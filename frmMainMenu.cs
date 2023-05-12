@@ -42,20 +42,17 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            frmCrearPersonaje menuCreacion = new frmCrearPersonaje(usuario);
-            menuCreacion.ShowDialog();
-            this.Hide();
-            if (menuCreacion.DialogResult == DialogResult.OK)
+            frmCrearPersonaje form = (frmCrearPersonaje)abrirSubForm(new frmCrearPersonaje());
+            if (form.DialogResult == DialogResult.OK)
             {
-                personajes.Add(menuCreacion.personaje);
-                actualizarLista();
+                personajes.Add(form.personaje);
             }
-            menuCreacion.Close();
-            this.Show();
-
+            /* frmCrearPersonaje menuCreacion = new frmCrearPersonaje(usuario);
+            menuCreacion.ShowDialog();
+            */
         }
 
-        private void actualizarLista()
+        public void actualizarLista()
         {
             this.lstPersonajes.Items.Clear();
             foreach (Personaje elem in personajes)
@@ -95,6 +92,21 @@ namespace PrimerParcialLabo_Intento2
         {
             frmExportar form = new frmExportar(personajes, personajeSeleccionado);
             form.ShowDialog();
+        }
+
+        private Form abrirSubForm(object subForm)
+        {
+            if (panelContenedor.Controls.Count > 0)
+            {
+                panelContenedor.Controls.Clear();
+            }
+            Form fh = subForm as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Show();
+            return fh;
         }
     }
 }

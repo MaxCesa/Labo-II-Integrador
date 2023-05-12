@@ -2,7 +2,6 @@ namespace PrimerParcialLabo_Intento2
 {
     public partial class frmCrearPersonaje : Form
     {
-        Usuario usuarioActivo;
         Raza raza;
         Clase clase;
         Dictionary<string, int> atributos;
@@ -11,11 +10,6 @@ namespace PrimerParcialLabo_Intento2
         public frmCrearPersonaje()
         {
             InitializeComponent();
-        }
-
-        public frmCrearPersonaje(Usuario usuario) : this()
-        {
-            this.usuarioActivo = usuario;
             this.cboRazas.DataSource = Enum.GetValues(typeof(Razas));
             this.cboClases.DataSource = Enum.GetValues(typeof(Clases));
         }
@@ -58,7 +52,7 @@ namespace PrimerParcialLabo_Intento2
             btnContinuar2.Enabled = true;
             frmAsignarAtributos form = new frmAsignarAtributos();
             form.ShowDialog();
-            if(form.DialogResult == DialogResult.OK)
+            if (form.DialogResult == DialogResult.OK)
             {
                 atributos = form.atributosGenerados;
             }
@@ -94,8 +88,8 @@ namespace PrimerParcialLabo_Intento2
             }
 
             personaje = new Personaje(txtNombre.Text, this.clase, this.raza, this.atributos);
-            this.DialogResult = DialogResult.OK;
-            this.Hide();
+            ((frmMainMenu)this.Parent.Parent).personajes.Add(personaje);
+            ((frmMainMenu)this.Parent.Parent).actualizarLista();
         }
     }
 }
