@@ -28,12 +28,6 @@ namespace PrimerParcialLabo_Intento2
         {
         }
     }
-    public class DungeonMaster : Usuario
-    {
-        public DungeonMaster(string usuario, string contraseña) : base(usuario, contraseña)
-        {
-        }
-    }
     public class SuperAdmin : Usuario
     {
         public SuperAdmin(string usuario, string contraseña) : base(usuario, contraseña)

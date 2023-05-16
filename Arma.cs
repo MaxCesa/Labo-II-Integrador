@@ -8,8 +8,7 @@ namespace PrimerParcialLabo_Intento2
 {
     internal class Arma : Objeto
     {
-        private int _cantidadDados;
-        private int _tipoDado;
+        public Dado dadoDaño;
         public enum tipoDeDaño
         {
             Cortante = 1,
@@ -29,11 +28,17 @@ namespace PrimerParcialLabo_Intento2
             Trueno = 110
         }
         public tipoDeDaño damageType;
+        public List<string> propiedades; 
         public Arma(string nombre, int dado, int tipoDeDado, int numeroDeTipo): base(nombre)
         {
-            _cantidadDados = dado;
-            _tipoDado = tipoDeDado;
+            dadoDaño = new Dado(dado, tipoDeDado);
             tipoDeDaño damageType = (tipoDeDaño)numeroDeTipo;
+            propiedades = new List<string>();
+        }
+
+        public Arma(string nombre, int dado, int tipoDeDado, int numeroDeTipo, List<string> propiedades): this(nombre, dado, tipoDeDado, numeroDeTipo)
+        {
+            this.propiedades = propiedades;
         }
 
         

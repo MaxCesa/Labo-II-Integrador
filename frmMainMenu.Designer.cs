@@ -76,6 +76,7 @@
             btnInformacion.TabIndex = 2;
             btnInformacion.Text = "Informacion";
             btnInformacion.UseVisualStyleBackColor = false;
+            btnInformacion.Click += btnInformacion_Click;
             // 
             // btnJugar
             // 
@@ -137,7 +138,7 @@
             // 
             // btnSeleccionarPersonaje
             // 
-            btnSeleccionarPersonaje.Location = new Point(6, 430);
+            btnSeleccionarPersonaje.Location = new Point(12, 430);
             btnSeleccionarPersonaje.Name = "btnSeleccionarPersonaje";
             btnSeleccionarPersonaje.Size = new Size(94, 29);
             btnSeleccionarPersonaje.TabIndex = 10;
@@ -147,6 +148,7 @@
             // 
             // lstPersonajes
             // 
+            lstPersonajes.BackColor = Color.PapayaWhip;
             lstPersonajes.FormattingEnabled = true;
             lstPersonajes.ItemHeight = 20;
             lstPersonajes.Location = new Point(12, 240);
@@ -176,28 +178,28 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(184, 557);
+            panelMenu.Size = new Size(184, 706);
             panelMenu.TabIndex = 14;
             // 
             // panelContenedor
             // 
-            panelContenedor.BackColor = Color.Sienna;
+            panelContenedor.BackColor = Color.BlanchedAlmond;
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(184, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(847, 557);
+            panelContenedor.Size = new Size(1016, 706);
             panelContenedor.TabIndex = 15;
             // 
             // frmMainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1031, 557);
+            ClientSize = new Size(1200, 706);
             Controls.Add(panelContenedor);
             Controls.Add(panelMenu);
             Controls.Add(lblPersonajeSeleccionado);
             Name = "frmMainMenu";
-            Text = "Form1";
+            Text = "Emporio de Personajes";
             ((System.ComponentModel.ISupportInitialize)campañaBindingSource).EndInit();
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();

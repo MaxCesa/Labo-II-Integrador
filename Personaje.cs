@@ -14,7 +14,6 @@ namespace PrimerParcialLabo_Intento2
         public Raza raza { set; get; }
         //public Background background;
         public Dictionary<string, int> atributos { set; get; } //Los atributos al ser mostrados se le deben sumar los bonus por clase
-
         public Personaje(string nombre, Clase clase, Raza raza)
         {
             this.nombre = nombre;
@@ -32,6 +31,21 @@ namespace PrimerParcialLabo_Intento2
         public override string ToString()
         {
             return this.nombre + " : " + this.clase + " nivel " + this.clase.nivel.ToString();
+        }
+
+        public bool esProeficiente(string habilidad)
+        {
+            return (this.clase.proeficiencias.Contains(habilidad));
+        }
+
+        public int modificadorDeAtributo(string atributo)
+        {
+            return (int)Math.Truncate((double)(-5 + (this.totalAtributo(atributo) / 2)));
+        }
+
+        public int totalAtributo(string atributo)
+        {
+            return atributos[atributo] + this.raza.abilityScoreIncreases[atributo] + this.clase.abilityScoreIncreases[atributo];
         }
     }
 }

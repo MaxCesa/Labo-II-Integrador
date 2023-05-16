@@ -65,5 +65,42 @@ namespace PrimerParcialLabo_Intento2
             }
             return retorno;
         }
+
+        public static string atributoAsociado(string habilidad)
+        {
+            string retorno = "-";
+            switch(habilidad)
+            {
+                case "Atletismo":
+                    retorno = "Fuerza";
+                    break;
+                case "Acrobacias":
+                case "Juego de manos":
+                case "Sigilo":
+                    retorno = "Destreza";
+                    break;
+                case "Arcano":
+                case "Historia":
+                case "Investigacion":
+                case "Naturaleza":
+                case "Religion":
+                    retorno = "Inteligencia";
+                    break;
+                case "Manejo de animales":
+                case "Medicina":
+                case "Percepcion":
+                case "Perspicacia":
+                case "Supervivencia":
+                    retorno = "Sabiduria";
+                    break;
+                case "Engaño":
+                case "Intimidacion":
+                case "Interpretacion":
+                case "Persuasion":
+                    retorno = "Carisma";
+                    break;
+            }
+            return retorno;
+        }
     }
 }

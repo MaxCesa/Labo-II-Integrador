@@ -77,15 +77,7 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            frmJugar menuCreacion = new frmJugar(personajeSeleccionado);
-            menuCreacion.ShowDialog();
-            this.Hide();
-            if (menuCreacion.DialogResult == DialogResult.OK)
-            {
-                menuCreacion.Close();
-            }
-
-            this.Show();
+            abrirSubForm(new frmJugar(personajeSeleccionado));
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -107,6 +99,11 @@ namespace PrimerParcialLabo_Intento2
             this.panelContenedor.Tag = fh;
             fh.Show();
             return fh;
+        }
+
+        private void btnInformacion_Click(object sender, EventArgs e)
+        {
+            abrirSubForm(new frmInformacion(personajeSeleccionado));
         }
     }
 }

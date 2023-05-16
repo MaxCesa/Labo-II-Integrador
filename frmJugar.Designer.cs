@@ -43,17 +43,21 @@
             // 
             // cboAtributos
             // 
+            cboAtributos.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboAtributos.FormattingEnabled = true;
-            cboAtributos.Location = new Point(54, 54);
+            cboAtributos.Location = new Point(68, 62);
+            cboAtributos.Margin = new Padding(4, 3, 4, 3);
             cboAtributos.Name = "cboAtributos";
-            cboAtributos.Size = new Size(151, 28);
+            cboAtributos.Size = new Size(188, 31);
             cboAtributos.TabIndex = 0;
             // 
             // btnTiradaAtributos
             // 
-            btnTiradaAtributos.Location = new Point(244, 54);
+            btnTiradaAtributos.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTiradaAtributos.Location = new Point(305, 62);
+            btnTiradaAtributos.Margin = new Padding(4, 3, 4, 3);
             btnTiradaAtributos.Name = "btnTiradaAtributos";
-            btnTiradaAtributos.Size = new Size(94, 29);
+            btnTiradaAtributos.Size = new Size(118, 33);
             btnTiradaAtributos.TabIndex = 1;
             btnTiradaAtributos.Text = "Tirar...";
             btnTiradaAtributos.UseVisualStyleBackColor = true;
@@ -61,88 +65,108 @@
             // 
             // cboHabilidades
             // 
+            cboHabilidades.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboHabilidades.FormattingEnabled = true;
-            cboHabilidades.Location = new Point(54, 141);
+            cboHabilidades.Location = new Point(68, 162);
+            cboHabilidades.Margin = new Padding(4, 3, 4, 3);
             cboHabilidades.Name = "cboHabilidades";
-            cboHabilidades.Size = new Size(151, 28);
+            cboHabilidades.Size = new Size(188, 31);
             cboHabilidades.TabIndex = 2;
             // 
             // btnTiradaHabilidades
             // 
-            btnTiradaHabilidades.Location = new Point(244, 140);
+            btnTiradaHabilidades.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTiradaHabilidades.Location = new Point(305, 161);
+            btnTiradaHabilidades.Margin = new Padding(4, 3, 4, 3);
             btnTiradaHabilidades.Name = "btnTiradaHabilidades";
-            btnTiradaHabilidades.Size = new Size(94, 29);
+            btnTiradaHabilidades.Size = new Size(118, 33);
             btnTiradaHabilidades.TabIndex = 3;
             btnTiradaHabilidades.Text = "Tirar...";
             btnTiradaHabilidades.UseVisualStyleBackColor = true;
+            btnTiradaHabilidades.Click += btnTiradaHabilidades_Click;
             // 
             // cboAtaques
             // 
+            cboAtaques.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboAtaques.FormattingEnabled = true;
-            cboAtaques.Location = new Point(54, 216);
+            cboAtaques.Location = new Point(68, 248);
+            cboAtaques.Margin = new Padding(4, 3, 4, 3);
             cboAtaques.Name = "cboAtaques";
-            cboAtaques.Size = new Size(151, 28);
+            cboAtaques.Size = new Size(188, 31);
             cboAtaques.TabIndex = 4;
             // 
             // btnCheckHit
             // 
-            btnCheckHit.Location = new Point(244, 216);
+            btnCheckHit.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCheckHit.Location = new Point(305, 248);
+            btnCheckHit.Margin = new Padding(4, 3, 4, 3);
             btnCheckHit.Name = "btnCheckHit";
-            btnCheckHit.Size = new Size(94, 29);
+            btnCheckHit.Size = new Size(118, 33);
             btnCheckHit.TabIndex = 5;
             btnCheckHit.Text = "Check";
             btnCheckHit.UseVisualStyleBackColor = true;
             // 
             // btnDaño
             // 
-            btnDaño.Location = new Point(244, 263);
+            btnDaño.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnDaño.Location = new Point(305, 302);
+            btnDaño.Margin = new Padding(4, 3, 4, 3);
             btnDaño.Name = "btnDaño";
-            btnDaño.Size = new Size(94, 29);
+            btnDaño.Size = new Size(118, 33);
             btnDaño.TabIndex = 6;
             btnDaño.Text = "Daño";
             btnDaño.UseVisualStyleBackColor = true;
             // 
             // rtbConsola
             // 
-            rtbConsola.Location = new Point(399, 49);
+            rtbConsola.BackColor = Color.BurlyWood;
+            rtbConsola.Location = new Point(499, 56);
+            rtbConsola.Margin = new Padding(4, 3, 4, 3);
             rtbConsola.Name = "rtbConsola";
             rtbConsola.ReadOnly = true;
-            rtbConsola.Size = new Size(377, 367);
+            rtbConsola.Size = new Size(470, 421);
             rtbConsola.TabIndex = 7;
             rtbConsola.Text = "";
             // 
             // lblAtributos
             // 
             lblAtributos.AutoSize = true;
-            lblAtributos.Location = new Point(54, 31);
+            lblAtributos.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAtributos.Location = new Point(68, 36);
+            lblAtributos.Margin = new Padding(4, 0, 4, 0);
             lblAtributos.Name = "lblAtributos";
-            lblAtributos.Size = new Size(70, 20);
+            lblAtributos.Size = new Size(87, 23);
             lblAtributos.TabIndex = 8;
             lblAtributos.Text = "Atributos";
             // 
             // lblHabilidades
             // 
             lblHabilidades.AutoSize = true;
-            lblHabilidades.Location = new Point(54, 118);
+            lblHabilidades.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHabilidades.Location = new Point(68, 136);
+            lblHabilidades.Margin = new Padding(4, 0, 4, 0);
             lblHabilidades.Name = "lblHabilidades";
-            lblHabilidades.Size = new Size(89, 20);
+            lblHabilidades.Size = new Size(107, 23);
             lblHabilidades.TabIndex = 9;
             lblHabilidades.Text = "Habilidades";
             // 
             // lblAtaques
             // 
             lblAtaques.AutoSize = true;
-            lblAtaques.Location = new Point(54, 193);
+            lblAtaques.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAtaques.Location = new Point(68, 222);
+            lblAtaques.Margin = new Padding(4, 0, 4, 0);
             lblAtaques.Name = "lblAtaques";
-            lblAtaques.Size = new Size(63, 20);
+            lblAtaques.Size = new Size(75, 23);
             lblAtaques.TabIndex = 10;
             lblAtaques.Text = "Ataques";
             // 
             // frmJugar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.BlanchedAlmond;
+            ClientSize = new Size(1000, 518);
             Controls.Add(lblAtaques);
             Controls.Add(lblHabilidades);
             Controls.Add(lblAtributos);
@@ -154,9 +178,12 @@
             Controls.Add(cboHabilidades);
             Controls.Add(btnTiradaAtributos);
             Controls.Add(cboAtributos);
-            HelpButton = true;
+            Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
             Name = "frmJugar";
             Text = "Jugar";
+            Load += frmJugar_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -34,11 +34,34 @@ namespace PrimerParcialLabo_Intento2
 
         private string tirarAtributo(Personaje personaje)
         {
-            Dado dado = new(1,20);
+            Dado dado = new(1, 20);
             string atributo = this.cboAtributos.Text;
             int resultado = 0;
-            resultado = dado.tirar() + personaje.clase.abilityScoreIncreases[atributo];
-            return ("Roll de " + atributo + ": " +  resultado.ToString() + "\n");
+            resultado = dado.tirar() + personaje.modificadorDeAtributo(atributo);
+            return ("Roll de " + atributo + ": " + resultado.ToString() + "\n");
+        }
+
+        private void frmJugar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTiradaHabilidades_Click(object sender, EventArgs e)
+        {
+            rtbConsola.AppendText(tirarHabilidad(personajeActual));
+        }
+
+        private string tirarHabilidad(Personaje personaje)
+        {
+            Dado dado = new(1, 20);
+            int resultado = 0;
+            string habilidad = this.cboHabilidades.Text;
+            resultado = dado.tirar() + personaje.modificadorDeAtributo(Habilidades.atributoAsociado(habilidad));
+            if (personajeActual.esProeficiente(habilidad))
+            {
+                resultado += personaje.clase.bonusProeficiencia;
+            }
+            return ("Roll de " + habilidad + ": " + resultado.ToString() + "\n"); ;
         }
     }
 }
