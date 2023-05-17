@@ -19,5 +19,8 @@
     <Compile Update="frmJugar.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmNuevoItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

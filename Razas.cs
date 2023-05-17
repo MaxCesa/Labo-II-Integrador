@@ -128,8 +128,8 @@ namespace PrimerParcialLabo_Intento2
             this.abilityScoreIncreases["Carisma"] = 2;
             this.abilityScoreIncreases[Atributos.elegirAtributo()] += 1;
             this.abilityScoreIncreases[Atributos.elegirAtributo()] += 1;
-            this.habilidades.Add(Habilidades.elegirHabilidad());
-            this.habilidades.Add(Habilidades.elegirHabilidad());
+            this.habilidades.Add(Habilidad.elegirHabilidad());
+            this.habilidades.Add(Habilidad.elegirHabilidad());
             this.size = "Mediano";
 
         }

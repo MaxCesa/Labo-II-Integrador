@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimerParcialLabo_Intento2
 {
-    internal class Instrumento : Objeto
+    internal class Instrumento : Item
     {
         public static List<string> instrumentosComunes = new List<string>()
             {

@@ -42,9 +42,6 @@ namespace PrimerParcialLabo_Intento2
                 case 7:
                     raza = new Tiefling();
                     break;
-                default:
-                    Lenguajes.elegirLenguaje();
-                    break;
             }
             cboRazas.Enabled = false;
             cboClases.Enabled = true;

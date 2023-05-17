@@ -199,3 +199,4 @@ D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\win-x86\native\vulkan-1.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo-Intento2.csproj.CopyComplete
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmInformacion.resources
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmNuevoItem.resources

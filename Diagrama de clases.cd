@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PrimerParcialLabo_Intento2.Arma" Collapsed="true">
+    <Position X="8.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Arma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Atributos" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Atributos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Clase" Collapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAABQAABACAiEAAAAAAAACACAAEAAhEQACAAQABA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Barbaro" Collapsed="true">
+    <Position X="10.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Bardo" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Clerigo" Collapsed="true">
+    <Position X="17" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Druida" Collapsed="true">
+    <Position X="1.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Guerrero" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAACACAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Monje" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABAAAAAAAAAAACACAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Paladin" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAACACAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Explorador" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAACACAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Dado" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.frmComboEleccion" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACEAAAwQBACAAAACAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>frmComboEleccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.frmCrearPersonaje" Collapsed="true">
+    <Position X="24.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ATABAAQEACCgAICAAAGAgAACACAAAAAAYIIAEAAAAAA=</HashCode>
+      <FileName>frmCrearPersonaje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.frmListEleccion" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAEAACAAAAwABACAAAAiAAAEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>frmListEleccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.frmLogIn" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAQAIAAAAAEACAAAAAAE=</HashCode>
+      <FileName>frmLogIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.frmMainMenu" Collapsed="true">
+    <Position X="23" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAAAKKIAAAAAAECIjAADAYCAAA8AQEAAAAhAAAQ=</HashCode>
+      <FileName>frmMainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Habilidades" Collapsed="true">
+    <Position X="24.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAI=</HashCode>
+      <FileName>Habilidades.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Instrumento" Collapsed="true">
+    <Position X="10.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Instrumentos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Lenguajes" Collapsed="true">
+    <Position X="19.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Lenguajes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Item" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAACEAQEAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Program" Collapsed="true">
+    <Position X="23" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Raza" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACEBIAAAAAAAAAAAAAAgEAACAAQABA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Enano" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Elfo" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Mediano" Collapsed="true">
+    <Position X="1.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Humano" Collapsed="true">
+    <Position X="3.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Gnomo" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.MedioElfo" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.MedioOrco" Collapsed="true">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Tiefling" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Serializador" Collapsed="true">
+    <Position X="24.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAoAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Serializador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Usuario" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAACAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Jugador" Collapsed="true">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.SuperAdmin" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PrimerParcialLabo_Intento2.Personaje" Collapsed="true">
+    <Position X="21.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABEgAAgAACEAAAAQIAAAAAAAAAAgIAAAgAAAAA=</HashCode>
+      <FileName>Personaje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="PrimerParcialLabo_Intento2.Clases" Collapsed="true">
+    <Position X="19.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAAIAAAAAAAAAAAAASAAAAMCAAAAAAAAAA=</HashCode>
+      <FileName>Clases.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="PrimerParcialLabo_Intento2.Razas" Collapsed="true">
+    <Position X="21.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAABBAAAAAAAAAAAAAAEAAIAAAAAAAIASAAAA=</HashCode>
+      <FileName>Razas.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

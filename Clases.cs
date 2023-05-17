@@ -113,7 +113,7 @@ namespace PrimerParcialLabo_Intento2
             {
                 "Manejo de animales", "Atletismo","Intimidacion","Naturaleza","Percepcion","Supervivencia"
             };
-            foreach (string habilidad in Habilidades.elegirDeLista(opciones, 2))
+            foreach (string habilidad in Habilidad.elegirDeLista(opciones, 2))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -268,7 +268,7 @@ namespace PrimerParcialLabo_Intento2
             }
             this.savingThrows.Add("Destreza");
             this.savingThrows.Add("Carisma");
-            foreach (string habilidad in Habilidades.elegirDeLista(Habilidades.habilidades, 3))
+            foreach (string habilidad in Habilidad.elegirDeLista(Habilidad.habilidades, 3))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -315,7 +315,7 @@ namespace PrimerParcialLabo_Intento2
                         }
                         if (caracteristicas.Contains("Colegio del Conocimiento"))
                         {
-                            foreach (string habilidad in Habilidades.elegirDeLista(Habilidades.habilidades, 3))
+                            foreach (string habilidad in Habilidad.elegirDeLista(Habilidad.habilidades, 3))
                             {
                                 this.habilidades.Add(habilidad);
                             }
@@ -431,7 +431,7 @@ namespace PrimerParcialLabo_Intento2
             this.savingThrows.Add("Carisma");
             List<string> opcionesDeClerigo = new List<string>()
             { "Historia", "Perspicacia", "Medicina", "Persuasion", "Religion"};
-            foreach (string habilidad in Habilidades.elegirDeLista(opcionesDeClerigo, 2))
+            foreach (string habilidad in Habilidad.elegirDeLista(opcionesDeClerigo, 2))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -464,7 +464,7 @@ namespace PrimerParcialLabo_Intento2
                                 this.lenguajes.Add(Lenguajes.elegirLenguaje());
                                 List<string> _opciones = new List<string>()
                                 { "Arcano", "Historia", "Naturaleza", "Religion"};
-                                foreach (string habilidad in Habilidades.elegirDeLista(_opciones, 2))
+                                foreach (string habilidad in Habilidad.elegirDeLista(_opciones, 2))
                                 {
                                     this.habilidades.Add(habilidad);
                                 }
@@ -596,7 +596,7 @@ namespace PrimerParcialLabo_Intento2
             Console.WriteLine("Primer log");
             List<string> opcionesDeDruida = new List<string>()
             { "Arcano", "Perspicacia", "Medicina", "Naturaleza", "Percepcion", "Religion", "Supervivencia", "Manejo de animales"};
-            foreach (string habilidad in Habilidades.elegirDeLista(opcionesDeDruida, 2))
+            foreach (string habilidad in Habilidad.elegirDeLista(opcionesDeDruida, 2))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -768,7 +768,7 @@ namespace PrimerParcialLabo_Intento2
             this.savingThrows.Add("Constitucion");
             List<string> opcionesDeGuerrero = new List<string>()
             { "Acrobacias", "Atletimo", "Perspicacia", "Historia", "Intimidacion", "Manejo de animales", "Percepcion", "Supervivencia"};
-            foreach (string habilidad in Habilidades.elegirDeLista(opcionesDeGuerrero, 2))
+            foreach (string habilidad in Habilidad.elegirDeLista(opcionesDeGuerrero, 2))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -969,7 +969,7 @@ namespace PrimerParcialLabo_Intento2
             this.savingThrows.Add("Destreza");
             List<string> opcionesDeGuerrero = new List<string>()
             { "Acrobacias", "Atletimo", "Perspicacia", "Historia", "Religion", "Sigilo"};
-            foreach (string habilidad in Habilidades.elegirDeLista(opcionesDeGuerrero, 2))
+            foreach (string habilidad in Habilidad.elegirDeLista(opcionesDeGuerrero, 2))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -1133,7 +1133,7 @@ namespace PrimerParcialLabo_Intento2
             this.savingThrows.Add("Carisma");
             List<string> opcionesDeGuerrero = new List<string>()
             { "Atletimo", "Perspicacia", "Intimidacion", "Medicina","Persuasion","Religion"};
-            foreach (string habilidad in Habilidades.elegirDeLista(opcionesDeGuerrero, 2))
+            foreach (string habilidad in Habilidad.elegirDeLista(opcionesDeGuerrero, 2))
             {
                 this.habilidades.Add(habilidad);
             }
@@ -1319,7 +1319,7 @@ namespace PrimerParcialLabo_Intento2
             this.savingThrows.Add("Destreza");
             List<string> opcionesDeGuerrero = new List<string>()
             { "Atletimo", "Perspicacia", "Investigacion","Manejo de animales", "Naturaleza", "Percepcion", "Sigilo", "Supervivencia"};
-            foreach (string habilidad in Habilidades.elegirDeLista(opcionesDeGuerrero, 3))
+            foreach (string habilidad in Habilidad.elegirDeLista(opcionesDeGuerrero, 3))
             {
                 this.habilidades.Add(habilidad);
             }

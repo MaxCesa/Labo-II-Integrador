@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             btnCrear = new Button();
             btnInformacion = new Button();
             btnJugar = new Button();
@@ -149,11 +150,12 @@
             // lstPersonajes
             // 
             lstPersonajes.BackColor = Color.PapayaWhip;
+            lstPersonajes.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lstPersonajes.FormattingEnabled = true;
-            lstPersonajes.ItemHeight = 20;
+            lstPersonajes.ItemHeight = 23;
             lstPersonajes.Location = new Point(12, 240);
             lstPersonajes.Name = "lstPersonajes";
-            lstPersonajes.Size = new Size(158, 184);
+            lstPersonajes.Size = new Size(158, 165);
             lstPersonajes.TabIndex = 11;
             // 
             // lblPersonajeSeleccionado
@@ -187,17 +189,18 @@
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(184, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(1016, 706);
+            panelContenedor.Size = new Size(1143, 706);
             panelContenedor.TabIndex = 15;
             // 
             // frmMainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 706);
+            ClientSize = new Size(1327, 706);
             Controls.Add(panelContenedor);
             Controls.Add(panelMenu);
             Controls.Add(lblPersonajeSeleccionado);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMainMenu";
             Text = "Emporio de Personajes";
             ((System.ComponentModel.ISupportInitialize)campañaBindingSource).EndInit();

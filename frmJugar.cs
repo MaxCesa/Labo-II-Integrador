@@ -23,7 +23,7 @@ namespace PrimerParcialLabo_Intento2
         {
             personajeActual = personaje;
             this.cboAtributos.DataSource = Atributos.atributos;
-            this.cboHabilidades.DataSource = Habilidades.habilidades;
+            this.cboHabilidades.DataSource = Habilidad.habilidades;
         }
 
         private void btnTiradaAtributos_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace PrimerParcialLabo_Intento2
             Dado dado = new(1, 20);
             int resultado = 0;
             string habilidad = this.cboHabilidades.Text;
-            resultado = dado.tirar() + personaje.modificadorDeAtributo(Habilidades.atributoAsociado(habilidad));
+            resultado = dado.tirar() + personaje.modificadorDeAtributo(Habilidad.atributoAsociado(habilidad));
             if (personajeActual.esProeficiente(habilidad))
             {
                 resultado += personaje.clase.bonusProeficiencia;

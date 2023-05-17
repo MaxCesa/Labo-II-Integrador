@@ -38,12 +38,14 @@
             lblClase = new Label();
             lblPasado = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            lblBonusProeficiencia = new Label();
             label17 = new Label();
             label16 = new Label();
             label15 = new Label();
             lblHP = new Label();
             label6 = new Label();
             label7 = new Label();
+            lblBonusProeficienciaValor = new Label();
             tableLayoutPanel3 = new TableLayoutPanel();
             label38 = new Label();
             label37 = new Label();
@@ -69,18 +71,43 @@
             lblFuerza = new Label();
             lblDestreza = new Label();
             lblConstitucion = new Label();
-            listView1 = new ListView();
+            lblAtributo = new Label();
+            lblAtributoTotal = new Label();
+            lblAtributoModificador = new Label();
+            lblSaveThrow = new Label();
+            lstEquipo = new ListView();
             tableLayoutPanel4 = new TableLayoutPanel();
-            label74 = new Label();
-            label72 = new Label();
-            label70 = new Label();
-            label68 = new Label();
-            label66 = new Label();
-            label64 = new Label();
-            label62 = new Label();
-            label60 = new Label();
-            label58 = new Label();
-            label56 = new Label();
+            lblModificador = new Label();
+            lblProeficiencia = new Label();
+            lblHabilidad = new Label();
+            lblPersuasionMod = new Label();
+            lblInterpretacionMod = new Label();
+            lblIntimidacionMod = new Label();
+            lblEngañoCarisma = new Label();
+            lblSupervivenciaMod = new Label();
+            lblPerspicaciaMod = new Label();
+            lblPercepcionMod = new Label();
+            lblMedicinaMod = new Label();
+            lblManejoDeAnimalesMod = new Label();
+            lblReligionMod = new Label();
+            lblNaturalezaMod = new Label();
+            lblInvestigacionMod = new Label();
+            lblHistoriaMod = new Label();
+            lblArcanoMod = new Label();
+            lblSigiloMod = new Label();
+            lblJuegoDeManosMod = new Label();
+            lblAcrobaciasMod = new Label();
+            lblAtletismoMod = new Label();
+            lblPersuasionProf = new Label();
+            lblInterpretacionProf = new Label();
+            lblIntimidacionProf = new Label();
+            lblEngañoProf = new Label();
+            lblSupervivenciaProf = new Label();
+            lblPerspicaciaProf = new Label();
+            lblPercepcionProf = new Label();
+            lblMedicinaProf = new Label();
+            lblManejoDeAnimalesProf = new Label();
+            lblReligionProf = new Label();
             lblNaturalezaProf = new Label();
             lblInvestigacionProf = new Label();
             lblHistoriaProf = new Label();
@@ -107,10 +134,15 @@
             lblInvestigacion = new Label();
             lblNaturaleza = new Label();
             lblReligion = new Label();
+            btnAñadirItem = new Button();
+            btnExaminarItem = new Button();
+            btnTirarItem = new Button();
+            Logo = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Logo).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -127,7 +159,7 @@
             tableLayoutPanel1.Controls.Add(lblRaza, 0, 1);
             tableLayoutPanel1.Controls.Add(lblClase, 0, 2);
             tableLayoutPanel1.Controls.Add(lblPasado, 0, 3);
-            tableLayoutPanel1.Location = new Point(48, 33);
+            tableLayoutPanel1.Location = new Point(48, 238);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
@@ -142,11 +174,11 @@
             lblPasadoValor.Anchor = AnchorStyles.None;
             lblPasadoValor.AutoSize = true;
             lblPasadoValor.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPasadoValor.Location = new Point(175, 135);
+            lblPasadoValor.Location = new Point(163, 135);
             lblPasadoValor.Name = "lblPasadoValor";
-            lblPasadoValor.Size = new Size(23, 27);
+            lblPasadoValor.Size = new Size(47, 27);
             lblPasadoValor.TabIndex = 7;
-            lblPasadoValor.Text = "-";
+            lblPasadoValor.Text = "WIP";
             lblPasadoValor.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblClaseValor
@@ -189,7 +221,7 @@
             // 
             lblNombre.Anchor = AnchorStyles.Left;
             lblNombre.AutoSize = true;
-            lblNombre.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNombre.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             lblNombre.Location = new Point(4, 8);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(87, 27);
@@ -201,7 +233,7 @@
             // 
             lblRaza.Anchor = AnchorStyles.Left;
             lblRaza.AutoSize = true;
-            lblRaza.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRaza.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             lblRaza.Location = new Point(4, 50);
             lblRaza.Name = "lblRaza";
             lblRaza.Size = new Size(62, 27);
@@ -213,7 +245,7 @@
             // 
             lblClase.Anchor = AnchorStyles.Left;
             lblClase.AutoSize = true;
-            lblClase.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblClase.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             lblClase.Location = new Point(4, 92);
             lblClase.Name = "lblClase";
             lblClase.Size = new Size(65, 27);
@@ -225,7 +257,7 @@
             // 
             lblPasado.Anchor = AnchorStyles.Left;
             lblPasado.AutoSize = true;
-            lblPasado.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPasado.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             lblPasado.Location = new Point(4, 135);
             lblPasado.Name = "lblPasado";
             lblPasado.Size = new Size(80, 27);
@@ -239,31 +271,46 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(lblBonusProeficiencia, 0, 3);
             tableLayoutPanel2.Controls.Add(label17, 1, 2);
             tableLayoutPanel2.Controls.Add(label16, 1, 1);
             tableLayoutPanel2.Controls.Add(label15, 1, 0);
             tableLayoutPanel2.Controls.Add(lblHP, 0, 0);
             tableLayoutPanel2.Controls.Add(label6, 0, 1);
             tableLayoutPanel2.Controls.Add(label7, 0, 2);
-            tableLayoutPanel2.Location = new Point(48, 225);
+            tableLayoutPanel2.Controls.Add(lblBonusProeficienciaValor, 1, 3);
+            tableLayoutPanel2.Location = new Point(48, 439);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.Size = new Size(250, 157);
+            tableLayoutPanel2.RowCount = 4;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel2.Size = new Size(250, 167);
             tableLayoutPanel2.TabIndex = 1;
+            // 
+            // lblBonusProeficiencia
+            // 
+            lblBonusProeficiencia.Anchor = AnchorStyles.Left;
+            lblBonusProeficiencia.AutoSize = true;
+            lblBonusProeficiencia.Font = new Font("Segoe Script", 7.8F, FontStyle.Underline, GraphicsUnit.Point);
+            lblBonusProeficiencia.Location = new Point(4, 125);
+            lblBonusProeficiencia.Name = "lblBonusProeficiencia";
+            lblBonusProeficiencia.Size = new Size(104, 40);
+            lblBonusProeficiencia.TabIndex = 6;
+            lblBonusProeficiencia.Text = "Bonus Proeficiencia:";
+            lblBonusProeficiencia.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label17
             // 
             label17.Anchor = AnchorStyles.None;
             label17.AutoSize = true;
             label17.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(175, 117);
+            label17.Location = new Point(163, 89);
             label17.Name = "label17";
-            label17.Size = new Size(23, 27);
+            label17.Size = new Size(47, 27);
             label17.TabIndex = 5;
-            label17.Text = "-";
+            label17.Text = "WIP";
             label17.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label16
@@ -271,11 +318,11 @@
             label16.Anchor = AnchorStyles.None;
             label16.AutoSize = true;
             label16.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(175, 65);
+            label16.Location = new Point(163, 48);
             label16.Name = "label16";
-            label16.Size = new Size(23, 27);
+            label16.Size = new Size(47, 27);
             label16.TabIndex = 4;
-            label16.Text = "-";
+            label16.Text = "WIP";
             label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label15
@@ -283,19 +330,19 @@
             label15.Anchor = AnchorStyles.None;
             label15.AutoSize = true;
             label15.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(175, 13);
+            label15.Location = new Point(163, 7);
             label15.Name = "label15";
-            label15.Size = new Size(23, 27);
+            label15.Size = new Size(47, 27);
             label15.TabIndex = 3;
-            label15.Text = "-";
+            label15.Text = "WIP";
             label15.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblHP
             // 
             lblHP.Anchor = AnchorStyles.Left;
             lblHP.AutoSize = true;
-            lblHP.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHP.Location = new Point(4, 13);
+            lblHP.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
+            lblHP.Location = new Point(4, 7);
             lblHP.Name = "lblHP";
             lblHP.Size = new Size(43, 27);
             lblHP.TabIndex = 0;
@@ -306,8 +353,8 @@
             // 
             label6.Anchor = AnchorStyles.Left;
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(4, 65);
+            label6.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
+            label6.Location = new Point(4, 48);
             label6.Name = "label6";
             label6.Size = new Size(44, 27);
             label6.TabIndex = 1;
@@ -318,48 +365,65 @@
             // 
             label7.Anchor = AnchorStyles.Left;
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe Script", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(4, 117);
+            label7.Font = new Font("Segoe Script", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
+            label7.Location = new Point(4, 89);
             label7.Name = "label7";
             label7.Size = new Size(106, 27);
             label7.TabIndex = 2;
             label7.Text = "Iniciativa:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // lblBonusProeficienciaValor
+            // 
+            lblBonusProeficienciaValor.Anchor = AnchorStyles.None;
+            lblBonusProeficienciaValor.AutoSize = true;
+            lblBonusProeficienciaValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblBonusProeficienciaValor.Location = new Point(177, 133);
+            lblBonusProeficienciaValor.Name = "lblBonusProeficienciaValor";
+            lblBonusProeficienciaValor.Size = new Size(20, 23);
+            lblBonusProeficienciaValor.TabIndex = 7;
+            lblBonusProeficienciaValor.Text = "-";
+            lblBonusProeficienciaValor.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            tableLayoutPanel3.ColumnCount = 6;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel3.Controls.Add(label38, 5, 3);
-            tableLayoutPanel3.Controls.Add(label37, 4, 3);
-            tableLayoutPanel3.Controls.Add(label36, 3, 3);
-            tableLayoutPanel3.Controls.Add(label35, 2, 3);
-            tableLayoutPanel3.Controls.Add(label34, 1, 3);
-            tableLayoutPanel3.Controls.Add(label33, 0, 3);
-            tableLayoutPanel3.Controls.Add(lblCarismaModificador, 5, 2);
-            tableLayoutPanel3.Controls.Add(lblSabiduriaModificador, 4, 2);
-            tableLayoutPanel3.Controls.Add(lblInteligenciaModificador, 3, 2);
-            tableLayoutPanel3.Controls.Add(lblConstitucionModificador, 2, 2);
-            tableLayoutPanel3.Controls.Add(lblDestrezaModificador, 1, 2);
-            tableLayoutPanel3.Controls.Add(lblFuerzaModificador, 0, 2);
-            tableLayoutPanel3.Controls.Add(lblCarismaValor, 5, 1);
-            tableLayoutPanel3.Controls.Add(lblSabiduriaValor, 4, 1);
-            tableLayoutPanel3.Controls.Add(lblInteligenciaValor, 3, 1);
-            tableLayoutPanel3.Controls.Add(lblConstitucionValor, 2, 1);
-            tableLayoutPanel3.Controls.Add(lblDestrezaValor, 1, 1);
-            tableLayoutPanel3.Controls.Add(lblFuerzaValor, 0, 1);
-            tableLayoutPanel3.Controls.Add(lblCarisma, 5, 0);
-            tableLayoutPanel3.Controls.Add(lblSabiduria, 4, 0);
-            tableLayoutPanel3.Controls.Add(lblInteligencia, 3, 0);
-            tableLayoutPanel3.Controls.Add(lblFuerza, 0, 0);
-            tableLayoutPanel3.Controls.Add(lblDestreza, 1, 0);
-            tableLayoutPanel3.Controls.Add(lblConstitucion, 2, 0);
+            tableLayoutPanel3.ColumnCount = 7;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.0769577F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.8202887F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.8209515F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.820446F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.8202381F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.8209515F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.820178F));
+            tableLayoutPanel3.Controls.Add(label38, 6, 3);
+            tableLayoutPanel3.Controls.Add(label37, 5, 3);
+            tableLayoutPanel3.Controls.Add(label36, 4, 3);
+            tableLayoutPanel3.Controls.Add(label35, 3, 3);
+            tableLayoutPanel3.Controls.Add(label34, 2, 3);
+            tableLayoutPanel3.Controls.Add(label33, 1, 3);
+            tableLayoutPanel3.Controls.Add(lblCarismaModificador, 6, 2);
+            tableLayoutPanel3.Controls.Add(lblSabiduriaModificador, 5, 2);
+            tableLayoutPanel3.Controls.Add(lblInteligenciaModificador, 4, 2);
+            tableLayoutPanel3.Controls.Add(lblConstitucionModificador, 3, 2);
+            tableLayoutPanel3.Controls.Add(lblDestrezaModificador, 2, 2);
+            tableLayoutPanel3.Controls.Add(lblFuerzaModificador, 1, 2);
+            tableLayoutPanel3.Controls.Add(lblCarismaValor, 6, 1);
+            tableLayoutPanel3.Controls.Add(lblSabiduriaValor, 5, 1);
+            tableLayoutPanel3.Controls.Add(lblInteligenciaValor, 4, 1);
+            tableLayoutPanel3.Controls.Add(lblConstitucionValor, 3, 1);
+            tableLayoutPanel3.Controls.Add(lblDestrezaValor, 2, 1);
+            tableLayoutPanel3.Controls.Add(lblFuerzaValor, 1, 1);
+            tableLayoutPanel3.Controls.Add(lblCarisma, 6, 0);
+            tableLayoutPanel3.Controls.Add(lblSabiduria, 5, 0);
+            tableLayoutPanel3.Controls.Add(lblInteligencia, 4, 0);
+            tableLayoutPanel3.Controls.Add(lblFuerza, 1, 0);
+            tableLayoutPanel3.Controls.Add(lblDestreza, 2, 0);
+            tableLayoutPanel3.Controls.Add(lblConstitucion, 3, 0);
+            tableLayoutPanel3.Controls.Add(lblAtributo, 0, 0);
+            tableLayoutPanel3.Controls.Add(lblAtributoTotal, 0, 1);
+            tableLayoutPanel3.Controls.Add(lblAtributoModificador, 0, 2);
+            tableLayoutPanel3.Controls.Add(lblSaveThrow, 0, 3);
             tableLayoutPanel3.Location = new Point(334, 33);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 4;
@@ -375,11 +439,11 @@
             label38.Anchor = AnchorStyles.None;
             label38.AutoSize = true;
             label38.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.Location = new Point(656, 141);
+            label38.Location = new Point(660, 141);
             label38.Name = "label38";
-            label38.Size = new Size(20, 23);
+            label38.Size = new Size(42, 23);
             label38.TabIndex = 23;
-            label38.Text = "-";
+            label38.Text = "WIP";
             label38.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label37
@@ -387,11 +451,11 @@
             label37.Anchor = AnchorStyles.None;
             label37.AutoSize = true;
             label37.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label37.Location = new Point(535, 141);
+            label37.Location = new Point(565, 141);
             label37.Name = "label37";
-            label37.Size = new Size(20, 23);
+            label37.Size = new Size(42, 23);
             label37.TabIndex = 22;
-            label37.Text = "-";
+            label37.Text = "WIP";
             label37.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label36
@@ -399,11 +463,11 @@
             label36.Anchor = AnchorStyles.None;
             label36.AutoSize = true;
             label36.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label36.Location = new Point(414, 141);
+            label36.Location = new Point(458, 141);
             label36.Name = "label36";
-            label36.Size = new Size(20, 23);
+            label36.Size = new Size(42, 23);
             label36.TabIndex = 21;
-            label36.Text = "-";
+            label36.Text = "WIP";
             label36.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label35
@@ -411,11 +475,11 @@
             label35.Anchor = AnchorStyles.None;
             label35.AutoSize = true;
             label35.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(293, 141);
+            label35.Location = new Point(341, 141);
             label35.Name = "label35";
-            label35.Size = new Size(20, 23);
+            label35.Size = new Size(42, 23);
             label35.TabIndex = 20;
-            label35.Text = "-";
+            label35.Text = "WIP";
             label35.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label34
@@ -423,11 +487,11 @@
             label34.Anchor = AnchorStyles.None;
             label34.AutoSize = true;
             label34.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(172, 141);
+            label34.Location = new Point(230, 141);
             label34.Name = "label34";
-            label34.Size = new Size(20, 23);
+            label34.Size = new Size(42, 23);
             label34.TabIndex = 19;
-            label34.Text = "-";
+            label34.Text = "WIP";
             label34.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label33
@@ -435,11 +499,11 @@
             label33.Anchor = AnchorStyles.None;
             label33.AutoSize = true;
             label33.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(51, 141);
+            label33.Location = new Point(141, 141);
             label33.Name = "label33";
-            label33.Size = new Size(20, 23);
+            label33.Size = new Size(42, 23);
             label33.TabIndex = 18;
-            label33.Text = "-";
+            label33.Text = "WIP";
             label33.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblCarismaModificador
@@ -447,7 +511,7 @@
             lblCarismaModificador.Anchor = AnchorStyles.None;
             lblCarismaModificador.AutoSize = true;
             lblCarismaModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCarismaModificador.Location = new Point(656, 107);
+            lblCarismaModificador.Location = new Point(671, 107);
             lblCarismaModificador.Name = "lblCarismaModificador";
             lblCarismaModificador.Size = new Size(20, 23);
             lblCarismaModificador.TabIndex = 17;
@@ -459,7 +523,7 @@
             lblSabiduriaModificador.Anchor = AnchorStyles.None;
             lblSabiduriaModificador.AutoSize = true;
             lblSabiduriaModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSabiduriaModificador.Location = new Point(535, 107);
+            lblSabiduriaModificador.Location = new Point(576, 107);
             lblSabiduriaModificador.Name = "lblSabiduriaModificador";
             lblSabiduriaModificador.Size = new Size(20, 23);
             lblSabiduriaModificador.TabIndex = 16;
@@ -471,7 +535,7 @@
             lblInteligenciaModificador.Anchor = AnchorStyles.None;
             lblInteligenciaModificador.AutoSize = true;
             lblInteligenciaModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInteligenciaModificador.Location = new Point(414, 107);
+            lblInteligenciaModificador.Location = new Point(469, 107);
             lblInteligenciaModificador.Name = "lblInteligenciaModificador";
             lblInteligenciaModificador.Size = new Size(20, 23);
             lblInteligenciaModificador.TabIndex = 15;
@@ -483,7 +547,7 @@
             lblConstitucionModificador.Anchor = AnchorStyles.None;
             lblConstitucionModificador.AutoSize = true;
             lblConstitucionModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblConstitucionModificador.Location = new Point(293, 107);
+            lblConstitucionModificador.Location = new Point(352, 107);
             lblConstitucionModificador.Name = "lblConstitucionModificador";
             lblConstitucionModificador.Size = new Size(20, 23);
             lblConstitucionModificador.TabIndex = 14;
@@ -495,7 +559,7 @@
             lblDestrezaModificador.Anchor = AnchorStyles.None;
             lblDestrezaModificador.AutoSize = true;
             lblDestrezaModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDestrezaModificador.Location = new Point(172, 107);
+            lblDestrezaModificador.Location = new Point(241, 107);
             lblDestrezaModificador.Name = "lblDestrezaModificador";
             lblDestrezaModificador.Size = new Size(20, 23);
             lblDestrezaModificador.TabIndex = 13;
@@ -507,7 +571,7 @@
             lblFuerzaModificador.Anchor = AnchorStyles.None;
             lblFuerzaModificador.AutoSize = true;
             lblFuerzaModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFuerzaModificador.Location = new Point(51, 107);
+            lblFuerzaModificador.Location = new Point(152, 107);
             lblFuerzaModificador.Name = "lblFuerzaModificador";
             lblFuerzaModificador.Size = new Size(20, 23);
             lblFuerzaModificador.TabIndex = 12;
@@ -519,7 +583,7 @@
             lblCarismaValor.Anchor = AnchorStyles.None;
             lblCarismaValor.AutoSize = true;
             lblCarismaValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCarismaValor.Location = new Point(656, 56);
+            lblCarismaValor.Location = new Point(671, 56);
             lblCarismaValor.Name = "lblCarismaValor";
             lblCarismaValor.Size = new Size(20, 23);
             lblCarismaValor.TabIndex = 11;
@@ -531,7 +595,7 @@
             lblSabiduriaValor.Anchor = AnchorStyles.None;
             lblSabiduriaValor.AutoSize = true;
             lblSabiduriaValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSabiduriaValor.Location = new Point(535, 56);
+            lblSabiduriaValor.Location = new Point(576, 56);
             lblSabiduriaValor.Name = "lblSabiduriaValor";
             lblSabiduriaValor.Size = new Size(20, 23);
             lblSabiduriaValor.TabIndex = 10;
@@ -543,7 +607,7 @@
             lblInteligenciaValor.Anchor = AnchorStyles.None;
             lblInteligenciaValor.AutoSize = true;
             lblInteligenciaValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInteligenciaValor.Location = new Point(414, 56);
+            lblInteligenciaValor.Location = new Point(469, 56);
             lblInteligenciaValor.Name = "lblInteligenciaValor";
             lblInteligenciaValor.Size = new Size(20, 23);
             lblInteligenciaValor.TabIndex = 9;
@@ -555,7 +619,7 @@
             lblConstitucionValor.Anchor = AnchorStyles.None;
             lblConstitucionValor.AutoSize = true;
             lblConstitucionValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblConstitucionValor.Location = new Point(293, 56);
+            lblConstitucionValor.Location = new Point(352, 56);
             lblConstitucionValor.Name = "lblConstitucionValor";
             lblConstitucionValor.Size = new Size(20, 23);
             lblConstitucionValor.TabIndex = 8;
@@ -567,7 +631,7 @@
             lblDestrezaValor.Anchor = AnchorStyles.None;
             lblDestrezaValor.AutoSize = true;
             lblDestrezaValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDestrezaValor.Location = new Point(172, 56);
+            lblDestrezaValor.Location = new Point(241, 56);
             lblDestrezaValor.Name = "lblDestrezaValor";
             lblDestrezaValor.Size = new Size(20, 23);
             lblDestrezaValor.TabIndex = 7;
@@ -579,7 +643,7 @@
             lblFuerzaValor.Anchor = AnchorStyles.None;
             lblFuerzaValor.AutoSize = true;
             lblFuerzaValor.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFuerzaValor.Location = new Point(51, 56);
+            lblFuerzaValor.Location = new Point(152, 56);
             lblFuerzaValor.Name = "lblFuerzaValor";
             lblFuerzaValor.Size = new Size(20, 23);
             lblFuerzaValor.TabIndex = 6;
@@ -591,7 +655,7 @@
             lblCarisma.Anchor = AnchorStyles.None;
             lblCarisma.AutoSize = true;
             lblCarisma.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCarisma.Location = new Point(628, 6);
+            lblCarisma.Location = new Point(643, 6);
             lblCarisma.Name = "lblCarisma";
             lblCarisma.Size = new Size(76, 23);
             lblCarisma.TabIndex = 5;
@@ -603,7 +667,7 @@
             lblSabiduria.Anchor = AnchorStyles.None;
             lblSabiduria.AutoSize = true;
             lblSabiduria.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSabiduria.Location = new Point(499, 6);
+            lblSabiduria.Location = new Point(541, 6);
             lblSabiduria.Name = "lblSabiduria";
             lblSabiduria.Size = new Size(91, 23);
             lblSabiduria.TabIndex = 4;
@@ -615,7 +679,7 @@
             lblInteligencia.Anchor = AnchorStyles.None;
             lblInteligencia.AutoSize = true;
             lblInteligencia.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInteligencia.Location = new Point(372, 6);
+            lblInteligencia.Location = new Point(427, 6);
             lblInteligencia.Name = "lblInteligencia";
             lblInteligencia.Size = new Size(104, 23);
             lblInteligencia.TabIndex = 3;
@@ -627,7 +691,7 @@
             lblFuerza.Anchor = AnchorStyles.None;
             lblFuerza.AutoSize = true;
             lblFuerza.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFuerza.Location = new Point(29, 6);
+            lblFuerza.Location = new Point(130, 6);
             lblFuerza.Name = "lblFuerza";
             lblFuerza.Size = new Size(64, 23);
             lblFuerza.TabIndex = 0;
@@ -639,7 +703,7 @@
             lblDestreza.Anchor = AnchorStyles.None;
             lblDestreza.AutoSize = true;
             lblDestreza.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDestreza.Location = new Point(144, 6);
+            lblDestreza.Location = new Point(213, 6);
             lblDestreza.Name = "lblDestreza";
             lblDestreza.Size = new Size(76, 23);
             lblDestreza.TabIndex = 1;
@@ -651,21 +715,69 @@
             lblConstitucion.Anchor = AnchorStyles.None;
             lblConstitucion.AutoSize = true;
             lblConstitucion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblConstitucion.Location = new Point(247, 6);
+            lblConstitucion.Location = new Point(306, 6);
             lblConstitucion.Name = "lblConstitucion";
             lblConstitucion.Size = new Size(112, 23);
             lblConstitucion.TabIndex = 2;
             lblConstitucion.Text = "Constitucion";
             lblConstitucion.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // listView1
+            // lblAtributo
             // 
-            listView1.BackColor = Color.Tan;
-            listView1.Location = new Point(699, 225);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(362, 393);
-            listView1.TabIndex = 3;
-            listView1.UseCompatibleStateImageBehavior = false;
+            lblAtributo.Anchor = AnchorStyles.None;
+            lblAtributo.AutoSize = true;
+            lblAtributo.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAtributo.Location = new Point(22, 6);
+            lblAtributo.Name = "lblAtributo";
+            lblAtributo.Size = new Size(80, 23);
+            lblAtributo.TabIndex = 24;
+            lblAtributo.Text = "Atributo";
+            lblAtributo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAtributoTotal
+            // 
+            lblAtributoTotal.Anchor = AnchorStyles.None;
+            lblAtributoTotal.AutoSize = true;
+            lblAtributoTotal.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAtributoTotal.Location = new Point(35, 56);
+            lblAtributoTotal.Name = "lblAtributoTotal";
+            lblAtributoTotal.Size = new Size(53, 23);
+            lblAtributoTotal.TabIndex = 25;
+            lblAtributoTotal.Text = "Valor";
+            lblAtributoTotal.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAtributoModificador
+            // 
+            lblAtributoModificador.Anchor = AnchorStyles.None;
+            lblAtributoModificador.AutoSize = true;
+            lblAtributoModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAtributoModificador.Location = new Point(8, 107);
+            lblAtributoModificador.Name = "lblAtributoModificador";
+            lblAtributoModificador.Size = new Size(108, 23);
+            lblAtributoModificador.TabIndex = 26;
+            lblAtributoModificador.Text = "Modificador";
+            lblAtributoModificador.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSaveThrow
+            // 
+            lblSaveThrow.Anchor = AnchorStyles.None;
+            lblSaveThrow.AutoSize = true;
+            lblSaveThrow.Font = new Font("Segoe Script", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSaveThrow.Location = new Point(9, 143);
+            lblSaveThrow.Name = "lblSaveThrow";
+            lblSaveThrow.Size = new Size(106, 20);
+            lblSaveThrow.TabIndex = 27;
+            lblSaveThrow.Text = "Saving Throw";
+            lblSaveThrow.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lstEquipo
+            // 
+            lstEquipo.BackColor = Color.Tan;
+            lstEquipo.Location = new Point(699, 225);
+            lstEquipo.Name = "lstEquipo";
+            lstEquipo.Size = new Size(362, 393);
+            lstEquipo.TabIndex = 3;
+            lstEquipo.UseCompatibleStateImageBehavior = false;
             // 
             // tableLayoutPanel4
             // 
@@ -674,46 +786,68 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            tableLayoutPanel4.Controls.Add(label74, 1, 17);
-            tableLayoutPanel4.Controls.Add(label72, 1, 16);
-            tableLayoutPanel4.Controls.Add(label70, 1, 15);
-            tableLayoutPanel4.Controls.Add(label68, 1, 14);
-            tableLayoutPanel4.Controls.Add(label66, 1, 13);
-            tableLayoutPanel4.Controls.Add(label64, 1, 12);
-            tableLayoutPanel4.Controls.Add(label62, 1, 11);
-            tableLayoutPanel4.Controls.Add(label60, 1, 10);
-            tableLayoutPanel4.Controls.Add(label58, 1, 9);
-            tableLayoutPanel4.Controls.Add(label56, 1, 8);
-            tableLayoutPanel4.Controls.Add(lblNaturalezaProf, 1, 7);
-            tableLayoutPanel4.Controls.Add(lblInvestigacionProf, 1, 6);
-            tableLayoutPanel4.Controls.Add(lblHistoriaProf, 1, 5);
-            tableLayoutPanel4.Controls.Add(lblArcanoProf, 1, 4);
-            tableLayoutPanel4.Controls.Add(lblSigiloProf, 1, 3);
-            tableLayoutPanel4.Controls.Add(lblJuegoDeManosProf, 1, 2);
-            tableLayoutPanel4.Controls.Add(lblAcrobaciasProf, 1, 1);
-            tableLayoutPanel4.Controls.Add(lblAtletismoProf, 1, 0);
-            tableLayoutPanel4.Controls.Add(lblPersuasion, 0, 17);
-            tableLayoutPanel4.Controls.Add(lblInterpretacion, 0, 16);
-            tableLayoutPanel4.Controls.Add(lblIntimidacion, 0, 15);
-            tableLayoutPanel4.Controls.Add(lblEngaño, 0, 14);
-            tableLayoutPanel4.Controls.Add(lblSupervivencia, 0, 13);
-            tableLayoutPanel4.Controls.Add(lblPerspicacia, 0, 12);
-            tableLayoutPanel4.Controls.Add(lblPercepcion, 0, 11);
-            tableLayoutPanel4.Controls.Add(lblMedicina, 0, 10);
-            tableLayoutPanel4.Controls.Add(lblManejoDeAnimales, 0, 9);
-            tableLayoutPanel4.Controls.Add(lblAtletismo, 0, 0);
-            tableLayoutPanel4.Controls.Add(lblAcrobacias, 0, 1);
-            tableLayoutPanel4.Controls.Add(lblJuegoDeManos, 0, 2);
-            tableLayoutPanel4.Controls.Add(lblSigilo, 0, 3);
-            tableLayoutPanel4.Controls.Add(lblArcano, 0, 4);
-            tableLayoutPanel4.Controls.Add(lblHistoria, 0, 5);
-            tableLayoutPanel4.Controls.Add(lblInvestigacion, 0, 6);
-            tableLayoutPanel4.Controls.Add(lblNaturaleza, 0, 7);
-            tableLayoutPanel4.Controls.Add(lblReligion, 0, 8);
+            tableLayoutPanel4.Controls.Add(lblModificador, 2, 0);
+            tableLayoutPanel4.Controls.Add(lblProeficiencia, 1, 0);
+            tableLayoutPanel4.Controls.Add(lblHabilidad, 0, 0);
+            tableLayoutPanel4.Controls.Add(lblPersuasionMod, 2, 18);
+            tableLayoutPanel4.Controls.Add(lblInterpretacionMod, 2, 17);
+            tableLayoutPanel4.Controls.Add(lblIntimidacionMod, 2, 16);
+            tableLayoutPanel4.Controls.Add(lblEngañoCarisma, 2, 15);
+            tableLayoutPanel4.Controls.Add(lblSupervivenciaMod, 2, 14);
+            tableLayoutPanel4.Controls.Add(lblPerspicaciaMod, 2, 13);
+            tableLayoutPanel4.Controls.Add(lblPercepcionMod, 2, 12);
+            tableLayoutPanel4.Controls.Add(lblMedicinaMod, 2, 11);
+            tableLayoutPanel4.Controls.Add(lblManejoDeAnimalesMod, 2, 10);
+            tableLayoutPanel4.Controls.Add(lblReligionMod, 2, 9);
+            tableLayoutPanel4.Controls.Add(lblNaturalezaMod, 2, 8);
+            tableLayoutPanel4.Controls.Add(lblInvestigacionMod, 2, 7);
+            tableLayoutPanel4.Controls.Add(lblHistoriaMod, 2, 6);
+            tableLayoutPanel4.Controls.Add(lblArcanoMod, 2, 5);
+            tableLayoutPanel4.Controls.Add(lblSigiloMod, 2, 4);
+            tableLayoutPanel4.Controls.Add(lblJuegoDeManosMod, 2, 3);
+            tableLayoutPanel4.Controls.Add(lblAcrobaciasMod, 2, 2);
+            tableLayoutPanel4.Controls.Add(lblAtletismoMod, 2, 1);
+            tableLayoutPanel4.Controls.Add(lblPersuasionProf, 1, 18);
+            tableLayoutPanel4.Controls.Add(lblInterpretacionProf, 1, 17);
+            tableLayoutPanel4.Controls.Add(lblIntimidacionProf, 1, 16);
+            tableLayoutPanel4.Controls.Add(lblEngañoProf, 1, 15);
+            tableLayoutPanel4.Controls.Add(lblSupervivenciaProf, 1, 14);
+            tableLayoutPanel4.Controls.Add(lblPerspicaciaProf, 1, 13);
+            tableLayoutPanel4.Controls.Add(lblPercepcionProf, 1, 12);
+            tableLayoutPanel4.Controls.Add(lblMedicinaProf, 1, 11);
+            tableLayoutPanel4.Controls.Add(lblManejoDeAnimalesProf, 1, 10);
+            tableLayoutPanel4.Controls.Add(lblReligionProf, 1, 9);
+            tableLayoutPanel4.Controls.Add(lblNaturalezaProf, 1, 8);
+            tableLayoutPanel4.Controls.Add(lblInvestigacionProf, 1, 7);
+            tableLayoutPanel4.Controls.Add(lblHistoriaProf, 1, 6);
+            tableLayoutPanel4.Controls.Add(lblArcanoProf, 1, 5);
+            tableLayoutPanel4.Controls.Add(lblSigiloProf, 1, 4);
+            tableLayoutPanel4.Controls.Add(lblJuegoDeManosProf, 1, 3);
+            tableLayoutPanel4.Controls.Add(lblAcrobaciasProf, 1, 2);
+            tableLayoutPanel4.Controls.Add(lblAtletismoProf, 1, 1);
+            tableLayoutPanel4.Controls.Add(lblPersuasion, 0, 18);
+            tableLayoutPanel4.Controls.Add(lblInterpretacion, 0, 17);
+            tableLayoutPanel4.Controls.Add(lblIntimidacion, 0, 16);
+            tableLayoutPanel4.Controls.Add(lblEngaño, 0, 15);
+            tableLayoutPanel4.Controls.Add(lblSupervivencia, 0, 14);
+            tableLayoutPanel4.Controls.Add(lblPerspicacia, 0, 13);
+            tableLayoutPanel4.Controls.Add(lblPercepcion, 0, 12);
+            tableLayoutPanel4.Controls.Add(lblMedicina, 0, 11);
+            tableLayoutPanel4.Controls.Add(lblManejoDeAnimales, 0, 10);
+            tableLayoutPanel4.Controls.Add(lblAtletismo, 0, 1);
+            tableLayoutPanel4.Controls.Add(lblAcrobacias, 0, 2);
+            tableLayoutPanel4.Controls.Add(lblJuegoDeManos, 0, 3);
+            tableLayoutPanel4.Controls.Add(lblSigilo, 0, 4);
+            tableLayoutPanel4.Controls.Add(lblArcano, 0, 5);
+            tableLayoutPanel4.Controls.Add(lblHistoria, 0, 6);
+            tableLayoutPanel4.Controls.Add(lblInvestigacion, 0, 7);
+            tableLayoutPanel4.Controls.Add(lblNaturaleza, 0, 8);
+            tableLayoutPanel4.Controls.Add(lblReligion, 0, 9);
             tableLayoutPanel4.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tableLayoutPanel4.Location = new Point(334, 225);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 18;
+            tableLayoutPanel4.RowCount = 19;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555439F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555439F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555439F));
@@ -732,138 +866,389 @@
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555439F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555439F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 5.55555439F));
-            tableLayoutPanel4.Size = new Size(335, 471);
+            tableLayoutPanel4.Size = new Size(335, 458);
             tableLayoutPanel4.TabIndex = 4;
             tableLayoutPanel4.Paint += tableLayoutPanel4_Paint;
             // 
-            // label74
+            // lblModificador
             // 
-            label74.AutoSize = true;
-            label74.Dock = DockStyle.Fill;
-            label74.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label74.Location = new Point(236, 443);
-            label74.Name = "label74";
-            label74.Size = new Size(27, 27);
-            label74.TabIndex = 55;
-            label74.Text = "○";
-            label74.TextAlign = ContentAlignment.MiddleCenter;
+            lblModificador.Anchor = AnchorStyles.None;
+            lblModificador.AutoSize = true;
+            lblModificador.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblModificador.Location = new Point(278, 1);
+            lblModificador.Name = "lblModificador";
+            lblModificador.Size = new Size(45, 20);
+            lblModificador.TabIndex = 76;
+            lblModificador.Text = "Mod";
+            lblModificador.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label72
+            // lblProeficiencia
             // 
-            label72.AutoSize = true;
-            label72.Dock = DockStyle.Fill;
-            label72.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label72.Location = new Point(236, 417);
-            label72.Name = "label72";
-            label72.Size = new Size(27, 25);
-            label72.TabIndex = 54;
-            label72.Text = "○";
-            label72.TextAlign = ContentAlignment.MiddleCenter;
+            lblProeficiencia.Anchor = AnchorStyles.None;
+            lblProeficiencia.AutoSize = true;
+            lblProeficiencia.Font = new Font("Segoe Script", 4.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblProeficiencia.Location = new Point(237, 4);
+            lblProeficiencia.Name = "lblProeficiencia";
+            lblProeficiencia.Size = new Size(25, 13);
+            lblProeficiencia.TabIndex = 75;
+            lblProeficiencia.Text = "Prof";
+            lblProeficiencia.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label70
+            // lblHabilidad
             // 
-            label70.AutoSize = true;
-            label70.Dock = DockStyle.Fill;
-            label70.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label70.Location = new Point(236, 391);
-            label70.Name = "label70";
-            label70.Size = new Size(27, 25);
-            label70.TabIndex = 53;
-            label70.Text = "○";
-            label70.TextAlign = ContentAlignment.MiddleCenter;
+            lblHabilidad.AutoSize = true;
+            lblHabilidad.Font = new Font("Segoe Script", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            lblHabilidad.Location = new Point(4, 1);
+            lblHabilidad.Name = "lblHabilidad";
+            lblHabilidad.Size = new Size(95, 20);
+            lblHabilidad.TabIndex = 74;
+            lblHabilidad.Text = "Habilidad";
+            lblHabilidad.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label68
+            // lblPersuasionMod
             // 
-            label68.AutoSize = true;
-            label68.Dock = DockStyle.Fill;
-            label68.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label68.Location = new Point(236, 365);
-            label68.Name = "label68";
-            label68.Size = new Size(27, 25);
-            label68.TabIndex = 52;
-            label68.Text = "○";
-            label68.TextAlign = ContentAlignment.MiddleCenter;
+            lblPersuasionMod.Anchor = AnchorStyles.None;
+            lblPersuasionMod.AutoSize = true;
+            lblPersuasionMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPersuasionMod.Location = new Point(290, 432);
+            lblPersuasionMod.Name = "lblPersuasionMod";
+            lblPersuasionMod.Size = new Size(20, 23);
+            lblPersuasionMod.TabIndex = 73;
+            lblPersuasionMod.Text = "-";
+            lblPersuasionMod.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label66
+            // lblInterpretacionMod
             // 
-            label66.AutoSize = true;
-            label66.Dock = DockStyle.Fill;
-            label66.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label66.Location = new Point(236, 339);
-            label66.Name = "label66";
-            label66.Size = new Size(27, 25);
-            label66.TabIndex = 51;
-            label66.Text = "○";
-            label66.TextAlign = ContentAlignment.MiddleCenter;
+            lblInterpretacionMod.Anchor = AnchorStyles.None;
+            lblInterpretacionMod.AutoSize = true;
+            lblInterpretacionMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblInterpretacionMod.Location = new Point(290, 406);
+            lblInterpretacionMod.Name = "lblInterpretacionMod";
+            lblInterpretacionMod.Size = new Size(20, 23);
+            lblInterpretacionMod.TabIndex = 72;
+            lblInterpretacionMod.Text = "-";
+            lblInterpretacionMod.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label64
+            // lblIntimidacionMod
             // 
-            label64.AutoSize = true;
-            label64.Dock = DockStyle.Fill;
-            label64.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label64.Location = new Point(236, 313);
-            label64.Name = "label64";
-            label64.Size = new Size(27, 25);
-            label64.TabIndex = 50;
-            label64.Text = "○";
-            label64.TextAlign = ContentAlignment.MiddleCenter;
+            lblIntimidacionMod.Anchor = AnchorStyles.None;
+            lblIntimidacionMod.AutoSize = true;
+            lblIntimidacionMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblIntimidacionMod.Location = new Point(290, 382);
+            lblIntimidacionMod.Name = "lblIntimidacionMod";
+            lblIntimidacionMod.Size = new Size(20, 23);
+            lblIntimidacionMod.TabIndex = 71;
+            lblIntimidacionMod.Text = "-";
+            lblIntimidacionMod.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label62
+            // lblEngañoCarisma
             // 
-            label62.AutoSize = true;
-            label62.Dock = DockStyle.Fill;
-            label62.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label62.Location = new Point(236, 287);
-            label62.Name = "label62";
-            label62.Size = new Size(27, 25);
-            label62.TabIndex = 49;
-            label62.Text = "○";
-            label62.TextAlign = ContentAlignment.MiddleCenter;
+            lblEngañoCarisma.Anchor = AnchorStyles.None;
+            lblEngañoCarisma.AutoSize = true;
+            lblEngañoCarisma.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEngañoCarisma.Location = new Point(290, 358);
+            lblEngañoCarisma.Name = "lblEngañoCarisma";
+            lblEngañoCarisma.Size = new Size(20, 23);
+            lblEngañoCarisma.TabIndex = 70;
+            lblEngañoCarisma.Text = "-";
+            lblEngañoCarisma.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label60
+            // lblSupervivenciaMod
             // 
-            label60.AutoSize = true;
-            label60.Dock = DockStyle.Fill;
-            label60.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label60.Location = new Point(236, 261);
-            label60.Name = "label60";
-            label60.Size = new Size(27, 25);
-            label60.TabIndex = 48;
-            label60.Text = "○";
-            label60.TextAlign = ContentAlignment.MiddleCenter;
+            lblSupervivenciaMod.Anchor = AnchorStyles.None;
+            lblSupervivenciaMod.AutoSize = true;
+            lblSupervivenciaMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSupervivenciaMod.Location = new Point(290, 334);
+            lblSupervivenciaMod.Name = "lblSupervivenciaMod";
+            lblSupervivenciaMod.Size = new Size(20, 23);
+            lblSupervivenciaMod.TabIndex = 69;
+            lblSupervivenciaMod.Text = "-";
+            lblSupervivenciaMod.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label58
+            // lblPerspicaciaMod
             // 
-            label58.AutoSize = true;
-            label58.Dock = DockStyle.Fill;
-            label58.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label58.Location = new Point(236, 235);
-            label58.Name = "label58";
-            label58.Size = new Size(27, 25);
-            label58.TabIndex = 47;
-            label58.Text = "○";
-            label58.TextAlign = ContentAlignment.MiddleCenter;
+            lblPerspicaciaMod.Anchor = AnchorStyles.None;
+            lblPerspicaciaMod.AutoSize = true;
+            lblPerspicaciaMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPerspicaciaMod.Location = new Point(290, 310);
+            lblPerspicaciaMod.Name = "lblPerspicaciaMod";
+            lblPerspicaciaMod.Size = new Size(20, 23);
+            lblPerspicaciaMod.TabIndex = 68;
+            lblPerspicaciaMod.Text = "-";
+            lblPerspicaciaMod.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label56
+            // lblPercepcionMod
             // 
-            label56.AutoSize = true;
-            label56.Dock = DockStyle.Fill;
-            label56.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label56.Location = new Point(236, 209);
-            label56.Name = "label56";
-            label56.Size = new Size(27, 25);
-            label56.TabIndex = 46;
-            label56.Text = "○";
-            label56.TextAlign = ContentAlignment.MiddleCenter;
+            lblPercepcionMod.Anchor = AnchorStyles.None;
+            lblPercepcionMod.AutoSize = true;
+            lblPercepcionMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPercepcionMod.Location = new Point(290, 286);
+            lblPercepcionMod.Name = "lblPercepcionMod";
+            lblPercepcionMod.Size = new Size(20, 23);
+            lblPercepcionMod.TabIndex = 67;
+            lblPercepcionMod.Text = "-";
+            lblPercepcionMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblMedicinaMod
+            // 
+            lblMedicinaMod.Anchor = AnchorStyles.None;
+            lblMedicinaMod.AutoSize = true;
+            lblMedicinaMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMedicinaMod.Location = new Point(290, 262);
+            lblMedicinaMod.Name = "lblMedicinaMod";
+            lblMedicinaMod.Size = new Size(20, 23);
+            lblMedicinaMod.TabIndex = 66;
+            lblMedicinaMod.Text = "-";
+            lblMedicinaMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblManejoDeAnimalesMod
+            // 
+            lblManejoDeAnimalesMod.Anchor = AnchorStyles.None;
+            lblManejoDeAnimalesMod.AutoSize = true;
+            lblManejoDeAnimalesMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblManejoDeAnimalesMod.Location = new Point(290, 238);
+            lblManejoDeAnimalesMod.Name = "lblManejoDeAnimalesMod";
+            lblManejoDeAnimalesMod.Size = new Size(20, 23);
+            lblManejoDeAnimalesMod.TabIndex = 65;
+            lblManejoDeAnimalesMod.Text = "-";
+            lblManejoDeAnimalesMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblReligionMod
+            // 
+            lblReligionMod.Anchor = AnchorStyles.None;
+            lblReligionMod.AutoSize = true;
+            lblReligionMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblReligionMod.Location = new Point(290, 214);
+            lblReligionMod.Name = "lblReligionMod";
+            lblReligionMod.Size = new Size(20, 23);
+            lblReligionMod.TabIndex = 64;
+            lblReligionMod.Text = "-";
+            lblReligionMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblNaturalezaMod
+            // 
+            lblNaturalezaMod.Anchor = AnchorStyles.None;
+            lblNaturalezaMod.AutoSize = true;
+            lblNaturalezaMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNaturalezaMod.Location = new Point(290, 190);
+            lblNaturalezaMod.Name = "lblNaturalezaMod";
+            lblNaturalezaMod.Size = new Size(20, 23);
+            lblNaturalezaMod.TabIndex = 63;
+            lblNaturalezaMod.Text = "-";
+            lblNaturalezaMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblInvestigacionMod
+            // 
+            lblInvestigacionMod.Anchor = AnchorStyles.None;
+            lblInvestigacionMod.AutoSize = true;
+            lblInvestigacionMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblInvestigacionMod.Location = new Point(290, 166);
+            lblInvestigacionMod.Name = "lblInvestigacionMod";
+            lblInvestigacionMod.Size = new Size(20, 23);
+            lblInvestigacionMod.TabIndex = 62;
+            lblInvestigacionMod.Text = "-";
+            lblInvestigacionMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblHistoriaMod
+            // 
+            lblHistoriaMod.Anchor = AnchorStyles.None;
+            lblHistoriaMod.AutoSize = true;
+            lblHistoriaMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHistoriaMod.Location = new Point(290, 142);
+            lblHistoriaMod.Name = "lblHistoriaMod";
+            lblHistoriaMod.Size = new Size(20, 23);
+            lblHistoriaMod.TabIndex = 61;
+            lblHistoriaMod.Text = "-";
+            lblHistoriaMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblArcanoMod
+            // 
+            lblArcanoMod.Anchor = AnchorStyles.None;
+            lblArcanoMod.AutoSize = true;
+            lblArcanoMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblArcanoMod.Location = new Point(290, 118);
+            lblArcanoMod.Name = "lblArcanoMod";
+            lblArcanoMod.Size = new Size(20, 23);
+            lblArcanoMod.TabIndex = 60;
+            lblArcanoMod.Text = "-";
+            lblArcanoMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSigiloMod
+            // 
+            lblSigiloMod.Anchor = AnchorStyles.None;
+            lblSigiloMod.AutoSize = true;
+            lblSigiloMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSigiloMod.Location = new Point(290, 94);
+            lblSigiloMod.Name = "lblSigiloMod";
+            lblSigiloMod.Size = new Size(20, 23);
+            lblSigiloMod.TabIndex = 59;
+            lblSigiloMod.Text = "-";
+            lblSigiloMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblJuegoDeManosMod
+            // 
+            lblJuegoDeManosMod.Anchor = AnchorStyles.None;
+            lblJuegoDeManosMod.AutoSize = true;
+            lblJuegoDeManosMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblJuegoDeManosMod.Location = new Point(290, 70);
+            lblJuegoDeManosMod.Name = "lblJuegoDeManosMod";
+            lblJuegoDeManosMod.Size = new Size(20, 23);
+            lblJuegoDeManosMod.TabIndex = 58;
+            lblJuegoDeManosMod.Text = "-";
+            lblJuegoDeManosMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAcrobaciasMod
+            // 
+            lblAcrobaciasMod.Anchor = AnchorStyles.None;
+            lblAcrobaciasMod.AutoSize = true;
+            lblAcrobaciasMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAcrobaciasMod.Location = new Point(290, 46);
+            lblAcrobaciasMod.Name = "lblAcrobaciasMod";
+            lblAcrobaciasMod.Size = new Size(20, 23);
+            lblAcrobaciasMod.TabIndex = 57;
+            lblAcrobaciasMod.Text = "-";
+            lblAcrobaciasMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAtletismoMod
+            // 
+            lblAtletismoMod.Anchor = AnchorStyles.None;
+            lblAtletismoMod.AutoSize = true;
+            lblAtletismoMod.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAtletismoMod.Location = new Point(290, 22);
+            lblAtletismoMod.Name = "lblAtletismoMod";
+            lblAtletismoMod.Size = new Size(20, 23);
+            lblAtletismoMod.TabIndex = 56;
+            lblAtletismoMod.Text = "-";
+            lblAtletismoMod.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPersuasionProf
+            // 
+            lblPersuasionProf.AutoSize = true;
+            lblPersuasionProf.Dock = DockStyle.Fill;
+            lblPersuasionProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPersuasionProf.Location = new Point(236, 430);
+            lblPersuasionProf.Name = "lblPersuasionProf";
+            lblPersuasionProf.Size = new Size(27, 27);
+            lblPersuasionProf.TabIndex = 55;
+            lblPersuasionProf.Text = "○";
+            lblPersuasionProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblInterpretacionProf
+            // 
+            lblInterpretacionProf.AutoSize = true;
+            lblInterpretacionProf.Dock = DockStyle.Fill;
+            lblInterpretacionProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblInterpretacionProf.Location = new Point(236, 406);
+            lblInterpretacionProf.Name = "lblInterpretacionProf";
+            lblInterpretacionProf.Size = new Size(27, 23);
+            lblInterpretacionProf.TabIndex = 54;
+            lblInterpretacionProf.Text = "○";
+            lblInterpretacionProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblIntimidacionProf
+            // 
+            lblIntimidacionProf.AutoSize = true;
+            lblIntimidacionProf.Dock = DockStyle.Fill;
+            lblIntimidacionProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblIntimidacionProf.Location = new Point(236, 382);
+            lblIntimidacionProf.Name = "lblIntimidacionProf";
+            lblIntimidacionProf.Size = new Size(27, 23);
+            lblIntimidacionProf.TabIndex = 53;
+            lblIntimidacionProf.Text = "○";
+            lblIntimidacionProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblEngañoProf
+            // 
+            lblEngañoProf.AutoSize = true;
+            lblEngañoProf.Dock = DockStyle.Fill;
+            lblEngañoProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEngañoProf.Location = new Point(236, 358);
+            lblEngañoProf.Name = "lblEngañoProf";
+            lblEngañoProf.Size = new Size(27, 23);
+            lblEngañoProf.TabIndex = 52;
+            lblEngañoProf.Text = "○";
+            lblEngañoProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblSupervivenciaProf
+            // 
+            lblSupervivenciaProf.AutoSize = true;
+            lblSupervivenciaProf.Dock = DockStyle.Fill;
+            lblSupervivenciaProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSupervivenciaProf.Location = new Point(236, 334);
+            lblSupervivenciaProf.Name = "lblSupervivenciaProf";
+            lblSupervivenciaProf.Size = new Size(27, 23);
+            lblSupervivenciaProf.TabIndex = 51;
+            lblSupervivenciaProf.Text = "○";
+            lblSupervivenciaProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPerspicaciaProf
+            // 
+            lblPerspicaciaProf.AutoSize = true;
+            lblPerspicaciaProf.Dock = DockStyle.Fill;
+            lblPerspicaciaProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPerspicaciaProf.Location = new Point(236, 310);
+            lblPerspicaciaProf.Name = "lblPerspicaciaProf";
+            lblPerspicaciaProf.Size = new Size(27, 23);
+            lblPerspicaciaProf.TabIndex = 50;
+            lblPerspicaciaProf.Text = "○";
+            lblPerspicaciaProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblPercepcionProf
+            // 
+            lblPercepcionProf.AutoSize = true;
+            lblPercepcionProf.Dock = DockStyle.Fill;
+            lblPercepcionProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPercepcionProf.Location = new Point(236, 286);
+            lblPercepcionProf.Name = "lblPercepcionProf";
+            lblPercepcionProf.Size = new Size(27, 23);
+            lblPercepcionProf.TabIndex = 49;
+            lblPercepcionProf.Text = "○";
+            lblPercepcionProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblMedicinaProf
+            // 
+            lblMedicinaProf.AutoSize = true;
+            lblMedicinaProf.Dock = DockStyle.Fill;
+            lblMedicinaProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMedicinaProf.Location = new Point(236, 262);
+            lblMedicinaProf.Name = "lblMedicinaProf";
+            lblMedicinaProf.Size = new Size(27, 23);
+            lblMedicinaProf.TabIndex = 48;
+            lblMedicinaProf.Text = "○";
+            lblMedicinaProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblManejoDeAnimalesProf
+            // 
+            lblManejoDeAnimalesProf.AutoSize = true;
+            lblManejoDeAnimalesProf.Dock = DockStyle.Fill;
+            lblManejoDeAnimalesProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblManejoDeAnimalesProf.Location = new Point(236, 238);
+            lblManejoDeAnimalesProf.Name = "lblManejoDeAnimalesProf";
+            lblManejoDeAnimalesProf.Size = new Size(27, 23);
+            lblManejoDeAnimalesProf.TabIndex = 47;
+            lblManejoDeAnimalesProf.Text = "○";
+            lblManejoDeAnimalesProf.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblReligionProf
+            // 
+            lblReligionProf.AutoSize = true;
+            lblReligionProf.Dock = DockStyle.Fill;
+            lblReligionProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            lblReligionProf.Location = new Point(236, 214);
+            lblReligionProf.Name = "lblReligionProf";
+            lblReligionProf.Size = new Size(27, 23);
+            lblReligionProf.TabIndex = 46;
+            lblReligionProf.Text = "○";
+            lblReligionProf.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblNaturalezaProf
             // 
             lblNaturalezaProf.AutoSize = true;
             lblNaturalezaProf.Dock = DockStyle.Fill;
             lblNaturalezaProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNaturalezaProf.Location = new Point(236, 183);
+            lblNaturalezaProf.Location = new Point(236, 190);
             lblNaturalezaProf.Name = "lblNaturalezaProf";
-            lblNaturalezaProf.Size = new Size(27, 25);
+            lblNaturalezaProf.Size = new Size(27, 23);
             lblNaturalezaProf.TabIndex = 45;
             lblNaturalezaProf.Text = "○";
             lblNaturalezaProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -873,9 +1258,9 @@
             lblInvestigacionProf.AutoSize = true;
             lblInvestigacionProf.Dock = DockStyle.Fill;
             lblInvestigacionProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInvestigacionProf.Location = new Point(236, 157);
+            lblInvestigacionProf.Location = new Point(236, 166);
             lblInvestigacionProf.Name = "lblInvestigacionProf";
-            lblInvestigacionProf.Size = new Size(27, 25);
+            lblInvestigacionProf.Size = new Size(27, 23);
             lblInvestigacionProf.TabIndex = 44;
             lblInvestigacionProf.Text = "○";
             lblInvestigacionProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -885,9 +1270,9 @@
             lblHistoriaProf.AutoSize = true;
             lblHistoriaProf.Dock = DockStyle.Fill;
             lblHistoriaProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHistoriaProf.Location = new Point(236, 131);
+            lblHistoriaProf.Location = new Point(236, 142);
             lblHistoriaProf.Name = "lblHistoriaProf";
-            lblHistoriaProf.Size = new Size(27, 25);
+            lblHistoriaProf.Size = new Size(27, 23);
             lblHistoriaProf.TabIndex = 43;
             lblHistoriaProf.Text = "○";
             lblHistoriaProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -897,9 +1282,9 @@
             lblArcanoProf.AutoSize = true;
             lblArcanoProf.Dock = DockStyle.Fill;
             lblArcanoProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArcanoProf.Location = new Point(236, 105);
+            lblArcanoProf.Location = new Point(236, 118);
             lblArcanoProf.Name = "lblArcanoProf";
-            lblArcanoProf.Size = new Size(27, 25);
+            lblArcanoProf.Size = new Size(27, 23);
             lblArcanoProf.TabIndex = 42;
             lblArcanoProf.Text = "○";
             lblArcanoProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -909,9 +1294,9 @@
             lblSigiloProf.AutoSize = true;
             lblSigiloProf.Dock = DockStyle.Fill;
             lblSigiloProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSigiloProf.Location = new Point(236, 79);
+            lblSigiloProf.Location = new Point(236, 94);
             lblSigiloProf.Name = "lblSigiloProf";
-            lblSigiloProf.Size = new Size(27, 25);
+            lblSigiloProf.Size = new Size(27, 23);
             lblSigiloProf.TabIndex = 41;
             lblSigiloProf.Text = "○";
             lblSigiloProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -921,9 +1306,9 @@
             lblJuegoDeManosProf.AutoSize = true;
             lblJuegoDeManosProf.Dock = DockStyle.Fill;
             lblJuegoDeManosProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJuegoDeManosProf.Location = new Point(236, 53);
+            lblJuegoDeManosProf.Location = new Point(236, 70);
             lblJuegoDeManosProf.Name = "lblJuegoDeManosProf";
-            lblJuegoDeManosProf.Size = new Size(27, 25);
+            lblJuegoDeManosProf.Size = new Size(27, 23);
             lblJuegoDeManosProf.TabIndex = 40;
             lblJuegoDeManosProf.Text = "○";
             lblJuegoDeManosProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -933,9 +1318,9 @@
             lblAcrobaciasProf.AutoSize = true;
             lblAcrobaciasProf.Dock = DockStyle.Fill;
             lblAcrobaciasProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAcrobaciasProf.Location = new Point(236, 27);
+            lblAcrobaciasProf.Location = new Point(236, 46);
             lblAcrobaciasProf.Name = "lblAcrobaciasProf";
-            lblAcrobaciasProf.Size = new Size(27, 25);
+            lblAcrobaciasProf.Size = new Size(27, 23);
             lblAcrobaciasProf.TabIndex = 39;
             lblAcrobaciasProf.Text = "○";
             lblAcrobaciasProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -945,9 +1330,9 @@
             lblAtletismoProf.AutoSize = true;
             lblAtletismoProf.Dock = DockStyle.Fill;
             lblAtletismoProf.Font = new Font("Segoe Script", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAtletismoProf.Location = new Point(236, 1);
+            lblAtletismoProf.Location = new Point(236, 22);
             lblAtletismoProf.Name = "lblAtletismoProf";
-            lblAtletismoProf.Size = new Size(27, 25);
+            lblAtletismoProf.Size = new Size(27, 23);
             lblAtletismoProf.TabIndex = 38;
             lblAtletismoProf.Text = "○";
             lblAtletismoProf.TextAlign = ContentAlignment.MiddleCenter;
@@ -956,199 +1341,254 @@
             // 
             lblPersuasion.AutoSize = true;
             lblPersuasion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPersuasion.Location = new Point(4, 443);
+            lblPersuasion.Location = new Point(4, 430);
             lblPersuasion.Name = "lblPersuasion";
-            lblPersuasion.Size = new Size(183, 23);
+            lblPersuasion.Size = new Size(100, 23);
             lblPersuasion.TabIndex = 37;
-            lblPersuasion.Text = "Persuasion (Carisma)";
+            lblPersuasion.Text = "Persuasion";
             lblPersuasion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblInterpretacion
             // 
             lblInterpretacion.AutoSize = true;
             lblInterpretacion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInterpretacion.Location = new Point(4, 417);
+            lblInterpretacion.Location = new Point(4, 406);
             lblInterpretacion.Name = "lblInterpretacion";
-            lblInterpretacion.Size = new Size(207, 23);
+            lblInterpretacion.Size = new Size(124, 23);
             lblInterpretacion.TabIndex = 35;
-            lblInterpretacion.Text = "Interpretacion (Carisma)";
+            lblInterpretacion.Text = "Interpretacion";
             lblInterpretacion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblIntimidacion
             // 
             lblIntimidacion.AutoSize = true;
             lblIntimidacion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblIntimidacion.Location = new Point(4, 391);
+            lblIntimidacion.Location = new Point(4, 382);
             lblIntimidacion.Name = "lblIntimidacion";
-            lblIntimidacion.Size = new Size(200, 23);
+            lblIntimidacion.Size = new Size(117, 23);
             lblIntimidacion.TabIndex = 33;
-            lblIntimidacion.Text = "Intimidacion (Carisma)";
+            lblIntimidacion.Text = "Intimidacion";
             lblIntimidacion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblEngaño
             // 
             lblEngaño.AutoSize = true;
             lblEngaño.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEngaño.Location = new Point(4, 365);
+            lblEngaño.Location = new Point(4, 358);
             lblEngaño.Name = "lblEngaño";
-            lblEngaño.Size = new Size(150, 23);
+            lblEngaño.Size = new Size(67, 23);
             lblEngaño.TabIndex = 31;
-            lblEngaño.Text = "Engaño (Carisma)";
+            lblEngaño.Text = "Engaño";
             lblEngaño.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSupervivencia
             // 
             lblSupervivencia.AutoSize = true;
             lblSupervivencia.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSupervivencia.Location = new Point(4, 339);
+            lblSupervivencia.Location = new Point(4, 334);
             lblSupervivencia.Name = "lblSupervivencia";
-            lblSupervivencia.Size = new Size(223, 23);
+            lblSupervivencia.Size = new Size(125, 23);
             lblSupervivencia.TabIndex = 29;
-            lblSupervivencia.Text = "Supervivencia (Sabiduria)";
+            lblSupervivencia.Text = "Supervivencia";
             lblSupervivencia.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPerspicacia
             // 
             lblPerspicacia.AutoSize = true;
             lblPerspicacia.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPerspicacia.Location = new Point(4, 313);
+            lblPerspicacia.Location = new Point(4, 310);
             lblPerspicacia.Name = "lblPerspicacia";
-            lblPerspicacia.Size = new Size(202, 23);
+            lblPerspicacia.Size = new Size(104, 23);
             lblPerspicacia.TabIndex = 27;
-            lblPerspicacia.Text = "Perspicacia (Sabiduria)";
+            lblPerspicacia.Text = "Perspicacia";
             lblPerspicacia.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPercepcion
             // 
             lblPercepcion.AutoSize = true;
             lblPercepcion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPercepcion.Location = new Point(4, 287);
+            lblPercepcion.Location = new Point(4, 286);
             lblPercepcion.Name = "lblPercepcion";
-            lblPercepcion.Size = new Size(196, 23);
+            lblPercepcion.Size = new Size(98, 23);
             lblPercepcion.TabIndex = 25;
-            lblPercepcion.Text = "Percepcion (Sabiduria)";
+            lblPercepcion.Text = "Percepcion";
             lblPercepcion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblMedicina
             // 
             lblMedicina.AutoSize = true;
             lblMedicina.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMedicina.Location = new Point(4, 261);
+            lblMedicina.Location = new Point(4, 262);
             lblMedicina.Name = "lblMedicina";
-            lblMedicina.Size = new Size(184, 23);
+            lblMedicina.Size = new Size(86, 23);
             lblMedicina.TabIndex = 23;
-            lblMedicina.Text = "Medicina (Sabiduria)";
+            lblMedicina.Text = "Medicina";
             lblMedicina.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblManejoDeAnimales
             // 
             lblManejoDeAnimales.AutoSize = true;
             lblManejoDeAnimales.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblManejoDeAnimales.Location = new Point(4, 235);
+            lblManejoDeAnimales.Location = new Point(4, 238);
             lblManejoDeAnimales.Name = "lblManejoDeAnimales";
-            lblManejoDeAnimales.Size = new Size(168, 25);
+            lblManejoDeAnimales.Size = new Size(168, 23);
             lblManejoDeAnimales.TabIndex = 21;
-            lblManejoDeAnimales.Text = "Manejo de animales (Sabiduria)";
+            lblManejoDeAnimales.Text = "Manejo de animales";
             lblManejoDeAnimales.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblAtletismo
             // 
             lblAtletismo.AutoSize = true;
             lblAtletismo.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAtletismo.Location = new Point(4, 1);
+            lblAtletismo.Location = new Point(4, 22);
             lblAtletismo.Name = "lblAtletismo";
-            lblAtletismo.Size = new Size(158, 23);
+            lblAtletismo.Size = new Size(87, 23);
             lblAtletismo.TabIndex = 3;
-            lblAtletismo.Text = "Atletismo (Fuerza)";
+            lblAtletismo.Text = "Atletismo";
             lblAtletismo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblAcrobacias
             // 
             lblAcrobacias.AutoSize = true;
             lblAcrobacias.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAcrobacias.Location = new Point(4, 27);
+            lblAcrobacias.Location = new Point(4, 46);
             lblAcrobacias.Name = "lblAcrobacias";
-            lblAcrobacias.Size = new Size(181, 23);
+            lblAcrobacias.Size = new Size(98, 23);
             lblAcrobacias.TabIndex = 5;
-            lblAcrobacias.Text = "Acrobacias (Destreza)";
+            lblAcrobacias.Text = "Acrobacias";
             lblAcrobacias.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblJuegoDeManos
             // 
             lblJuegoDeManos.AutoSize = true;
             lblJuegoDeManos.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJuegoDeManos.Location = new Point(4, 53);
+            lblJuegoDeManos.Location = new Point(4, 70);
             lblJuegoDeManos.Name = "lblJuegoDeManos";
-            lblJuegoDeManos.Size = new Size(217, 23);
+            lblJuegoDeManos.Size = new Size(134, 23);
             lblJuegoDeManos.TabIndex = 4;
-            lblJuegoDeManos.Text = "Juego de manos (Destreza)";
+            lblJuegoDeManos.Text = "Juego de manos";
             lblJuegoDeManos.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSigilo
             // 
             lblSigilo.AutoSize = true;
             lblSigilo.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSigilo.Location = new Point(4, 79);
+            lblSigilo.Location = new Point(4, 94);
             lblSigilo.Name = "lblSigilo";
-            lblSigilo.Size = new Size(138, 23);
+            lblSigilo.Size = new Size(55, 23);
             lblSigilo.TabIndex = 6;
-            lblSigilo.Text = "Sigilo (Destreza)";
+            lblSigilo.Text = "Sigilo";
             lblSigilo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblArcano
             // 
             lblArcano.AutoSize = true;
             lblArcano.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblArcano.Location = new Point(4, 105);
+            lblArcano.Location = new Point(4, 118);
             lblArcano.Name = "lblArcano";
-            lblArcano.Size = new Size(178, 23);
+            lblArcano.Size = new Size(67, 23);
             lblArcano.TabIndex = 7;
-            lblArcano.Text = "Arcano (Inteligencia)";
+            lblArcano.Text = "Arcano";
             lblArcano.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblHistoria
             // 
             lblHistoria.AutoSize = true;
             lblHistoria.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHistoria.Location = new Point(4, 131);
+            lblHistoria.Location = new Point(4, 142);
             lblHistoria.Name = "lblHistoria";
-            lblHistoria.Size = new Size(185, 23);
+            lblHistoria.Size = new Size(74, 23);
             lblHistoria.TabIndex = 8;
-            lblHistoria.Text = "Historia (Inteligencia)";
+            lblHistoria.Text = "Historia";
             lblHistoria.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblInvestigacion
             // 
             lblInvestigacion.AutoSize = true;
             lblInvestigacion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInvestigacion.Location = new Point(4, 157);
+            lblInvestigacion.Location = new Point(4, 166);
             lblInvestigacion.Name = "lblInvestigacion";
-            lblInvestigacion.Size = new Size(155, 23);
+            lblInvestigacion.Size = new Size(115, 23);
             lblInvestigacion.TabIndex = 9;
-            lblInvestigacion.Text = "Investigacion (Int)";
+            lblInvestigacion.Text = "Investigacion";
             lblInvestigacion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblNaturaleza
             // 
             lblNaturaleza.AutoSize = true;
             lblNaturaleza.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNaturaleza.Location = new Point(4, 183);
+            lblNaturaleza.Location = new Point(4, 190);
             lblNaturaleza.Name = "lblNaturaleza";
-            lblNaturaleza.Size = new Size(210, 23);
+            lblNaturaleza.Size = new Size(99, 23);
             lblNaturaleza.TabIndex = 10;
-            lblNaturaleza.Text = "Naturaleza (Inteligencia)";
+            lblNaturaleza.Text = "Naturaleza";
             lblNaturaleza.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblReligion
             // 
             lblReligion.AutoSize = true;
             lblReligion.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblReligion.Location = new Point(4, 209);
+            lblReligion.Location = new Point(4, 214);
             lblReligion.Name = "lblReligion";
-            lblReligion.Size = new Size(189, 23);
+            lblReligion.Size = new Size(78, 23);
             lblReligion.TabIndex = 11;
-            lblReligion.Text = "Religion (Inteligencia)";
+            lblReligion.Text = "Religión";
             lblReligion.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnAñadirItem
+            // 
+            btnAñadirItem.BackgroundImage = Properties.Resources.pngegg;
+            btnAñadirItem.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAñadirItem.FlatAppearance.BorderSize = 0;
+            btnAñadirItem.FlatStyle = FlatStyle.Flat;
+            btnAñadirItem.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAñadirItem.Location = new Point(699, 624);
+            btnAñadirItem.Name = "btnAñadirItem";
+            btnAñadirItem.Size = new Size(121, 54);
+            btnAñadirItem.TabIndex = 5;
+            btnAñadirItem.Text = "Añadir";
+            btnAñadirItem.UseVisualStyleBackColor = true;
+            btnAñadirItem.Click += btnAñadirItem_Click;
+            // 
+            // btnExaminarItem
+            // 
+            btnExaminarItem.BackgroundImage = Properties.Resources.pngegg;
+            btnExaminarItem.BackgroundImageLayout = ImageLayout.Stretch;
+            btnExaminarItem.FlatAppearance.BorderSize = 0;
+            btnExaminarItem.FlatStyle = FlatStyle.Flat;
+            btnExaminarItem.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExaminarItem.Location = new Point(826, 624);
+            btnExaminarItem.Name = "btnExaminarItem";
+            btnExaminarItem.Size = new Size(129, 54);
+            btnExaminarItem.TabIndex = 6;
+            btnExaminarItem.Text = "Examinar";
+            btnExaminarItem.UseVisualStyleBackColor = true;
+            // 
+            // btnTirarItem
+            // 
+            btnTirarItem.BackgroundImage = Properties.Resources.pngegg;
+            btnTirarItem.BackgroundImageLayout = ImageLayout.Stretch;
+            btnTirarItem.FlatAppearance.BorderSize = 0;
+            btnTirarItem.FlatStyle = FlatStyle.Flat;
+            btnTirarItem.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTirarItem.Location = new Point(961, 625);
+            btnTirarItem.Name = "btnTirarItem";
+            btnTirarItem.Size = new Size(100, 54);
+            btnTirarItem.TabIndex = 7;
+            btnTirarItem.Text = "Tirar";
+            btnTirarItem.UseVisualStyleBackColor = true;
+            btnTirarItem.Click += btnTirarItem_Click;
+            // 
+            // Logo
+            // 
+            Logo.BackgroundImageLayout = ImageLayout.None;
+            Logo.Image = Properties.Resources.DnD_Symbol;
+            Logo.Location = new Point(48, 31);
+            Logo.Name = "Logo";
+            Logo.Size = new Size(250, 142);
+            Logo.SizeMode = PictureBoxSizeMode.Zoom;
+            Logo.TabIndex = 8;
+            Logo.TabStop = false;
             // 
             // frmInformacion
             // 
@@ -1156,8 +1596,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(1084, 708);
+            Controls.Add(Logo);
+            Controls.Add(btnTirarItem);
+            Controls.Add(btnExaminarItem);
+            Controls.Add(btnAñadirItem);
             Controls.Add(tableLayoutPanel4);
-            Controls.Add(listView1);
+            Controls.Add(lstEquipo);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
@@ -1172,6 +1616,7 @@
             tableLayoutPanel3.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Logo).EndInit();
             ResumeLayout(false);
         }
 
@@ -1180,7 +1625,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
-        private ListView listView1;
+        private ListView lstEquipo;
         private TableLayoutPanel tableLayoutPanel4;
         private Label lblPasadoValor;
         private Label lblClaseValor;
@@ -1213,7 +1658,6 @@
         private Label lblInteligenciaValor;
         private Label lblConstitucionValor;
         private Label lblDestrezaValor;
-        private Label lblFuerzaValor;
         private Label lblCarisma;
         private Label lblSabiduria;
         private Label lblInteligencia;
@@ -1238,16 +1682,16 @@
         private Label lblPercepcion;
         private Label lblMedicina;
         private Label lblManejoDeAnimales;
-        private Label label74;
-        private Label label72;
-        private Label label70;
-        private Label label68;
-        private Label label66;
-        private Label label64;
-        private Label label62;
-        private Label label60;
-        private Label label58;
-        private Label label56;
+        private Label lblPersuasionProf;
+        private Label lblInterpretacionProf;
+        private Label lblIntimidacionProf;
+        private Label lblEngañoProf;
+        private Label lblSupervivenciaProf;
+        private Label lblPerspicaciaProf;
+        private Label lblPercepcionProf;
+        private Label lblMedicinaProf;
+        private Label lblManejoDeAnimalesProf;
+        private Label lblReligionProf;
         private Label lblNaturalezaProf;
         private Label lblInvestigacionProf;
         private Label lblHistoriaProf;
@@ -1256,5 +1700,37 @@
         private Label lblJuegoDeManosProf;
         private Label lblAcrobaciasProf;
         private Label lblAtletismoProf;
+        private Label lblFuerzaValor;
+        private Label lblPersuasionMod;
+        private Label lblInterpretacionMod;
+        private Label lblIntimidacionMod;
+        private Label lblEngañoCarisma;
+        private Label lblSupervivenciaMod;
+        private Label lblPerspicaciaMod;
+        private Label lblPercepcionMod;
+        private Label lblMedicinaMod;
+        private Label lblManejoDeAnimalesMod;
+        private Label lblReligionMod;
+        private Label lblNaturalezaMod;
+        private Label lblInvestigacionMod;
+        private Label lblHistoriaMod;
+        private Label lblArcanoMod;
+        private Label lblSigiloMod;
+        private Label lblJuegoDeManosMod;
+        private Label lblAcrobaciasMod;
+        private Label lblAtletismoMod;
+        private Button btnAñadirItem;
+        private Button btnExaminarItem;
+        private Button btnTirarItem;
+        private PictureBox Logo;
+        private Label lblAtributo;
+        private Label lblAtributoTotal;
+        private Label lblAtributoModificador;
+        private Label lblSaveThrow;
+        private Label lblBonusProeficiencia;
+        private Label lblBonusProeficienciaValor;
+        private Label lblHabilidad;
+        private Label lblModificador;
+        private Label lblProeficiencia;
     }
 }
