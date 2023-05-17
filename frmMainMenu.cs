@@ -13,7 +13,7 @@ namespace PrimerParcialLabo_Intento2
 {
     public partial class frmMainMenu : Form
     {
-        Usuario usuario;
+        public Usuario usuario;
         public List<Personaje> personajes = new List<Personaje>();
         Personaje personajeSeleccionado;
         string archivoPersonajes;
@@ -36,7 +36,16 @@ namespace PrimerParcialLabo_Intento2
             }
             foreach (Personaje elem in personajes)
             {
-                lstPersonajes.Items.Add(elem);
+                if (elem.esDueño(usuario))
+                {
+                    lstPersonajes.Items.Add(elem);
+                }
+
+            }
+            if (usuario is SuperAdmin)
+            {
+                btnUsuarios.Visible = true;
+                btnUsuarios.Enabled = true;
             }
         }
 

@@ -16,9 +16,8 @@ namespace PrimerParcialLabo_Intento2
         public Dictionary<string, int> atributos { set; get; } //Los atributos al ser mostrados se le deben sumar los bonus por clase
         public Dictionary<string, Habilidad> habilidades { set; get; }
         public List<Item> equipamiento  { set; get; }
-
-
-        public Personaje(string nombre, Clase clase, Raza raza, Dictionary<string, int> atributos)
+        private Usuario dueño { set; get; }
+        public Personaje(string nombre, Clase clase, Raza raza, Dictionary<string, int> atributos, Usuario usuario)
         {
             this.nombre = nombre;
             this.clase = clase;
@@ -30,6 +29,7 @@ namespace PrimerParcialLabo_Intento2
                 habilidades.Add(habilidad, new Habilidad(esProeficiente(habilidad), modificadorDeHabilidad(habilidad)));
             }
             equipamiento = new List<Item>();
+            dueño = usuario;
         }
 
         public override string ToString()
@@ -80,6 +80,9 @@ namespace PrimerParcialLabo_Intento2
             return retorno;
         }
 
-
+        public bool esDueño(Usuario usuarioAValidar)
+        {
+            return (usuarioAValidar == null);
+        }
     }
 }

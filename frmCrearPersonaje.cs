@@ -43,15 +43,16 @@ namespace PrimerParcialLabo_Intento2
                     raza = new Tiefling();
                     break;
             }
-            cboRazas.Enabled = false;
-            cboClases.Enabled = true;
-            numNivel.Enabled = true;
-            btnContinuar2.Enabled = true;
+
             frmAsignarAtributos form = new frmAsignarAtributos();
             form.ShowDialog();
             if (form.DialogResult == DialogResult.OK)
             {
                 atributos = form.atributosGenerados;
+                cboRazas.Enabled = false;
+                cboClases.Enabled = true;
+                numNivel.Enabled = true;
+                btnContinuar2.Enabled = true;
             }
             form.Close();
         }
@@ -83,10 +84,21 @@ namespace PrimerParcialLabo_Intento2
                     break;
 
             }
+            btnCrear.Enabled = true;
 
-            personaje = new Personaje(txtNombre.Text, this.clase, this.raza, this.atributos);
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            personaje = new Personaje(txtNombre.Text, this.clase, this.raza, this.atributos, ((frmMainMenu)this.Parent.Parent).usuario);
             ((frmMainMenu)this.Parent.Parent).personajes.Add(personaje);
             ((frmMainMenu)this.Parent.Parent).actualizarLista();
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

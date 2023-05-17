@@ -4,7 +4,8 @@ namespace PrimerParcialLabo_Intento2
     {
         public List<Usuario> usuarios = new List<Usuario>()
         {
-            new SuperAdmin("Max","123")
+            new SuperAdmin("Max","123"),
+            new Jugador("test", "test")
         };
 
         public frmLogIn()
@@ -24,6 +25,10 @@ namespace PrimerParcialLabo_Intento2
                     menu.Show();
                     this.Hide();
 
+                }
+                else
+                {
+                    lblIncorrecto.Visible = true;
                 }
             }
         }

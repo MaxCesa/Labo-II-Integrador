@@ -118,6 +118,7 @@
             btnUsuarios.BackColor = Color.Transparent;
             btnUsuarios.BackgroundImage = Properties.Resources.pngegg;
             btnUsuarios.BackgroundImageLayout = ImageLayout.Stretch;
+            btnUsuarios.Enabled = false;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Location = new Point(6, 512);

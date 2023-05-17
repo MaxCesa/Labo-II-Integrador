@@ -44,7 +44,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.BackColor = Color.Silver;
+            txtNombre.BackColor = Color.BurlyWood;
             txtNombre.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             txtNombre.Location = new Point(38, 52);
             txtNombre.Name = "txtNombre";
@@ -63,7 +63,7 @@
             // 
             // cboClases
             // 
-            cboClases.BackColor = Color.Silver;
+            cboClases.BackColor = Color.BurlyWood;
             cboClases.Enabled = false;
             cboClases.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboClases.FormattingEnabled = true;
@@ -74,7 +74,7 @@
             // 
             // numNivel
             // 
-            numNivel.BackColor = Color.Silver;
+            numNivel.BackColor = Color.BurlyWood;
             numNivel.Enabled = false;
             numNivel.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             numNivel.Location = new Point(214, 154);
@@ -88,7 +88,7 @@
             // 
             // cboRazas
             // 
-            cboRazas.BackColor = Color.Silver;
+            cboRazas.BackColor = Color.BurlyWood;
             cboRazas.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cboRazas.FormattingEnabled = true;
             cboRazas.Location = new Point(253, 52);
@@ -151,6 +151,7 @@
             btnCrear.TabIndex = 8;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // btnCancelar
             // 
@@ -165,6 +166,7 @@
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // lblClase
             // 
@@ -190,7 +192,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Sienna;
+            BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(800, 450);
             Controls.Add(lblNivel);
             Controls.Add(lblClase);
