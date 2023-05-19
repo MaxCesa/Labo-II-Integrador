@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInformacion));
             tableLayoutPanel1 = new TableLayoutPanel();
             lblPasadoValor = new Label();
             lblClaseValor = new Label();
@@ -138,6 +140,7 @@
             btnExaminarItem = new Button();
             btnTirarItem = new Button();
             Logo = new PictureBox();
+            toolTip1 = new ToolTip(components);
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -296,9 +299,9 @@
             lblBonusProeficiencia.Font = new Font("Segoe Script", 7.8F, FontStyle.Underline, GraphicsUnit.Point);
             lblBonusProeficiencia.Location = new Point(4, 125);
             lblBonusProeficiencia.Name = "lblBonusProeficiencia";
-            lblBonusProeficiencia.Size = new Size(104, 40);
+            lblBonusProeficiencia.Size = new Size(103, 40);
             lblBonusProeficiencia.TabIndex = 6;
-            lblBonusProeficiencia.Text = "Bonus Proeficiencia:";
+            lblBonusProeficiencia.Text = "Bonus Competencia:";
             lblBonusProeficiencia.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label17
@@ -661,6 +664,7 @@
             lblCarisma.TabIndex = 5;
             lblCarisma.Text = "Carisma";
             lblCarisma.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblCarisma, "Mide la fuerza de la personalidad de un personaje.\r\n\"La carisma de un aventurero indica su capacidad\r\npara convencer a alguien de poner un tomate en una\r\nensalada de fruta.\"\r\n");
             // 
             // lblSabiduria
             // 
@@ -673,6 +677,7 @@
             lblSabiduria.TabIndex = 4;
             lblSabiduria.Text = "Sabiduria";
             lblSabiduria.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblSabiduria, "Mide el razonamiento e instintos de un personaje.\r\n\"La sabiduria de un aventurero indica su capacidad\r\npara saber que un tomate no va en una ensalada de frutas.\"");
             // 
             // lblInteligencia
             // 
@@ -685,6 +690,7 @@
             lblInteligencia.TabIndex = 3;
             lblInteligencia.Text = "Inteligencia";
             lblInteligencia.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblInteligencia, "Mide los conocimientos de una persona.\r\n\"La inteligencia de un aventurero indica su capacidad\r\npara saber que un tomate es una fruta.\"");
             // 
             // lblFuerza
             // 
@@ -697,6 +703,7 @@
             lblFuerza.TabIndex = 0;
             lblFuerza.Text = "Fuerza";
             lblFuerza.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblFuerza, "Mide el poder fisico de un personaje.\r\n\"La fuerza de un aventurero indica que tan fuerte puede\r\ntirar un tomate.\"\r\n");
             // 
             // lblDestreza
             // 
@@ -709,6 +716,7 @@
             lblDestreza.TabIndex = 1;
             lblDestreza.Text = "Destreza";
             lblDestreza.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblDestreza, "Mide la agilidad y la coordinacion.\r\n\"La destreza indica la punteria de un aventurero\r\nal tirar un tomate.\"");
             // 
             // lblConstitucion
             // 
@@ -721,6 +729,7 @@
             lblConstitucion.TabIndex = 2;
             lblConstitucion.Text = "Constitucion";
             lblConstitucion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblConstitucion, "Mide la resistencia y dureza de un personaje.\r\n\"La constitucion de un aventurero indica que tan bien\r\npuede aguantar comer un tomate podrido.\"");
             // 
             // lblAtributo
             // 
@@ -733,6 +742,7 @@
             lblAtributo.TabIndex = 24;
             lblAtributo.Text = "Atributo";
             lblAtributo.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblAtributo, "Los atributos representan las fuerzas y debilidades\r\nde un aventurero en sus diferentes facetas.");
             // 
             // lblAtributoTotal
             // 
@@ -745,6 +755,7 @@
             lblAtributoTotal.TabIndex = 25;
             lblAtributoTotal.Text = "Valor";
             lblAtributoTotal.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblAtributoTotal, "Un atributo es representado por un valor de 1 a 20,\r\ncon una persona promedio teniendo 10 en todos ellos.");
             // 
             // lblAtributoModificador
             // 
@@ -757,6 +768,7 @@
             lblAtributoModificador.TabIndex = 26;
             lblAtributoModificador.Text = "Modificador";
             lblAtributoModificador.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblAtributoModificador, resources.GetString("lblAtributoModificador.ToolTip"));
             // 
             // lblSaveThrow
             // 
@@ -886,13 +898,14 @@
             // 
             lblProeficiencia.Anchor = AnchorStyles.None;
             lblProeficiencia.AutoSize = true;
-            lblProeficiencia.Font = new Font("Segoe Script", 4.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblProeficiencia.Location = new Point(237, 4);
+            lblProeficiencia.Font = new Font("Segoe Script", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblProeficiencia.Location = new Point(240, 1);
             lblProeficiencia.Name = "lblProeficiencia";
-            lblProeficiencia.Size = new Size(25, 13);
+            lblProeficiencia.Size = new Size(19, 20);
             lblProeficiencia.TabIndex = 75;
-            lblProeficiencia.Text = "Prof";
+            lblProeficiencia.Text = "C";
             lblProeficiencia.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblProeficiencia, resources.GetString("lblProeficiencia.ToolTip"));
             // 
             // lblHabilidad
             // 
@@ -1347,6 +1360,7 @@
             lblPersuasion.TabIndex = 37;
             lblPersuasion.Text = "Persuasion";
             lblPersuasion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblPersuasion, "Tu capacidad de influenciar a alguien con tacto,\r\ngracia social u encanto.");
             // 
             // lblInterpretacion
             // 
@@ -1358,6 +1372,7 @@
             lblInterpretacion.TabIndex = 35;
             lblInterpretacion.Text = "Interpretacion";
             lblInterpretacion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblInterpretacion, "Lo bien que puedes deleitar a una audiencia con musica,\r\ndanza, actuacion, narracion u otra forma de entretenimiento.");
             // 
             // lblIntimidacion
             // 
@@ -1369,6 +1384,7 @@
             lblIntimidacion.TabIndex = 33;
             lblIntimidacion.Text = "Intimidacion";
             lblIntimidacion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblIntimidacion, "Tu capacidad de influenciar a traves de amenazas,\r\nacciones y violencia.");
             // 
             // lblEngaño
             // 
@@ -1380,6 +1396,7 @@
             lblEngaño.TabIndex = 31;
             lblEngaño.Text = "Engaño";
             lblEngaño.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblEngaño, "Tu capacidad de mentir y mantener una cara de poker.");
             // 
             // lblSupervivencia
             // 
@@ -1391,6 +1408,7 @@
             lblSupervivencia.TabIndex = 29;
             lblSupervivencia.Text = "Supervivencia";
             lblSupervivencia.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblSupervivencia, "Tu capacidad para seguir huellas, orientarte\r\nen lo salvaje, predecir el clima, etc.");
             // 
             // lblPerspicacia
             // 
@@ -1402,6 +1420,7 @@
             lblPerspicacia.TabIndex = 27;
             lblPerspicacia.Text = "Perspicacia";
             lblPerspicacia.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblPerspicacia, "Tu capacidad para detectar mentiras, leer las\r\nexpresiones faciales de otros y ver si ocultan algo.");
             // 
             // lblPercepcion
             // 
@@ -1413,6 +1432,7 @@
             lblPercepcion.TabIndex = 25;
             lblPercepcion.Text = "Percepcion";
             lblPercepcion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblPercepcion, "Tu manejo de tus sentidos.");
             // 
             // lblMedicina
             // 
@@ -1424,6 +1444,7 @@
             lblMedicina.TabIndex = 23;
             lblMedicina.Text = "Medicina";
             lblMedicina.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblMedicina, "Tu conocimiento medico y capacidad de diagnosticar\r\ny tratar enfermedades y heridas.");
             // 
             // lblManejoDeAnimales
             // 
@@ -1435,6 +1456,7 @@
             lblManejoDeAnimales.TabIndex = 21;
             lblManejoDeAnimales.Text = "Manejo de animales";
             lblManejoDeAnimales.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblManejoDeAnimales, "Tu capacidad para calmar a un animal o intuir\r\nsus intenciones o patrones.");
             // 
             // lblAtletismo
             // 
@@ -1446,6 +1468,7 @@
             lblAtletismo.TabIndex = 3;
             lblAtletismo.Text = "Atletismo";
             lblAtletismo.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblAtletismo, "Prueba tu capacidad para escalar, saltar o nadar.");
             // 
             // lblAcrobacias
             // 
@@ -1457,6 +1480,7 @@
             lblAcrobacias.TabIndex = 5;
             lblAcrobacias.Text = "Acrobacias";
             lblAcrobacias.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblAcrobacias, "Tu capacidad de maniobrarte en el aire y de mantenerte de pie.");
             // 
             // lblJuegoDeManos
             // 
@@ -1468,6 +1492,7 @@
             lblJuegoDeManos.TabIndex = 4;
             lblJuegoDeManos.Text = "Juego de manos";
             lblJuegoDeManos.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblJuegoDeManos, "Tu habilidad con tus manos, util para manejar, esconder\r\ny robar objetos pequeños.");
             // 
             // lblSigilo
             // 
@@ -1479,6 +1504,7 @@
             lblSigilo.TabIndex = 6;
             lblSigilo.Text = "Sigilo";
             lblSigilo.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblSigilo, "Tu capacidad de esconderte y mantenerte oculto.");
             // 
             // lblArcano
             // 
@@ -1490,6 +1516,7 @@
             lblArcano.TabIndex = 7;
             lblArcano.Text = "Arcano";
             lblArcano.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblArcano, "Tu conocimiento de la magia y lo sobrenatural.");
             // 
             // lblHistoria
             // 
@@ -1501,6 +1528,7 @@
             lblHistoria.TabIndex = 8;
             lblHistoria.Text = "Historia";
             lblHistoria.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblHistoria, "Tu conocimiento de eventos pasados, personajes\r\nlegendarios, reinos antiguos, guerras y otros eventos.");
             // 
             // lblInvestigacion
             // 
@@ -1512,6 +1540,7 @@
             lblInvestigacion.TabIndex = 9;
             lblInvestigacion.Text = "Investigacion";
             lblInvestigacion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblInvestigacion, "Tu capacidad para encontrar pistar y realizar\r\ndeducciones con ellas.");
             // 
             // lblNaturaleza
             // 
@@ -1523,6 +1552,7 @@
             lblNaturaleza.TabIndex = 10;
             lblNaturaleza.Text = "Naturaleza";
             lblNaturaleza.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblNaturaleza, "Tu conocimiento sobre la flora, la fauna y el terreno\r\ndonde te encuentras.");
             // 
             // lblReligion
             // 
@@ -1534,6 +1564,7 @@
             lblReligion.TabIndex = 11;
             lblReligion.Text = "Religión";
             lblReligion.TextAlign = ContentAlignment.MiddleCenter;
+            toolTip1.SetToolTip(lblReligion, "Tu conocimiento sobre las deidades y panteones,\r\nsus rituales y oraciones, sus jerarquias religiosas y\r\nsimbolos.");
             // 
             // btnAñadirItem
             // 
@@ -1561,7 +1592,7 @@
             btnExaminarItem.Name = "btnExaminarItem";
             btnExaminarItem.Size = new Size(129, 54);
             btnExaminarItem.TabIndex = 6;
-            btnExaminarItem.Text = "Examinar";
+            btnExaminarItem.Text = "WIP";
             btnExaminarItem.UseVisualStyleBackColor = true;
             // 
             // btnTirarItem
@@ -1732,5 +1763,6 @@
         private Label lblHabilidad;
         private Label lblModificador;
         private Label lblProeficiencia;
+        private ToolTip toolTip1;
     }
 }

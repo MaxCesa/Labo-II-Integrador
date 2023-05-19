@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             cboAtributos = new ComboBox();
             btnTiradaAtributos = new Button();
             cboHabilidades = new ComboBox();
@@ -39,6 +40,7 @@
             lblAtributos = new Label();
             lblHabilidades = new Label();
             lblAtaques = new Label();
+            toolTip1 = new ToolTip(components);
             SuspendLayout();
             // 
             // cboAtributos
@@ -53,13 +55,18 @@
             // 
             // btnTiradaAtributos
             // 
+            btnTiradaAtributos.BackgroundImage = Properties.Resources.pngegg;
+            btnTiradaAtributos.BackgroundImageLayout = ImageLayout.Stretch;
+            btnTiradaAtributos.FlatAppearance.BorderSize = 0;
+            btnTiradaAtributos.FlatStyle = FlatStyle.Flat;
             btnTiradaAtributos.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnTiradaAtributos.Location = new Point(305, 62);
             btnTiradaAtributos.Margin = new Padding(4, 3, 4, 3);
             btnTiradaAtributos.Name = "btnTiradaAtributos";
-            btnTiradaAtributos.Size = new Size(118, 33);
+            btnTiradaAtributos.Size = new Size(95, 33);
             btnTiradaAtributos.TabIndex = 1;
             btnTiradaAtributos.Text = "Tirar...";
+            toolTip1.SetToolTip(btnTiradaAtributos, "Tirada de un atributo:\r\n1d20 + modificador de atributo");
             btnTiradaAtributos.UseVisualStyleBackColor = true;
             btnTiradaAtributos.Click += btnTiradaAtributos_Click;
             // 
@@ -75,13 +82,18 @@
             // 
             // btnTiradaHabilidades
             // 
+            btnTiradaHabilidades.BackgroundImage = Properties.Resources.pngegg;
+            btnTiradaHabilidades.BackgroundImageLayout = ImageLayout.Stretch;
+            btnTiradaHabilidades.FlatAppearance.BorderSize = 0;
+            btnTiradaHabilidades.FlatStyle = FlatStyle.Flat;
             btnTiradaHabilidades.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnTiradaHabilidades.Location = new Point(305, 161);
             btnTiradaHabilidades.Margin = new Padding(4, 3, 4, 3);
             btnTiradaHabilidades.Name = "btnTiradaHabilidades";
-            btnTiradaHabilidades.Size = new Size(118, 33);
+            btnTiradaHabilidades.Size = new Size(95, 33);
             btnTiradaHabilidades.TabIndex = 3;
             btnTiradaHabilidades.Text = "Tirar...";
+            toolTip1.SetToolTip(btnTiradaHabilidades, "Tirada de una habilidad:\r\n1d20 + modificador de habilidad\r\nModificador de habilidad = \r\nModificador de atributos + proeficiencia (si se es proeficiente)");
             btnTiradaHabilidades.UseVisualStyleBackColor = true;
             btnTiradaHabilidades.Click += btnTiradaHabilidades_Click;
             // 
@@ -97,22 +109,31 @@
             // 
             // btnCheckHit
             // 
+            btnCheckHit.BackgroundImage = Properties.Resources.pngegg;
+            btnCheckHit.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCheckHit.FlatAppearance.BorderSize = 0;
+            btnCheckHit.FlatStyle = FlatStyle.Flat;
             btnCheckHit.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCheckHit.Location = new Point(305, 248);
             btnCheckHit.Margin = new Padding(4, 3, 4, 3);
             btnCheckHit.Name = "btnCheckHit";
-            btnCheckHit.Size = new Size(118, 33);
+            btnCheckHit.Size = new Size(95, 33);
             btnCheckHit.TabIndex = 5;
             btnCheckHit.Text = "Check";
+            toolTip1.SetToolTip(btnCheckHit, "Checkeo de golpe (Ver si el ataque conecta):\r\n1d20 + atributo del arma");
             btnCheckHit.UseVisualStyleBackColor = true;
             // 
             // btnDaño
             // 
+            btnDaño.BackgroundImage = Properties.Resources.pngegg;
+            btnDaño.BackgroundImageLayout = ImageLayout.Stretch;
+            btnDaño.FlatAppearance.BorderSize = 0;
+            btnDaño.FlatStyle = FlatStyle.Flat;
             btnDaño.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnDaño.Location = new Point(305, 302);
             btnDaño.Margin = new Padding(4, 3, 4, 3);
             btnDaño.Name = "btnDaño";
-            btnDaño.Size = new Size(118, 33);
+            btnDaño.Size = new Size(95, 33);
             btnDaño.TabIndex = 6;
             btnDaño.Text = "Daño";
             btnDaño.UseVisualStyleBackColor = true;
@@ -201,5 +222,6 @@
         private Label lblAtributos;
         private Label lblHabilidades;
         private Label lblAtaques;
+        private ToolTip toolTip1;
     }
 }

@@ -34,6 +34,10 @@ namespace PrimerParcialLabo_Intento2
         public Dictionary<int, int> spellSlots { set; get; } = new Dictionary<int, int>(); // spellSlots {Nivel, Cantidad}
         public List<string> hechizos { set; get; } = new List<string>();
         private string _especializacion { set; get; } = "";
+        public Clase()
+        {
+
+        }
         public void SetEspecializacion(List<string> especializaciones)
         {
             using (var form = new frmComboEleccion(especializaciones, "Elija la especializacion de su personaje..."))

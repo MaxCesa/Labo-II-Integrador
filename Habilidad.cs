@@ -4,7 +4,7 @@
     {
         public bool proeficiente { get; set; }
         public int valor { get; set; }
-
+        public Habilidad() { }
         public Habilidad (bool esProeficiente, int valor)
         {
             this.proeficiente =esProeficiente; this.valor =valor;

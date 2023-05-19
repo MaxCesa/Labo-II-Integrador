@@ -8,17 +8,18 @@ namespace PrimerParcialLabo_Intento2
 {
     public abstract class Usuario
     {
-        public string usuario { get; }
-        string contraseña;
-
+        public string username { get; set; }
+        public string contraseña { get; set; }
+        public string tipo { get; set; }
+        public Usuario() { }
         public Usuario(string usuario, string contraseña)
         {
-            this.usuario = usuario;
+            this.username = usuario;
             this.contraseña = contraseña;
         }
         public bool validacion(string usuario, string contraseña)
         {
-            return (usuario == this.usuario && contraseña == this.contraseña);
+            return (usuario == this.username && contraseña == this.contraseña);
         }
     }
 
@@ -26,12 +27,14 @@ namespace PrimerParcialLabo_Intento2
     {
         public Jugador(string usuario, string contraseña) : base(usuario, contraseña)
         {
+            this.tipo = "Jugador";
         }
     }
     public class SuperAdmin : Usuario
     {
         public SuperAdmin(string usuario, string contraseña) : base(usuario, contraseña)
         {
+            this.tipo = "SuperAdmin";
         }
     }
 }

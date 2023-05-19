@@ -27,8 +27,9 @@ namespace PrimerParcialLabo_Intento2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string datos = Serializador.Serializar(personajeList);
-            ControladorArchivos.Escribir(datos);
+            MessageBox.Show("La funcion de administracion de usuarios esta bajo desarrollo.", "Lo sentimos...", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            //string datos = Serializador.Serializar(personajeList);
+            //ControladorArchivos.Escribir(datos);
         }
 
         private void btnExportar_Click(object sender, EventArgs e)

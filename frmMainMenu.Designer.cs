@@ -42,6 +42,7 @@
             lblPersonajeSeleccionado = new Label();
             panelMenu = new Panel();
             panelContenedor = new Panel();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)campañaBindingSource).BeginInit();
             panelMenu.SuspendLayout();
             SuspendLayout();
@@ -59,6 +60,7 @@
             btnCrear.Size = new Size(175, 46);
             btnCrear.TabIndex = 1;
             btnCrear.Text = "Crear personaje";
+            toolTip1.SetToolTip(btnCrear, "Crear un nuevo personaje.");
             btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
@@ -76,6 +78,7 @@
             btnInformacion.Size = new Size(175, 46);
             btnInformacion.TabIndex = 2;
             btnInformacion.Text = "Informacion";
+            toolTip1.SetToolTip(btnInformacion, "Informacion sobre personaje seleccionado.\r\n(Debe tener un personaje seleccionado para entrar)");
             btnInformacion.UseVisualStyleBackColor = false;
             btnInformacion.Click += btnInformacion_Click;
             // 
@@ -93,6 +96,7 @@
             btnJugar.Size = new Size(175, 46);
             btnJugar.TabIndex = 3;
             btnJugar.Text = "Jugar";
+            toolTip1.SetToolTip(btnJugar, "Tirar dados con el personaje seleccionado.\r\n(Debe tener un personaje seleccionado para entrar)\r\n");
             btnJugar.UseVisualStyleBackColor = false;
             btnJugar.Click += btnJugar_Click;
             // 
@@ -110,6 +114,7 @@
             btnExportar.Size = new Size(175, 46);
             btnExportar.TabIndex = 4;
             btnExportar.Text = "Exportar";
+            toolTip1.SetToolTip(btnExportar, "Exportar personaje/s.\r\n(Debe tener un personaje seleccionado para entrar)\r\n");
             btnExportar.UseVisualStyleBackColor = false;
             btnExportar.Click += btnExportar_Click;
             // 
@@ -128,6 +133,7 @@
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.Visible = false;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // lblUsuario
             // 
@@ -225,5 +231,6 @@
         private Label lblPersonajeSeleccionado;
         private Panel panelMenu;
         private Panel panelContenedor;
+        private ToolTip toolTip1;
     }
 }

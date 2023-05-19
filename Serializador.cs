@@ -4,17 +4,16 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Newtonsoft;
 
 namespace PrimerParcialLabo_Intento2
 {
     internal class Serializador
     {
         private readonly List<Personaje> _listaPersonajes;
-        private static readonly JsonSerializerOptions _opciones = new()
-        {
-            WriteIndented = true
-        };
+        
         
         public Serializador(List<Personaje> listaPersonajes)
         {
@@ -23,17 +22,31 @@ namespace PrimerParcialLabo_Intento2
 
         public static string Serializar(List<Personaje> listaPersonajes)
         {
-            string retorno = JsonSerializer.Serialize(listaPersonajes, Serializador._opciones);
+            string retorno;
+            Newtonsoft.Json.JsonSerializerSettings settings = new Newtonsoft.Json.JsonSerializerSettings()
+            {
+            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+            TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
+            };
+
+
+
+            retorno = Newtonsoft.Json.JsonConvert.SerializeObject(listaPersonajes, settings);
             return retorno;
+        
         }
 
         public static List<Personaje> Deserealizar(string info)
         {
-            List<Personaje> listaPersonajes = new();
-            if(JsonSerializer.Deserialize<List<Personaje>>(info) != null)
+            List<Personaje> listaPersonajes = new List<Personaje>();
+            
+            
+            listaPersonajes = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Personaje>>(info, new Newtonsoft.Json.JsonSerializerSettings
             {
-                listaPersonajes = JsonSerializer.Deserialize<List<Personaje>>(info);
-            }
+                TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto,
+                NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+            });
+            
             return listaPersonajes;
         }
     }

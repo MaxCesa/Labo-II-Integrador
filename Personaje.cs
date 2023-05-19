@@ -17,6 +17,11 @@ namespace PrimerParcialLabo_Intento2
         public Dictionary<string, Habilidad> habilidades { set; get; }
         public List<Item> equipamiento  { set; get; }
         private Usuario dueño { set; get; }
+
+        public Personaje()
+        {
+
+        }
         public Personaje(string nombre, Clase clase, Raza raza, Dictionary<string, int> atributos, Usuario usuario)
         {
             this.nombre = nombre;

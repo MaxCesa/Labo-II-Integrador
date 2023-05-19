@@ -17,6 +17,7 @@ namespace PrimerParcialLabo_Intento2
         public List<Personaje> personajes = new List<Personaje>();
         Personaje personajeSeleccionado;
         string archivoPersonajes;
+        public List<Usuario> usuarios;
 
         //lista de campañas de pruba
 
@@ -28,7 +29,8 @@ namespace PrimerParcialLabo_Intento2
         public frmMainMenu(List<Usuario> usuarios, Usuario usuario) : this()
         {
             this.usuario = usuario;
-            this.lblUsuario.Text += usuario.usuario;
+            this.usuarios = usuarios;
+            this.lblUsuario.Text += usuario.username;
             archivoPersonajes = ControladorArchivos.Leer();
             if (archivoPersonajes != "404")
             {
@@ -110,9 +112,30 @@ namespace PrimerParcialLabo_Intento2
             return fh;
         }
 
+        private Form abrirSubForm(object subForm, object tag)
+        {
+            if (panelContenedor.Controls.Count > 0)
+            {
+                panelContenedor.Controls.Clear();
+            }
+            Form fh = subForm as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.panelContenedor.Controls.Add(fh);
+            this.panelContenedor.Tag = fh;
+            fh.Tag = tag;
+            fh.Show();
+            return fh;
+        }
+
         private void btnInformacion_Click(object sender, EventArgs e)
         {
             abrirSubForm(new frmInformacion(personajeSeleccionado));
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La funcion de administracion de usuarios esta bajo desarrollo.", "Lo sentimos...", MessageBoxButtons.OK, MessageBoxIcon.Stop);
         }
     }
 }

@@ -57,6 +57,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="lblAtributoModificador.ToolTip" xml:space="preserve">
+    <value>El modificador de un atributo es el valor que se añade
+a la tirada de un dado cuando se debe evaluar el atributo.
+
+Ability Score	Roll Modifier
+1                             -5
+2-3                          -4
+4-5                          -3
+6-7                          -2
+8-9                          -1
+10-11                      +0
+12-13                      +1
+14-15                      +2
+16-17                      +3
+18-19                      +4
+20                            +5</value>
+  </data>
+  <data name="lblProeficiencia.ToolTip" xml:space="preserve">
+    <value>La competencia de un personaje indica habilidades
+en las que el aventurero es especificamente bueno.
+Cuando un aventurero es competente en una
+habilidad, se le suma el bonus de competencia al
+modificador de esa habilidad.</value>
+  </data>
   <metadata name="lblPersuasionProf.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

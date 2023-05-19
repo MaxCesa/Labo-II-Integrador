@@ -14,12 +14,13 @@ namespace PrimerParcialLabo_Intento2
 {
     public static class ControladorArchivos
     {
-        private static readonly string _defaultAdress = Path.GetRelativePath(AppDomain.CurrentDomain.BaseDirectory, "D:\\Users\\maxic\\Documents\\Programacion 2\\PrimerParcialLabo-Intento2\\files");
+        private static readonly string _defaultAdressPersonaje = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ "\\personajes.json";
+        private static readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
         public static void Escribir(string obj)
         {
             if (obj != String.Empty)
             {
-                File.WriteAllText(_defaultAdress, obj);
+                File.WriteAllText(_defaultAdressPersonaje, obj);
             }
         }
 
@@ -34,9 +35,9 @@ namespace PrimerParcialLabo_Intento2
         public static string Leer()
         {
             string retorno = "404";
-            if (File.Exists(_defaultAdress))
+            if (File.Exists(_defaultAdressPersonaje))
             {
-                retorno = File.ReadAllText(_defaultAdress);
+                retorno = File.ReadAllText(_defaultAdressPersonaje);
             }
             return retorno;
         }
@@ -53,13 +54,13 @@ namespace PrimerParcialLabo_Intento2
 
         public static void ExportarAPDF(Personaje personaje)
         {
-            PdfDocument documento = PdfDocument.FromFile(_defaultAdress + "hoja-rellenable.pdf");
+            PdfDocument documento = PdfDocument.FromFile(_projectDirectory + "\\hoja-rellenable.pdf");
             var form = documento.Form;
             var fields = form.Fields;
             rellenarDatosBasicos(ref form, personaje);
-            documento.SaveAs(_defaultAdress + "hoja-rellenada.pdf");
+            documento.SaveAs(_projectDirectory + "\\hoja-rellenada.pdf");
         }
-
+        
         static void rellenarDatosBasicos(ref PdfForm hoja, Personaje personaje)
         {
             hoja.GetFieldByName("CharacterName").Value = personaje.nombre;

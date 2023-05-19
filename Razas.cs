@@ -29,6 +29,8 @@ namespace PrimerParcialLabo_Intento2
         public List<string> proeficiencias { set; get; } = new List<string>();
         public List<string> habilidades { set; get; } = new List<string>();
 
+        public Raza() { }
+
         public override string ToString()
         {
             return nombre;

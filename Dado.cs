@@ -20,7 +20,7 @@ namespace PrimerParcialLabo_Intento2
             d12 = 12,
             d20 = 20
         }
-
+        public Dado() { }
         public Dado(int cantidad, int caras)
         {
             this.cantidad = cantidad;

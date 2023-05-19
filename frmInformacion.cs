@@ -32,6 +32,7 @@ namespace PrimerParcialLabo_Intento2
             this.lblNombreValor.Text = personaje.nombre;
             this.lblRazaValor.Text = personaje.raza.ToString();
             this.lblClaseValor.Text = personaje.clase.ToString();
+            this.lblBonusProeficienciaValor.Text = personaje.clase.bonusProeficiencia.ToString();
         }
 
         private void cargarAtributos()
