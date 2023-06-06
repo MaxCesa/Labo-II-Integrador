@@ -31,7 +31,12 @@ namespace PrimerParcialLabo_Intento2
             this.usuario = usuario;
             this.usuarios = usuarios;
             this.lblUsuario.Text += usuario.username;
-            //personajes = ControladorArchivos.Leer();
+            if (ControladorArchivos.ExisteArchivo())
+            {
+                personajes = ControladorArchivos.Leer();
+                actualizarLista();
+            }
+            
             
             
             if (usuario is SuperAdmin)

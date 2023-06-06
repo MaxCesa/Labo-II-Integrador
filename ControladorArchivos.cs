@@ -31,7 +31,10 @@ namespace PrimerParcialLabo_Intento2
                 serializer.Serialize(jsonWriter, personajes);
             }
         }
-
+        public static bool ExisteArchivo()
+        {
+            return File.Exists(_defaultAdressPersonaje);
+        }
         public static List<Personaje> Leer()
         {
             List<Personaje> retorno = new List<Personaje>();
