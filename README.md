@@ -74,6 +74,8 @@ mas basicos del personaje (para mostrar funcionalidad), pero se implementara que
 - Arreglar deserealizacion de personajes.
 - Implementar formulario de manejo de usuarios.
 - Implementar filtro de personajes basado en usuario.
+- Implementar excepciones.
+- Implementar uso de base de datos.
 - Homogenizar interfaz de usuario a lo largo del programa.
 - Implementar el uso de ataques.
 - Finalizar generacion de PDF
