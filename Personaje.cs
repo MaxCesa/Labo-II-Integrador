@@ -12,38 +12,64 @@ namespace PrimerParcialLabo_Intento2;
 public class Personaje
 {
     public string nombre { set; get; }
-    public Clase clase { set; get; }
-    public Raza raza { set; get; }
+    public string clase { set; get; } = string.Empty;
+    public int nivel { set; get; } = 0;
+    public string raza { set; get; } = string.Empty;
     //public Background background;
+    public bool inspiracion { set; get; } = false;
     public Dictionary<string, int> atributos { set; get; } //Los atributos al ser mostrados se le deben sumar los bonus por clase
-    public Dictionary<string, Habilidad> habilidades { set; get; }
-    public List<Item> equipamiento  { set; get; }
+    public Dictionary<string, bool> habilidades { set; get; }
+    public List<Item> equipamiento { set; get; } = new List<Item>();
+    public List<string> proeficiencias { set; get; } = new List<string>();
+    public List<string> caracteristicas { set; get; } = new List<string>();
+    public List<string> lenguajes { set; get; } = new List<string>();
+    public List<string> savingThrows { set; get; } = new List<string>();
+    public int hitPointsMaximos { set; get; }
+    public int hitPointsActuales { set; get; }
+    public int velocidad { set; get; } = 0;
+    public Dado dadoHP { set; get; }
+    public Dictionary<int, int> spellSlots { set; get; }
     private Usuario dueño { set; get; }
 
     public Personaje()
     {
 
     }
-    public Personaje(string nombre, Clase clase, Raza raza, Dictionary<string, int> atributos, Usuario usuario)
+    public Personaje(string nombre, Dictionary<string, int> atributos, Usuario usuario)
     {
         this.nombre = nombre;
-        this.clase = clase;
-        this.raza = raza;
         this.atributos = atributos;
-        habilidades = new Dictionary<string, Habilidad>();
+        habilidades = Habilidad.listaHabilidadesVacia;
         //Mover instanciamiento de habilidades a la clase Habilidad
-        foreach (string habilidad in Habilidad.habilidades)
-        {
-            habilidades.Add(habilidad, new Habilidad(esProeficiente(habilidad), modificadorDeHabilidad(habilidad)));
-        }
         equipamiento = new List<Item>();
         dueño = usuario;
     }
 
     public override string ToString()
     {
-        return this.nombre + " : " + this.clase + " nivel " + this.clase.nivel.ToString();
+        return this.nombre + " : " + this.clase + " nivel " + this.nivel.ToString();
     }
+    public int bonusProeficiencia()
+    {
+        if(nivel < 5)
+        {
+            return 2;
+        }
+        else if(nivel < 9)
+        {
+            return 3;
+        }
+        else if(nivel < 13)
+        {
+            return 4;
+        }
+        else if(nivel < 17)
+        {
+            return 5;
+        }
+        else { return 6;}
+    }
+
     /// <summary>
     /// Retorna un booleano indicando si el personaje es proeficiente en la habilidad pasada por parametro
     /// </summary>
@@ -51,7 +77,7 @@ public class Personaje
     /// <returns></returns>
     public bool esProeficiente(string habilidad) 
     {
-        return (this.clase.habilidades.Contains(habilidad));
+        return (this.habilidades[habilidad]);
     }
     /// <summary>
     /// Retorna el modificador que se utiliza en una tirada de dado basado en la puntuacion del atributo dado
@@ -70,7 +96,7 @@ public class Personaje
     /// <returns></returns>
     public int totalAtributo(string atributo)
     {
-        return atributos[atributo] + this.raza.abilityScoreIncreases[atributo] + this.clase.abilityScoreIncreases[atributo];
+        return atributos[atributo];
     }
     /// <summary>
     /// Retorna el modificador que se utiliza en una tirada de dado basado en la habilidad siendo evaluada.
@@ -82,7 +108,7 @@ public class Personaje
         int retorno = 0;
         if(esProeficiente(habilidad))
         {
-            retorno += this.clase.bonusProeficiencia;
+            retorno += this.bonusProeficiencia();
         }
         retorno += modificadorDeAtributo(Habilidad.atributoAsociado(habilidad));
         return retorno;

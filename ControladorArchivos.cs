@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using IronPdf;
 using IronPdf.Forms;
+using Newtonsoft.Json;
 
 namespace PrimerParcialLabo_Intento2
 {
@@ -16,42 +17,31 @@ namespace PrimerParcialLabo_Intento2
     {
         private static readonly string _defaultAdressPersonaje = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ "\\personajes.json";
         private static readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
-        public static void Escribir(string obj)
+        
+        public static void Guardar(List<Personaje> personajes)
         {
-            if (obj != String.Empty)
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Formatting = Formatting.Indented;
+            serializer.ObjectCreationHandling = ObjectCreationHandling.Auto;
+            serializer.TypeNameHandling = TypeNameHandling.All;
+
+            using (StreamWriter sWriter = new StreamWriter(_defaultAdressPersonaje))
+            using (JsonWriter jsonWriter = new JsonTextWriter(sWriter))
             {
-                File.WriteAllText(_defaultAdressPersonaje, obj);
+                serializer.Serialize(jsonWriter, personajes);
             }
         }
 
-        public static void Escribir(string obj, string path)
+        public static List<Personaje> Leer()
         {
-            if (obj != String.Empty && path != String.Empty)
-            {
-                File.WriteAllText(path, obj);
-            }
-        }
+            List<Personaje> retorno = new List<Personaje>();
 
-        public static string Leer()
-        {
-            string retorno = "404";
-            if (File.Exists(_defaultAdressPersonaje))
-            {
-                retorno = File.ReadAllText(_defaultAdressPersonaje);
-            }
+            using StreamReader reader = new(_defaultAdressPersonaje);
+            var json = reader.ReadToEnd();
+            retorno = JsonConvert.DeserializeObject<List<Personaje>>(json);
+
             return retorno;
         }
-
-        public static string Leer(string path)
-        {
-            string retorno = "";
-            if (File.Exists(path))
-            {
-                retorno = File.ReadAllText(path);
-            }
-            return retorno;
-        }
-
         public static void ExportarAPDF(Personaje personaje)
         {
             PdfDocument documento = PdfDocument.FromFile(_projectDirectory + "\\hoja-rellenable.pdf");

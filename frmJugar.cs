@@ -60,7 +60,7 @@ namespace PrimerParcialLabo_Intento2
             resultado = dado.tirar() + personaje.modificadorDeAtributo(Habilidad.atributoAsociado(habilidad));
             if (personajeActual.esProeficiente(habilidad))
             {
-                resultado += personaje.clase.bonusProeficiencia;
+                resultado += personaje.bonusProeficiencia();
             }
             return ("Roll de " + habilidad + ": " + resultado.ToString() + "\n"); ;
         }

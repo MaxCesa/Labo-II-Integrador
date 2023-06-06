@@ -4,8 +4,6 @@ namespace PrimerParcialLabo_Intento2
 {
     public partial class frmCrearPersonaje : Form
     {
-        Raza raza;
-        Clase clase;
         Dictionary<string, int> atributos;
         public Personaje personaje;
 
@@ -18,33 +16,6 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            switch (cboRazas.SelectedIndex)
-            {
-                case 0:
-                    raza = new Enano();
-                    break;
-                case 1:
-                    raza = new Elfo();
-                    break;
-                case 2:
-                    raza = new Mediano();
-                    break;
-                case 3:
-                    raza = new Humano();
-                    break;
-                case 4:
-                    raza = new Gnomo();
-                    break;
-                case 5:
-                    raza = new MedioElfo();
-                    break;
-                case 6:
-                    raza = new MedioOrco();
-                    break;
-                case 7:
-                    raza = new Tiefling();
-                    break;
-            }
 
             frmAsignarAtributos form = new frmAsignarAtributos();
             form.ShowDialog();
@@ -61,38 +32,68 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnContinuar2_Click(object sender, EventArgs e)
         {
-            switch (cboClases.Text)
-            {
-                case "Barbaro":
-                    clase = new Barbaro((int)numNivel.Value);
-                    break;
-                case "Bardo":
-                    clase = new Bardo((int)numNivel.Value);
-                    break;
-                case "Clerigo":
-                    clase = new Clerigo((int)numNivel.Value);
-                    break;
-                case "Druida":
-                    clase = new Druida((int)numNivel.Value);
-                    break;
-                case "Guerrero":
-                    clase = new Guerrero((int)numNivel.Value);
-                    break;
-                case "Explorador":
-                    clase = new Explorador((int)numNivel.Value);
-                    break;
-                case "Paladin":
-                    clase = new Paladin((int)numNivel.Value);
-                    break;
-
-            }
             btnCrear.Enabled = true;
 
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            personaje = new Personaje(txtNombre.Text, this.clase, this.raza, this.atributos, ((frmMainMenu)this.Parent.Parent).usuario);
+            personaje = new Personaje(txtNombre.Text, this.atributos, ((frmMainMenu)this.Parent.Parent).usuario);
+
+            switch (cboRazas.SelectedIndex)
+            {
+                case 0:
+                    Enano.OtorgarRaza(personaje);
+                    break;
+                case 1:
+                    Elfo.OtorgarRaza(personaje);
+                    break;
+                case 2:
+                    Mediano.OtorgarRaza(personaje);
+                    break;
+                case 3:
+                    Humano.OtorgarRaza(personaje);
+                    break;
+                case 4:
+                    Gnomo.OtorgarRaza(personaje);
+                    break;
+                case 5:
+                    MedioElfo.OtorgarRaza(personaje);
+                    break;
+                case 6:
+                    MedioOrco.OtorgarRaza(personaje);
+                    break;
+                case 7:
+                    Tiefling.OtorgarRaza(personaje);
+                    break;
+            }
+
+            switch (cboClases.Text)
+            {
+                case "Barbaro":
+                    Barbaro.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+                case "Bardo":
+                    Bardo.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+                case "Clerigo":
+                    Clerigo.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+                case "Druida":
+                    Druida.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+                case "Guerrero":
+                    Guerrero.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+                case "Explorador":
+                    Explorador.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+                case "Paladin":
+                    Paladin.subirDeNivel(personaje, (int)numNivel.Value);
+                    break;
+
+            }
+
             ((frmMainMenu)this.Parent.Parent).personajes.Add(personaje);
             ((frmMainMenu)this.Parent.Parent).actualizarLista();
             this.Close();

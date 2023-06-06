@@ -1,8 +1,29 @@
 ﻿using PrimerParcialLabo_Intento2;
 namespace DnD
 {
-    public class Habilidad
+    public abstract class Habilidad
     {
+        public static Dictionary<string, bool> listaHabilidadesVacia = new Dictionary<string, bool>()
+        {
+            { "Atletismo", false },
+            { "Acrobacias", false },
+            { "Juego de manos", false },
+            { "Sigilo", false },
+            { "Arcano", false },
+            { "Historia", false },
+            { "Investigacion", false },
+            { "Naturaleza", false },
+            { "Religión", false },
+            { "Manejo de animales", false },
+            { "Medicina", false },
+            { "Percepcion", false },
+            { "Perspicacia", false },
+            { "Supervivencia", false },
+            { "Engaño", false },
+            { "Intimidacion", false },
+            { "Interpretacion", false },
+            { "Persuasion", false }
+        };
         public bool proeficiente { get; set; }
         public int valor { get; set; }
         public Habilidad() { }

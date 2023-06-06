@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimerParcialLabo_Intento2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,154 +18,124 @@ namespace DnD
         MedioOrco,
         Tiefling
     }
-    public abstract class Raza
+
+    public static class Enano
     {
-        public string nombre { set; get; } = "";
-        public int velocidad { set; get; } = 0;
-        public string size { set; get; } = "";
-        public Dictionary<string, int> abilityScoreIncreases { set; get; } = new Dictionary<string, int>()
-        { { "Fuerza", 0 }, { "Destreza", 0 }, { "Constitucion", 0 }, { "Carisma", 0 }, { "Inteligencia", 0 }, { "Sabiduria", 0 } };
-        public List<string> lenguajes { set; get; } = new List<string>() { "Comun" };
-        public List<string> caracteristicas { set; get; } = new List<string>();
-        public List<string> proeficiencias { set; get; } = new List<string>();
-        public List<string> habilidades { set; get; } = new List<string>();
-
-        public Raza() { }
-
-        public override string ToString()
+        public static void OtorgarRaza(Personaje personaje)
         {
-            return nombre;
+            personaje.raza = "Enano";
+            personaje.velocidad = 25;
+            personaje.caracteristicas.Add("Darkvision");
+            personaje.caracteristicas.Add("Resistencia enana");
+            personaje.caracteristicas.Add("Stonecutting");
+            personaje.lenguajes.Add("Enano");
+            personaje.atributos["Constitucion"] += 2;
         }
     }
 
-    public class Enano : Raza
+    public static class Elfo
     {
-        public Enano()
-        {
-            this.nombre = "Enano";
-            this.velocidad = 25;
-            this.caracteristicas.Add("Darkvision");
-            this.caracteristicas.Add("Resistencia enana");
-            this.caracteristicas.Add("Stonecutting");
-            this.lenguajes.Add("Enano");
-            this.abilityScoreIncreases["Constitucion"] = 2;
-            this.size = "Mediano";
 
+        public static void OtorgarRaza(Personaje personaje)
+        {
+            personaje.raza = "Enano";
+            personaje.velocidad = 30;
+            personaje.caracteristicas.Add("Darkvision");
+            personaje.caracteristicas.Add("Keen senses");
+            personaje.caracteristicas.Add("Fey ancestry");
+            personaje.caracteristicas.Add("Trance");
+            personaje.lenguajes.Add("Elfico");
+            personaje.atributos["Destreza"] += 2;
         }
     }
 
-    public class Elfo : Raza
+    public static class Mediano
     {
-        public Elfo()
+        public static void OtorgarRaza(Personaje personaje)
         {
-            this.nombre = "Enano";
-            this.velocidad = 30;
-            this.caracteristicas.Add("Darkvision");
-            this.caracteristicas.Add("Keen senses");
-            this.caracteristicas.Add("Fey ancestry");
-            this.caracteristicas.Add("Trance");
-            this.lenguajes.Add("Elfico");
-            this.abilityScoreIncreases["Destreza"] = 2;
-            this.size = "Mediano";
-
+            personaje.raza = "Mediano";
+            personaje.velocidad = 25;
+            personaje.caracteristicas.Add("Suertudo");
+            personaje.caracteristicas.Add("Valiente");
+            personaje.caracteristicas.Add("Agilidad de Mediano");
+            personaje.lenguajes.Add("Mediano");
+            personaje.atributos["Destreza"] += 2;
+        }
+    }
+    public static class Humano
+    {
+        public static void OtorgarRaza(Personaje personaje)
+        {
+            personaje.raza = "Humano";
+            personaje.velocidad = 30;
+            personaje.lenguajes.Add(Lenguajes.elegirLenguaje());
+            personaje.atributos["Destreza"] += 1;
+            personaje.atributos["Fuerza"] += 1;
+            personaje.atributos["Inteligencia"] += 1;
+            personaje.atributos["Sabiduria"] += 1;
+            personaje.atributos["Constitucion"] += 1;
+            personaje.atributos["Carisma"] += 1;
         }
     }
 
-    public class Mediano : Raza
+    public static class Gnomo
     {
-        public Mediano()
+        public static void OtorgarRaza(Personaje personaje)
         {
-            this.nombre = "Mediano";
-            this.velocidad = 25;
-            this.caracteristicas.Add("Suertudo");
-            this.caracteristicas.Add("Valiente");
-            this.caracteristicas.Add("Agilidad de Mediano");
-            this.lenguajes.Add("Mediano");
-            this.abilityScoreIncreases["Destreza"] = 2;
-            this.size = "Pequeño";
+            personaje.raza = "Gnomo";
+            personaje.velocidad = 25;
+            personaje.lenguajes.Add("Gnómico");
+            personaje.atributos["Inteligencia"] += 2;
+            personaje.caracteristicas.Add("Darkvision");
+            personaje.caracteristicas.Add("Astucia de Gnomo");
+        }
+    }
+    public static class MedioElfo
+    {
+        public static void OtorgarRaza(Personaje personaje)
+        {
+            personaje.raza = "Medio-Elfo";
+            personaje.velocidad = 30;
+            personaje.caracteristicas.Add("Darkvision");
+            personaje.caracteristicas.Add("Fey ancestry");
+            personaje.lenguajes.Add("Elfico");
+            personaje.lenguajes.Add(Lenguajes.elegirLenguaje());
+            personaje.atributos["Carisma"] += 2;
+            personaje.atributos[Atributos.elegirAtributo()] += 1;
+            personaje.atributos[Atributos.elegirAtributo()] += 1;
+            personaje.habilidades[Habilidad.elegirHabilidad()] = true;
+            personaje.habilidades[Habilidad.elegirHabilidad()] = true;
 
         }
     }
-    public class Humano : Raza
+    public static class MedioOrco
     {
-        public Humano()
-        {
-            this.nombre = "Humano";
-            this.velocidad = 30;
-            this.lenguajes.Add(Lenguajes.elegirLenguaje());
-            this.abilityScoreIncreases["Destreza"] = 1;
-            this.abilityScoreIncreases["Fuerza"] = 1;
-            this.abilityScoreIncreases["Inteligencia"] = 1;
-            this.abilityScoreIncreases["Sabiduria"] = 1;
-            this.abilityScoreIncreases["Constitucion"] = 1;
-            this.abilityScoreIncreases["Carisma"] = 1;
-            this.size = "Mediano";
 
+        public static void OtorgarRaza(Personaje personaje)
+        {
+            personaje.raza = "Medio-Orco";
+            personaje.velocidad = 30;
+            personaje.caracteristicas.Add("Darkvision");
+            personaje.caracteristicas.Add("Amenazante");
+            personaje.caracteristicas.Add("Resistencia implacable");
+            personaje.caracteristicas.Add("Ataques salvajes");
+            personaje.lenguajes.Add("Orco");
+            personaje.atributos["Fuerza"] += 2;
+            personaje.atributos["Constitucion"] += 1;
         }
     }
-
-    public class Gnomo : Raza
+    public static class Tiefling
     {
-        public Gnomo()
+        public static void OtorgarRaza(Personaje personaje)
         {
-            this.nombre = "Gnomo";
-            this.velocidad = 25;
-            this.lenguajes.Add("Gnómico");
-            this.abilityScoreIncreases["Inteligencia"] = 2;
-            this.size = "Pequeño";
-            this.caracteristicas.Add("Darkvision");
-            this.caracteristicas.Add("Astucia de Gnomo");
-
-        }
-    }
-    public class MedioElfo : Raza
-    {
-        public MedioElfo()
-        {
-            this.nombre = "Medio-Elfo";
-            this.velocidad = 30;
-            this.caracteristicas.Add("Darkvision");
-            this.caracteristicas.Add("Fey ancestry");
-            this.lenguajes.Add("Elfico");
-            this.lenguajes.Add(Lenguajes.elegirLenguaje());
-            this.abilityScoreIncreases["Carisma"] = 2;
-            this.abilityScoreIncreases[Atributos.elegirAtributo()] += 1;
-            this.abilityScoreIncreases[Atributos.elegirAtributo()] += 1;
-            this.habilidades.Add(Habilidad.elegirHabilidad());
-            this.habilidades.Add(Habilidad.elegirHabilidad());
-            this.size = "Mediano";
-
-        }
-    }
-    public class MedioOrco : Raza
-    {
-        public MedioOrco()
-        {
-            this.nombre = "Medio-Orco";
-            this.velocidad = 30;
-            this.caracteristicas.Add("Darkvision");
-            this.caracteristicas.Add("Amenazante");
-            this.caracteristicas.Add("Resistencia implacable");
-            this.caracteristicas.Add("Ataques salvajes");
-            this.lenguajes.Add("Orco");
-            this.abilityScoreIncreases["Fuerza"] = 2;
-            this.abilityScoreIncreases["Constitucion"] = 1;
-            this.size = "Mediano";
-        }
-    }
-    public class Tiefling : Raza
-    {
-        public Tiefling()
-        {
-            this.nombre = "Tiefling";
-            this.velocidad = 30;
-            this.caracteristicas.Add("Darkvision");
-            this.caracteristicas.Add("Resistencia infernal");
-            this.caracteristicas.Add("Legado infernal");
-            this.lenguajes.Add("Infernal");
-            this.abilityScoreIncreases["Carisma"] = 2;
-            this.abilityScoreIncreases["Inteligencia"] = 1;
-            this.size = "Mediano";
+            personaje.raza = "Tiefling";
+            personaje.velocidad = 30;
+            personaje.caracteristicas.Add("Darkvision");
+            personaje.caracteristicas.Add("Resistencia infernal");
+            personaje.caracteristicas.Add("Legado infernal");
+            personaje.lenguajes.Add("Infernal");
+            personaje.atributos["Carisma"] += 2;
+            personaje.atributos["Inteligencia"] += 1;
         }
     }
 }

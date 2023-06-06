@@ -31,19 +31,9 @@ namespace PrimerParcialLabo_Intento2
             this.usuario = usuario;
             this.usuarios = usuarios;
             this.lblUsuario.Text += usuario.username;
-            archivoPersonajes = ControladorArchivos.Leer();
-            if (archivoPersonajes != "404")
-            {
-                personajes = Serializador.Deserealizar(archivoPersonajes);
-            }
-            foreach (Personaje elem in personajes)
-            {
-                if (elem.esDueño(usuario))
-                {
-                    lstPersonajes.Items.Add(elem);
-                }
-
-            }
+            //personajes = ControladorArchivos.Leer();
+            
+            
             if (usuario is SuperAdmin)
             {
                 btnUsuarios.Visible = true;
