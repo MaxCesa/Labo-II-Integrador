@@ -1,3 +1,5 @@
+using DnD;
+
 namespace PrimerParcialLabo_Intento2
 {
     public partial class frmCrearPersonaje : Form

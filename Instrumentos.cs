@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrimerParcialLabo_Intento2;
 
-namespace PrimerParcialLabo_Intento2
+namespace DnD
 {
     internal class Instrumento : Item
     {

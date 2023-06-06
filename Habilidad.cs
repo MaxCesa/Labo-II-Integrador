@@ -1,4 +1,5 @@
-﻿namespace PrimerParcialLabo_Intento2
+﻿using PrimerParcialLabo_Intento2;
+namespace DnD
 {
     public class Habilidad
     {

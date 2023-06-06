@@ -35,7 +35,7 @@ namespace PrimerParcialLabo_Intento2
             return retorno;
         
         }
-
+        //Utilizar herencia para poder deserealizar tanto personajes como personajes.
         public static List<Personaje> Deserealizar(string info)
         {
             List<Personaje> listaPersonajes = new List<Personaje>();

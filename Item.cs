@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimerParcialLabo_Intento2
+namespace DnD
 {
     public class Item
     {

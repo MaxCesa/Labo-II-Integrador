@@ -4,8 +4,9 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using PrimerParcialLabo_Intento2;
 
-namespace PrimerParcialLabo_Intento2
+namespace DnD
 {
     enum Clases
     {

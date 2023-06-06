@@ -1,4 +1,6 @@
-﻿namespace PrimerParcialLabo_Intento2
+﻿using DnD;
+
+namespace PrimerParcialLabo_Intento2
 {
     partial class frmNuevoItem
     {
