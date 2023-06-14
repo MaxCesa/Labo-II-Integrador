@@ -21,6 +21,19 @@ namespace PrimerParcialLabo_Intento2
         {
             return (usuario == this.username && contraseña == this.contraseña);
         }
+
+        public static List<Personaje> FiltrarPersonajesPorUsuario(List<Personaje> lista, Usuario usuario)
+        {
+            List<Personaje> retorno = new List<Personaje>();
+            foreach(Personaje personaje in lista)
+            {
+                if (personaje.esDueño(usuario))
+                {
+                    retorno.Add(personaje);
+                }
+            }
+            return retorno;
+        }
     }
 
     public class Jugador : Usuario

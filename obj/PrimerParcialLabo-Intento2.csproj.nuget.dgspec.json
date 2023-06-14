@@ -43,11 +43,15 @@
           "dependencies": {
             "IronPdf": {
               "target": "Package",
-              "version": "[2023.5.8, )"
+              "version": "[2023.6.10, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

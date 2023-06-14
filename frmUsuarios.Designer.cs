@@ -39,6 +39,8 @@
             btnCrear = new Button();
             btnEditar = new Button();
             btnEliminar = new Button();
+            btnGuardar = new Button();
+            btnSalir = new Button();
             SuspendLayout();
             // 
             // lblUsuarios
@@ -105,7 +107,7 @@
             // 
             // btnCrear
             // 
-            btnCrear.Location = new Point(568, 342);
+            btnCrear.Location = new Point(578, 342);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(94, 29);
             btnCrear.TabIndex = 5;
@@ -132,11 +134,33 @@
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // btnGuardar
+            // 
+            btnGuardar.Location = new Point(670, 398);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(119, 29);
+            btnGuardar.TabIndex = 8;
+            btnGuardar.Text = "Guardar y Salir";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(813, 398);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(94, 29);
+            btnSalir.TabIndex = 9;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(919, 450);
+            Controls.Add(btnSalir);
+            Controls.Add(btnGuardar);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnCrear);
@@ -166,5 +190,7 @@
         private Button btnCrear;
         private Button btnEditar;
         private Button btnEliminar;
+        private Button btnGuardar;
+        private Button btnSalir;
     }
 }

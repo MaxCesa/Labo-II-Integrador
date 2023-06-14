@@ -202,3 +202,9 @@ D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmNuevoItem.resources
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmUsuarios.resources
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

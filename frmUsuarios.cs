@@ -12,17 +12,19 @@ namespace PrimerParcialLabo_Intento2
 {
     public partial class frmUsuarios : Form
     {
-        Usuario usuarioActual;
-
+        public Usuario usuarioActual;
+        public List<Usuario> usuarios;
+        public delegate void pasarUsuarios(List<Usuario> usuarios);
+        public event EventHandler guardarYSalir;
         public frmUsuarios()
         {
             InitializeComponent();
-
-
-
-
         }
 
+        public void conseguirUsuarios(List<Usuario> usuarios)
+        {
+            this.usuarios = usuarios;
+        }
         public frmUsuarios(Usuario usuario) : this()
         {
             usuarioActual = usuario;
@@ -36,7 +38,7 @@ namespace PrimerParcialLabo_Intento2
         private void cargarLista()
         {
             this.lstUsuarios.Items.Clear();
-            foreach (Usuario usuario in (List<Usuario>)this.Tag)
+            foreach (Usuario usuario in usuarios)
             {
                 string[] datos = new string[] { usuario.tipo, usuario.username, usuario.contraseña };
                 ListViewItem aux = new ListViewItem(datos);
@@ -75,9 +77,13 @@ namespace PrimerParcialLabo_Intento2
                 }
                 if (nuevoUsuario != null)
                 {
-                    if (!((List<Usuario>)this.Tag).Exists(e => e.username == nuevoUsuario.username))
+                    if (!((List<Usuario>)this.usuarios).Exists(e => e.username == nuevoUsuario.username))
                     {
-                        ((List<Usuario>)this.Tag).Add(nuevoUsuario);
+                        ((List<Usuario>)this.usuarios).Add(nuevoUsuario);
+                    }
+                    else
+                    {
+                        throw new Exception("Usuario ya existe");
                     }
                 }
                 cargarLista();
@@ -91,15 +97,25 @@ namespace PrimerParcialLabo_Intento2
             {
                 if (lstUsuarios.SelectedItems[0].SubItems[1].Text != usuarioActual.username)
                 {
-                    if(!((List<Usuario>)this.Tag).Exists(e => e.username == txtUsername.Text))
+                    if (!((List<Usuario>)this.usuarios).Exists(e => e.username == txtUsername.Text))
                     {
                         lstUsuarios.SelectedItems[0].SubItems[0].Text = cboTipo.Text;
                         lstUsuarios.SelectedItems[0].SubItems[1].Text = txtUsername.Text;
                         lstUsuarios.SelectedItems[0].SubItems[2].Text = txtContraseña.Text;
-                        
+
                     }
                 }
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            guardarYSalir?.Invoke(this, EventArgs.Empty);
         }
     }
 }

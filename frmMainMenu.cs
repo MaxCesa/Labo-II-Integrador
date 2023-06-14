@@ -16,8 +16,14 @@ namespace PrimerParcialLabo_Intento2
         public Usuario usuario;
         public List<Personaje> personajes = new List<Personaje>();
         Personaje personajeSeleccionado;
-        string archivoPersonajes;
+        private frmUsuarios childForm;
         public List<Usuario> usuarios;
+        public delegate void pasarUsuarios(List<Usuario> usuarios);
+
+        public void conseguirUsuarios(List<Usuario> usuarios)
+        {
+            this.usuarios = usuarios;
+        }
 
         //lista de campañas de pruba
 
@@ -33,7 +39,7 @@ namespace PrimerParcialLabo_Intento2
             this.lblUsuario.Text += usuario.username;
             if (ControladorArchivos.ExisteArchivo())
             {
-                personajes = ControladorArchivos.Leer();
+                personajes = ControladorArchivos.LeerArchivoPersonajes();
                 actualizarLista();
             }
             
@@ -49,6 +55,7 @@ namespace PrimerParcialLabo_Intento2
         private void btnCrear_Click(object sender, EventArgs e)
         {
             frmCrearPersonaje form = (frmCrearPersonaje)abrirSubForm(new frmCrearPersonaje());
+            form.ShowDialog();
             if (form.DialogResult == DialogResult.OK)
             {
                 personajes.Add(form.personaje);
@@ -83,7 +90,8 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            abrirSubForm(new frmJugar(personajeSeleccionado));
+            Form frm = abrirSubForm(new frmJugar(personajeSeleccionado));
+            frm.Show();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
@@ -102,26 +110,9 @@ namespace PrimerParcialLabo_Intento2
             fh.TopLevel = false;
             fh.Dock = DockStyle.Fill;
             this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
-            fh.Show();
             return fh;
         }
 
-        private Form abrirSubForm(object subForm, object tag)
-        {
-            if (panelContenedor.Controls.Count > 0)
-            {
-                panelContenedor.Controls.Clear();
-            }
-            Form fh = subForm as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenedor.Controls.Add(fh);
-            this.panelContenedor.Tag = fh;
-            fh.Tag = tag;
-            fh.Show();
-            return fh;
-        }
 
         private void btnInformacion_Click(object sender, EventArgs e)
         {
@@ -130,7 +121,20 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La funcion de administracion de usuarios esta bajo desarrollo.", "Lo sentimos...", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            childForm = (frmUsuarios)abrirSubForm(new frmUsuarios());
+            pasarUsuarios del = new pasarUsuarios(childForm.conseguirUsuarios);
+            del(this.usuarios);
+            childForm.guardarYSalir += Usuarios_GuardarYSalir;
+            childForm.usuarioActual = this.usuario;
+            childForm.Show();
+            
+
+        }
+
+        void Usuarios_GuardarYSalir(object sender, EventArgs e)
+        {
+            this.usuarios = childForm.usuarios;
+            childForm.Close();
         }
     }
 }

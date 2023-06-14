@@ -13,6 +13,6 @@
     <SourceRoot Include="C:\Users\maxic\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)ironpdf.slim\2023.5.8\build\IronPdf.Slim.props" Condition="Exists('$(NuGetPackageRoot)ironpdf.slim\2023.5.8\build\IronPdf.Slim.props')" />
+    <Import Project="$(NuGetPackageRoot)ironpdf.slim\2023.6.10\build\IronPdf.Slim.props" Condition="Exists('$(NuGetPackageRoot)ironpdf.slim\2023.6.10\build\IronPdf.Slim.props')" />
   </ImportGroup>
 </Project>

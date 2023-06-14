@@ -35,13 +35,25 @@ namespace PrimerParcialLabo_Intento2
         {
             return File.Exists(_defaultAdressPersonaje);
         }
-        public static List<Personaje> Leer()
+        public static List<Personaje> LeerArchivoPersonajes()
         {
             List<Personaje> retorno = new List<Personaje>();
 
             using StreamReader reader = new(_defaultAdressPersonaje);
             var json = reader.ReadToEnd();
             retorno = JsonConvert.DeserializeObject<List<Personaje>>(json);
+
+            return retorno;
+        }
+
+        public static List<Personaje> LeerArchivoPersonajes(Usuario usuario)
+        {
+            List<Personaje> retorno = new List<Personaje>();
+
+            using StreamReader reader = new(_defaultAdressPersonaje);
+            var json = reader.ReadToEnd();
+            retorno = JsonConvert.DeserializeObject<List<Personaje>>(json);
+            retorno = Usuario.FiltrarPersonajesPorUsuario(retorno, usuario);
 
             return retorno;
         }
