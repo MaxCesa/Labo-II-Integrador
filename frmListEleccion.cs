@@ -28,9 +28,11 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(this.chklOpciones.CheckedItems.Count == 0 || this.chklOpciones.CheckedItems.Count > this.cantidad)
+            if (this.chklOpciones.CheckedItems.Count == 0 || this.chklOpciones.CheckedItems.Count > this.cantidad)
             {
-                lblWarning.Text = "Debe seleccionar " + this.cantidad + "opciones de la lista.";
+
+                lblWarning.Text = "Debe seleccionar " + this.cantidad + " opciones de la lista.";
+                lblWarning.Visible = true;
             }
             else
             {

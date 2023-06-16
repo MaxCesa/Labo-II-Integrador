@@ -30,6 +30,7 @@
         {
             btnGuardar = new Button();
             btnExportar = new Button();
+            btnImportar = new Button();
             SuspendLayout();
             // 
             // btnGuardar
@@ -52,11 +53,22 @@
             btnExportar.UseVisualStyleBackColor = true;
             btnExportar.Click += btnExportar_Click;
             // 
+            // btnImportar
+            // 
+            btnImportar.Location = new Point(38, 207);
+            btnImportar.Name = "btnImportar";
+            btnImportar.Size = new Size(174, 54);
+            btnImportar.TabIndex = 2;
+            btnImportar.Text = "Importar personajes desde base de datos";
+            btnImportar.UseVisualStyleBackColor = true;
+            btnImportar.Click += btnImportar_Click;
+            // 
             // frmExportar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(248, 212);
+            ClientSize = new Size(248, 441);
+            Controls.Add(btnImportar);
             Controls.Add(btnExportar);
             Controls.Add(btnGuardar);
             Name = "frmExportar";
@@ -68,5 +80,6 @@
 
         private Button btnGuardar;
         private Button btnExportar;
+        private Button btnImportar;
     }
 }

@@ -130,7 +130,7 @@
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(175, 42);
             btnUsuarios.TabIndex = 5;
-            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.Text = "Admin";
             btnUsuarios.UseVisualStyleBackColor = false;
             btnUsuarios.Visible = false;
             btnUsuarios.Click += btnUsuarios_Click;

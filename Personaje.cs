@@ -8,7 +8,6 @@ using DnD;
 
 namespace PrimerParcialLabo_Intento2;
 
-//Añadir serializable a clase y raza.
 public class Personaje
 {
     public string nombre { set; get; }
@@ -24,11 +23,11 @@ public class Personaje
     public List<string> caracteristicas { set; get; } = new List<string>();
     public List<string> lenguajes { set; get; } = new List<string>();
     public List<string> savingThrows { set; get; } = new List<string>();
-    public int hitPointsMaximos { set; get; }
-    public int hitPointsActuales { set; get; }
+    public int hitPointsMaximos { set; get; } = 0;
+    public int hitPointsActuales { set; get; } = 0;
     public int velocidad { set; get; } = 0;
     public Dado dadoHP { set; get; }
-    public Dictionary<int, int> spellSlots { set; get; }
+    public Dictionary<int, int> spellSlots { set; get; } = new Dictionary<int, int>();
     private Usuario dueño { set; get; }
 
     public Personaje()
@@ -40,7 +39,6 @@ public class Personaje
         this.nombre = nombre;
         this.atributos = atributos;
         habilidades = Habilidad.listaHabilidadesVacia;
-        //Mover instanciamiento de habilidades a la clase Habilidad
         equipamiento = new List<Item>();
         dueño = usuario;
     }

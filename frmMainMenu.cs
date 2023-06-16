@@ -20,6 +20,8 @@ namespace PrimerParcialLabo_Intento2
         public List<Usuario> usuarios;
         public delegate void pasarUsuarios(List<Usuario> usuarios);
 
+        public bool sqlActive = false;
+
         public void conseguirUsuarios(List<Usuario> usuarios)
         {
             this.usuarios = usuarios;
@@ -42,9 +44,9 @@ namespace PrimerParcialLabo_Intento2
                 personajes = ControladorArchivos.LeerArchivoPersonajes();
                 actualizarLista();
             }
-            
-            
-            
+
+
+
             if (usuario is SuperAdmin)
             {
                 btnUsuarios.Visible = true;
@@ -55,14 +57,8 @@ namespace PrimerParcialLabo_Intento2
         private void btnCrear_Click(object sender, EventArgs e)
         {
             frmCrearPersonaje form = (frmCrearPersonaje)abrirSubForm(new frmCrearPersonaje());
-            form.ShowDialog();
-            if (form.DialogResult == DialogResult.OK)
-            {
-                personajes.Add(form.personaje);
-            }
-            /* frmCrearPersonaje menuCreacion = new frmCrearPersonaje(usuario);
-            menuCreacion.ShowDialog();
-            */
+            form.Show();
+
         }
 
         public void actualizarLista()
@@ -97,6 +93,7 @@ namespace PrimerParcialLabo_Intento2
         private void btnExportar_Click(object sender, EventArgs e)
         {
             frmExportar form = new frmExportar(personajes, personajeSeleccionado);
+            form.Owner = this;
             form.ShowDialog();
         }
 
@@ -127,7 +124,7 @@ namespace PrimerParcialLabo_Intento2
             childForm.guardarYSalir += Usuarios_GuardarYSalir;
             childForm.usuarioActual = this.usuario;
             childForm.Show();
-            
+
 
         }
 
@@ -136,5 +133,6 @@ namespace PrimerParcialLabo_Intento2
             this.usuarios = childForm.usuarios;
             childForm.Close();
         }
+
     }
 }
