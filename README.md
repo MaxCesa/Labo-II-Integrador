@@ -71,9 +71,6 @@ Al clickear el boton de exportar personaje a PDF, se genera un archivo de PDF en
 mas basicos del personaje (para mostrar funcionalidad), pero se implementara que se impriman todos los datos del personaje.
 
 # Proximos cambios (en orden de prioridad):
-- Arreglar deserealizacion de personajes.
-- Implementar formulario de manejo de usuarios.
-- Implementar filtro de personajes basado en usuario.
 - Implementar excepciones.
 - Implementar uso de base de datos.
 - Homogenizar interfaz de usuario a lo largo del programa.
