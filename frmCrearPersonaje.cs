@@ -6,7 +6,7 @@ namespace PrimerParcialLabo_Intento2
     {
         Dictionary<string, int> atributos;
         public Personaje personaje;
-
+        public frmMainMenu.addPersonaje pasarPersonaje;
         public frmCrearPersonaje()
         {
             InitializeComponent();
@@ -91,11 +91,14 @@ namespace PrimerParcialLabo_Intento2
                 case "Paladin":
                     Paladin.subirDeNivel(personaje, (int)numNivel.Value);
                     break;
+                case "Monje":
+                    Monje.subirDeNivel(personaje, ((int)numNivel.Value));
+                    break;
 
             }
 
-            ((frmMainMenu)this.Parent.Parent).personajes.Add(personaje);
-            ((frmMainMenu)this.Parent.Parent).actualizarLista();
+            pasarPersonaje(this.personaje);
+            
             this.Close();
         }
 

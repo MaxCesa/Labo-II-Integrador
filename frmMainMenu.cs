@@ -18,7 +18,9 @@ namespace PrimerParcialLabo_Intento2
         Personaje personajeSeleccionado;
         private frmUsuarios childForm;
         public List<Usuario> usuarios;
-        public delegate void pasarUsuarios(List<Usuario> usuarios);
+        public delegate void actualizarUsuarios(List<Usuario> usuarios);
+        public delegate void addPersonaje(Personaje personaje);
+
 
         public bool sqlActive = false;
 
@@ -57,8 +59,15 @@ namespace PrimerParcialLabo_Intento2
         private void btnCrear_Click(object sender, EventArgs e)
         {
             frmCrearPersonaje form = (frmCrearPersonaje)abrirSubForm(new frmCrearPersonaje());
+            form.pasarPersonaje = new addPersonaje(this.addPersonajeFn);
             form.Show();
 
+        }
+
+        private void addPersonajeFn(Personaje personaje)
+        {
+            this.personajes.Add(personaje);
+            this.actualizarLista();
         }
 
         public void actualizarLista()
@@ -118,21 +127,21 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            childForm = (frmUsuarios)abrirSubForm(new frmUsuarios());
-            pasarUsuarios del = new pasarUsuarios(childForm.conseguirUsuarios);
-            del(this.usuarios);
-            childForm.guardarYSalir += Usuarios_GuardarYSalir;
-            childForm.usuarioActual = this.usuario;
+            childForm = (frmUsuarios)abrirSubForm(new frmUsuarios(usuario, usuarios));
+            childForm.guardarYSalir = new actualizarUsuarios(this.actualizarUsuariosFn);
             childForm.Show();
 
 
         }
 
-        void Usuarios_GuardarYSalir(object sender, EventArgs e)
+        private void actualizarUsuariosFn(List<Usuario> usuarios)
         {
-            this.usuarios = childForm.usuarios;
-            childForm.Close();
+            this.usuarios = usuarios;
         }
 
+        private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

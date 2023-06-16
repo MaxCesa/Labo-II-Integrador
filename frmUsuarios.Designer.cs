@@ -41,6 +41,10 @@
             btnEliminar = new Button();
             btnGuardar = new Button();
             btnSalir = new Button();
+            vScrollBar1 = new VScrollBar();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // lblUsuarios
@@ -48,12 +52,13 @@
             lblUsuarios.AutoSize = true;
             lblUsuarios.Location = new Point(31, 28);
             lblUsuarios.Name = "lblUsuarios";
-            lblUsuarios.Size = new Size(50, 20);
+            lblUsuarios.Size = new Size(65, 20);
             lblUsuarios.TabIndex = 0;
-            lblUsuarios.Text = "label1";
+            lblUsuarios.Text = "Usuarios";
             // 
             // lstUsuarios
             // 
+            lstUsuarios.BackColor = Color.Tan;
             lstUsuarios.Columns.AddRange(new ColumnHeader[] { Tipos, Usuarios, Contraseñas });
             lstUsuarios.FullRowSelect = true;
             lstUsuarios.HeaderStyle = ColumnHeaderStyle.Nonclickable;
@@ -107,7 +112,7 @@
             // 
             // btnCrear
             // 
-            btnCrear.Location = new Point(578, 342);
+            btnCrear.Location = new Point(568, 310);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(94, 29);
             btnCrear.TabIndex = 5;
@@ -117,7 +122,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(695, 342);
+            btnEditar.Location = new Point(670, 310);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(94, 29);
             btnEditar.TabIndex = 6;
@@ -127,7 +132,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(813, 342);
+            btnEliminar.Location = new Point(770, 310);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 7;
@@ -136,7 +141,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(670, 398);
+            btnGuardar.Location = new Point(645, 398);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(119, 29);
             btnGuardar.TabIndex = 8;
@@ -146,7 +151,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(813, 398);
+            btnSalir.Location = new Point(770, 398);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(94, 29);
             btnSalir.TabIndex = 9;
@@ -154,11 +159,51 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
+            // vScrollBar1
+            // 
+            vScrollBar1.Dock = DockStyle.Right;
+            vScrollBar1.Location = new Point(893, 0);
+            vScrollBar1.Name = "vScrollBar1";
+            vScrollBar1.Size = new Size(26, 450);
+            vScrollBar1.TabIndex = 10;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(568, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(39, 20);
+            label1.TabIndex = 11;
+            label1.Text = "Tipo";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(568, 130);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 20);
+            label2.TabIndex = 12;
+            label2.Text = "Usuario";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(568, 227);
+            label3.Name = "label3";
+            label3.Size = new Size(83, 20);
+            label3.TabIndex = 13;
+            label3.Text = "Contraseña";
+            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(919, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(vScrollBar1);
             Controls.Add(btnSalir);
             Controls.Add(btnGuardar);
             Controls.Add(btnEliminar);
@@ -192,5 +237,9 @@
         private Button btnEliminar;
         private Button btnGuardar;
         private Button btnSalir;
+        private VScrollBar vScrollBar1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

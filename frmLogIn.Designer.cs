@@ -125,6 +125,7 @@
             Controls.Add(txt_Usuario);
             Name = "frmLogIn";
             Text = "Emporio de Personajes";
+            FormClosed += frmLogIn_FormClosed;
             ResumeLayout(false);
             PerformLayout();
         }

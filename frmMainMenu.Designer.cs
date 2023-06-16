@@ -126,6 +126,7 @@
             btnUsuarios.Enabled = false;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnUsuarios.Location = new Point(6, 512);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(175, 42);
@@ -138,17 +139,19 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblUsuario.Location = new Point(12, 489);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(66, 20);
+            lblUsuario.Size = new Size(82, 23);
             lblUsuario.TabIndex = 6;
             lblUsuario.Text = "Usuario: ";
             // 
             // btnSeleccionarPersonaje
             // 
-            btnSeleccionarPersonaje.Location = new Point(12, 430);
+            btnSeleccionarPersonaje.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSeleccionarPersonaje.Location = new Point(12, 411);
             btnSeleccionarPersonaje.Name = "btnSeleccionarPersonaje";
-            btnSeleccionarPersonaje.Size = new Size(94, 29);
+            btnSeleccionarPersonaje.Size = new Size(110, 29);
             btnSeleccionarPersonaje.TabIndex = 10;
             btnSeleccionarPersonaje.Text = "Seleccionar";
             btnSeleccionarPersonaje.UseVisualStyleBackColor = true;
@@ -210,6 +213,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMainMenu";
             Text = "Emporio de Personajes";
+            FormClosed += frmMainMenu_FormClosed;
             ((System.ComponentModel.ISupportInitialize)campañaBindingSource).EndInit();
             panelMenu.ResumeLayout(false);
             panelMenu.PerformLayout();

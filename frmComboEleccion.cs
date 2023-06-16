@@ -33,7 +33,7 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.DialogResult=DialogResult.Cancel; this.Hide();
+            this.DialogResult = DialogResult.Cancel; this.Hide();
         }
     }
 }

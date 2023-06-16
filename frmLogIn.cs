@@ -32,5 +32,10 @@ namespace PrimerParcialLabo_Intento2
                 }
             }
         }
+
+        private void frmLogIn_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

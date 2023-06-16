@@ -14,8 +14,7 @@ namespace PrimerParcialLabo_Intento2
     {
         public Usuario usuarioActual;
         public List<Usuario> usuarios;
-        public delegate void pasarUsuarios(List<Usuario> usuarios);
-        public event EventHandler guardarYSalir;
+        public frmMainMenu.actualizarUsuarios guardarYSalir;
         public frmUsuarios()
         {
             InitializeComponent();
@@ -28,6 +27,11 @@ namespace PrimerParcialLabo_Intento2
         public frmUsuarios(Usuario usuario) : this()
         {
             usuarioActual = usuario;
+        }
+
+        public frmUsuarios(Usuario usuarioActual, List<Usuario> usuarios) : this(usuarioActual)
+        {
+            this.usuarios = usuarios;
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -115,7 +119,7 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            guardarYSalir?.Invoke(this, EventArgs.Empty);
+            guardarYSalir(this.usuarios);
         }
     }
 }

@@ -45,7 +45,7 @@ public class Personaje
 
     public override string ToString()
     {
-        return this.nombre + " : " + this.clase + " nivel " + this.nivel.ToString();
+        return this.nombre + " : " + this.clase + " " + this.nivel.ToString();
     }
     public int bonusProeficiencia()
     {
