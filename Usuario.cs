@@ -34,6 +34,11 @@ namespace PrimerParcialLabo_Intento2
             }
             return retorno;
         }
+
+        public override string ToString()
+        {
+            return username;
+        }
     }
 
     public class Jugador : Usuario

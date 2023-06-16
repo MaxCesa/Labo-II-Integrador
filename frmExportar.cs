@@ -43,13 +43,13 @@ namespace PrimerParcialLabo_Intento2
         private void btnImportar_Click(object sender, EventArgs e)
         {
             List<Personaje> nuevaLista = new List<Personaje>();
-            if(((frmMainMenu)this.Owner).sqlActive == true)
+            if (((frmMainMenu)this.Owner).sqlActive == true)
             {
                 SqlConnection connection; // Puente.
                 SqlCommand command;      // Quien lleva la consulta.
                 SqlDataReader reader;
 
-                connection = new SqlConnection(@"Data Source = .;
+                connection = new SqlConnection(@"Data Source = localhost;
                                 Database = emporiodepersonajes;
                                 Trusted_Connection = True;");
 
@@ -86,6 +86,14 @@ namespace PrimerParcialLabo_Intento2
             else
             {
                 // TODO: Firebase connection
+            }
+        }
+
+        private void btmExportarDB_Click(object sender, EventArgs e)
+        {
+            if (((frmMainMenu)this.Owner).sqlActive == true)
+            {
+                //SQLHandler.exportarPersonajes(personajes);
             }
         }
     }

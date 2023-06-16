@@ -22,7 +22,7 @@ namespace PrimerParcialLabo_Intento2
         public delegate void addPersonaje(Personaje personaje);
 
 
-        public bool sqlActive = false;
+        public bool sqlActive = true;
 
         public void conseguirUsuarios(List<Usuario> usuarios)
         {

@@ -31,6 +31,7 @@
             btnGuardar = new Button();
             btnExportar = new Button();
             btnImportar = new Button();
+            btmExportarDB = new Button();
             SuspendLayout();
             // 
             // btnGuardar
@@ -45,7 +46,7 @@
             // 
             // btnExportar
             // 
-            btnExportar.Location = new Point(38, 121);
+            btnExportar.Location = new Point(38, 105);
             btnExportar.Name = "btnExportar";
             btnExportar.Size = new Size(174, 53);
             btnExportar.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // btnImportar
             // 
-            btnImportar.Location = new Point(38, 207);
+            btnImportar.Location = new Point(38, 179);
             btnImportar.Name = "btnImportar";
             btnImportar.Size = new Size(174, 54);
             btnImportar.TabIndex = 2;
@@ -63,16 +64,28 @@
             btnImportar.UseVisualStyleBackColor = true;
             btnImportar.Click += btnImportar_Click;
             // 
+            // btmExportarDB
+            // 
+            btmExportarDB.Location = new Point(38, 251);
+            btmExportarDB.Name = "btmExportarDB";
+            btmExportarDB.Size = new Size(174, 55);
+            btmExportarDB.TabIndex = 3;
+            btmExportarDB.Text = "Exportar a base de datos";
+            btmExportarDB.UseVisualStyleBackColor = true;
+            btmExportarDB.Click += btmExportarDB_Click;
+            // 
             // frmExportar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(248, 441);
+            Controls.Add(btmExportarDB);
             Controls.Add(btnImportar);
             Controls.Add(btnExportar);
             Controls.Add(btnGuardar);
             Name = "frmExportar";
-            Text = "frmExportar";
+            Text = "Exportar...";
             ResumeLayout(false);
         }
 
@@ -81,5 +94,6 @@
         private Button btnGuardar;
         private Button btnExportar;
         private Button btnImportar;
+        private Button btmExportarDB;
     }
 }

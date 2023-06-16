@@ -28,7 +28,7 @@ public class Personaje
     public int velocidad { set; get; } = 0;
     public Dado dadoHP { set; get; }
     public Dictionary<int, int> spellSlots { set; get; } = new Dictionary<int, int>();
-    private Usuario dueño { set; get; }
+    public Usuario dueño { set; get; }
 
     public Personaje()
     {
