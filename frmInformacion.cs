@@ -109,6 +109,7 @@ namespace PrimerParcialLabo_Intento2
                     int posicionItemABorrar = lstEquipo.SelectedIndices[0];
                     personaje.equipamiento.RemoveAt(posicionItemABorrar);
                     this.recargarTabla();
+
                 }
                 else
                 {

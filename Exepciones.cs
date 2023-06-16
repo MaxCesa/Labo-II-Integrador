@@ -11,7 +11,7 @@ namespace Exepciones
     {
         public ItemNoSeleccionadoExeption()
         {
-            MessageBox.Show("Por favor seleccione un item de la lista.");
+            MessageBox.Show("Por favor seleccione un item de la lista. ");
         }
     }
 }
