@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\maxic\\Documents\\Programacion 2\\PrimerParcialLabo-Intento2\\PrimerParcialLabo-Intento2.csproj": {}
+    "E:\\TP MAxi\\PrimerParcialLabo-Intento2.csproj": {}
   },
   "projects": {
-    "D:\\Users\\maxic\\Documents\\Programacion 2\\PrimerParcialLabo-Intento2\\PrimerParcialLabo-Intento2.csproj": {
+    "E:\\TP MAxi\\PrimerParcialLabo-Intento2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\maxic\\Documents\\Programacion 2\\PrimerParcialLabo-Intento2\\PrimerParcialLabo-Intento2.csproj",
+        "projectUniqueName": "E:\\TP MAxi\\PrimerParcialLabo-Intento2.csproj",
         "projectName": "PrimerParcialLabo-Intento2",
-        "projectPath": "D:\\Users\\maxic\\Documents\\Programacion 2\\PrimerParcialLabo-Intento2\\PrimerParcialLabo-Intento2.csproj",
-        "packagesPath": "C:\\Users\\maxic\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\maxic\\Documents\\Programacion 2\\PrimerParcialLabo-Intento2\\obj\\",
+        "projectPath": "E:\\TP MAxi\\PrimerParcialLabo-Intento2.csproj",
+        "packagesPath": "C:\\Users\\guido\\.nuget\\packages\\",
+        "outputPath": "E:\\TP MAxi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maxic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\guido\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\Downloads": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

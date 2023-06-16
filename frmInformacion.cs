@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnD;
+using Exepciones;
 
 namespace PrimerParcialLabo_Intento2
 {
@@ -100,8 +102,23 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnTirarItem_Click(object sender, EventArgs e)
         {
-            int posicionItemABorrar = lstEquipo.SelectedIndices[0];
-            personaje.equipamiento.RemoveAt(posicionItemABorrar);
+            try
+            {
+                if(lstEquipo.SelectedIndices.Count > 0)
+                {
+                    int posicionItemABorrar = lstEquipo.SelectedIndices[0];
+                    personaje.equipamiento.RemoveAt(posicionItemABorrar);
+                    this.recargarTabla();
+                }
+                else
+                {
+                    throw new ItemNoSeleccionadoExeption();
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
     }
 }

@@ -122,7 +122,8 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnInformacion_Click(object sender, EventArgs e)
         {
-            abrirSubForm(new frmInformacion(personajeSeleccionado));
+            Form frm = abrirSubForm(new frmInformacion(personajeSeleccionado));
+            frm.Show();
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
