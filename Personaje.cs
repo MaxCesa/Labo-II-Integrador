@@ -28,7 +28,7 @@ public class Personaje
     public int velocidad { set; get; } = 0;
     public Dado dadoHP { set; get; }
     public Dictionary<int, int> spellSlots { set; get; } = new Dictionary<int, int>();
-    public Usuario dueño { set; get; }
+    public string dueño { set; get; }
 
     public Personaje()
     {
@@ -40,7 +40,7 @@ public class Personaje
         this.atributos = atributos;
         habilidades = Habilidad.listaHabilidadesVacia;
         equipamiento = new List<Item>();
-        dueño = usuario;
+        dueño = usuario.ToString();
     }
 
     public override string ToString()

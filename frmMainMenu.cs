@@ -101,7 +101,7 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            frmExportar form = new frmExportar(personajes, personajeSeleccionado);
+            frmExportar form = new frmExportar(personajes, personajeSeleccionado, usuario);
             form.Owner = this;
             form.ShowDialog();
         }
@@ -123,7 +123,7 @@ namespace PrimerParcialLabo_Intento2
         private void btnInformacion_Click(object sender, EventArgs e)
         {
             Form frm = abrirSubForm(new frmInformacion(personajeSeleccionado));
-            
+
             frm.Show();
         }
 

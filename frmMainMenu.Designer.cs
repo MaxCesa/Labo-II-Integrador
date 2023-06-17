@@ -105,7 +105,6 @@
             btnExportar.BackColor = Color.Transparent;
             btnExportar.BackgroundImage = Properties.Resources.pngegg;
             btnExportar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnExportar.Enabled = false;
             btnExportar.FlatAppearance.BorderSize = 0;
             btnExportar.FlatStyle = FlatStyle.Flat;
             btnExportar.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);

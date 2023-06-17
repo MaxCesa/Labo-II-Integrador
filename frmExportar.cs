@@ -28,6 +28,11 @@ namespace PrimerParcialLabo_Intento2
             this.personaje = personajeSeleccionado;
         }
 
+        public frmExportar(List<Personaje> personajeList, Personaje personajeSeleccionado, Usuario usuario) : this(personajeList, personajeSeleccionado)
+        {
+            this.usuario = usuario;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("La funcion de administracion de usuarios esta bajo desarrollo.", "Lo sentimos...", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -45,55 +50,21 @@ namespace PrimerParcialLabo_Intento2
             List<Personaje> nuevaLista = new List<Personaje>();
             if (((frmMainMenu)this.Owner).sqlActive == true)
             {
-                SqlConnection connection; // Puente.
-                SqlCommand command;      // Quien lleva la consulta.
-                SqlDataReader reader;
-
-                connection = new SqlConnection(@"Data Source = localhost;
-                                Database = emporiodepersonajes;
-                                Trusted_Connection = True;");
-
-                command = new SqlCommand();
-                command.CommandType = CommandType.Text;
-                command.Connection = connection;
-
-                try
-                {
-                    command.CommandText = "SELECT * FROM 'personajes' WHERE 'Dueño' = '" + usuario.ToString() + "'";
-                    connection.Open();
-                    reader = command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        var personajeJson = reader.GetString(2);
-                        Personaje personaje = Serializador.deserealizarPersonaje(personajeJson);
-                        nuevaLista.Add(personaje);
-                    }
-                }
-                catch (Exception)
-                {
-                    throw new Exception("Error de conexión a la base de datos");
-                }
-                finally
-                {
-                    if (connection.State == ConnectionState.Open)
-                    {
-                        connection.Close();
-                    }
-                    ((frmMainMenu)this.Owner).personajes = nuevaLista;
-                }
+                nuevaLista = SQLHandler.importarPersonajes(usuario);
             }
             else
             {
                 // TODO: Firebase connection
             }
+            ((frmMainMenu)this.Owner).personajes = nuevaLista;
+            ((frmMainMenu)this.Owner).actualizarLista();
         }
 
         private void btmExportarDB_Click(object sender, EventArgs e)
         {
             if (((frmMainMenu)this.Owner).sqlActive == true)
             {
-                //SQLHandler.exportarPersonajes(personajes);
+                SQLHandler.exportarPersonajes(personajeList);
             }
         }
     }

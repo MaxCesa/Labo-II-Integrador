@@ -5,27 +5,28 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace PrimerParcialLabo_Intento2
 {
     internal class SQLHandler
     {
-        SqlConnection connection;
-        SqlCommand command;
-        SqlDataReader reader;
-        public void exportarPersonajes(List<Personaje> personajes)
-        {
-            connection = new SqlConnection(@"Data Source = localhost;
-                                Database = emporiodepersonajes;
-                                Trusted_Connection = True;");
 
-            command = new SqlCommand();
+        public static void exportarPersonajes(List<Personaje> personajes)
+        {
+            MySqlConnection connection;
+            MySqlCommand command;
+
+
+            connection = new MySqlConnection("server= localhost; port= 3306; database= emporiodepersonajes; uid= root;");
+
+            command = new MySqlCommand();
             command.CommandType = CommandType.Text;
             command.Connection = connection;
-
+            var state = connection.State;
             try
             {
-                command.CommandText = "INSERT INTO tabla VALUES (@Dueño, @personaje)";
+                command.CommandText = "INSERT INTO personajes (Dueño, personaje) VALUES (@Dueño, @personaje)";
                 connection.Open();
 
                 foreach (Personaje personaje in personajes)
@@ -37,8 +38,9 @@ namespace PrimerParcialLabo_Intento2
                 }
                 command.Parameters.Clear();
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message);
                 throw new Exception("Error de conexión a la base de datos");
             }
             finally
@@ -51,24 +53,22 @@ namespace PrimerParcialLabo_Intento2
             }
         }
 
-        public List<Personaje> importarPersonajes(Usuario usuario)
+        public static List<Personaje> importarPersonajes(Usuario usuario)
         {
             List<Personaje> import = new List<Personaje>();
-            SqlConnection connection; 
-            SqlCommand command;      
-            SqlDataReader reader;
+            MySqlConnection connection;
+            MySqlCommand command;
+            MySqlDataReader reader;
 
-            connection = new SqlConnection(@"Data Source = localhost;
-                                Database = emporiodepersonajes;
-                                Trusted_Connection = True;");
+            connection = new MySqlConnection("server= localhost; port= 3306; database= emporiodepersonajes; uid= root;");
 
-            command = new SqlCommand();
+            command = new MySqlCommand();
             command.CommandType = CommandType.Text;
             command.Connection = connection;
 
             try
             {
-                command.CommandText = "SELECT * FROM 'personajes' WHERE 'Dueño' = '" + usuario.ToString() + "'";
+                command.CommandText = "SELECT * FROM `personajes` WHERE `Dueño` = '" + usuario.ToString() + "'";
                 connection.Open();
                 reader = command.ExecuteReader();
 
@@ -79,7 +79,7 @@ namespace PrimerParcialLabo_Intento2
                     import.Add(personaje);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new Exception("Error de conexión a la base de datos");
             }
