@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="frmInformacion.cs">
+    <Compile Update="Forms\frmInformacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmComboEleccion.cs">
+    <Compile Update="Forms\frmComboEleccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmCrearPersonaje.cs">
+    <Compile Update="Forms\frmCrearPersonaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmAsignarAtributos.cs">
+    <Compile Update="Forms\frmAsignarAtributos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmExportar.cs">
+    <Compile Update="Forms\frmExportar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmJugar.cs">
+    <Compile Update="Forms\frmJugar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmNuevoItem.cs">
+    <Compile Update="Forms\frmNuevoItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmUsuarios.cs">
+    <Compile Update="Forms\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

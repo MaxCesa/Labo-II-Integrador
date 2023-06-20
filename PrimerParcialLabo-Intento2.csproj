@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Google.Cloud.Firestore" Version="3.3.0" />
     <PackageReference Include="IronPdf" Version="2023.6.10" />
     <PackageReference Include="MySql.Data" Version="8.0.33" />
     <PackageReference Include="MySqlConnector" Version="2.2.6" />
@@ -19,13 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="frmListEleccion.cs">
+    <Compile Update="Forms\frmListEleccion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmLogIn.cs">
+    <Compile Update="Forms\frmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmMainMenu.cs">
+    <Compile Update="Forms\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

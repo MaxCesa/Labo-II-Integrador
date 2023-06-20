@@ -41,6 +41,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Google.Cloud.Firestore": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
             "IronPdf": {
               "target": "Package",
               "version": "[2023.6.10, )"
