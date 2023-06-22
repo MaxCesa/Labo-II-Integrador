@@ -30,7 +30,30 @@ namespace PrimerParcialLabo_Intento2.DB
                 await AgregarPersonaje(personaje);
             }
         }
+        async public static Task<List<Personaje>> ImportarPersonajes(Usuario dueño)
+        {
+            List<Personaje> retorno = new List<Personaje>();
+            try
+            {
+                System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\Downloads\\tp-integrador-prog2-firebase-adminsdk-yicqq-68208ce954.json");
+                FirestoreDb db = FirestoreDb.Create(projectId);
+                CollectionReference personajesRef = db.Collection("personajes");
+                Query query = personajesRef.WhereEqualTo("dueño", dueño.ToString());
+                QuerySnapshot querySnapshot = await query.GetSnapshotAsync();
+                string valor;
+                foreach (DocumentSnapshot personajeFirestore in querySnapshot.Documents)
+                {
+                    personajeFirestore.TryGetValue<string>("personaje", out valor);
+                    retorno.Add(Serializador.deserealizarPersonaje(valor));
+                }
+            }
+            catch (Exception)
+            {
 
+                throw new Exception("Error en conexion con Firestore");
+            }
+            return retorno;
+        }
         
     }
 

@@ -46,7 +46,7 @@ namespace PrimerParcialLabo_Intento2
             ControladorArchivos.ExportarAPDF(personaje);
         }
 
-        private void btnImportar_Click(object sender, EventArgs e)
+        private async void btnImportar_Click(object sender, EventArgs e)
         {
             List<Personaje> nuevaLista = new List<Personaje>();
             if (((frmMainMenu)this.Owner).sqlActive == true)
@@ -55,7 +55,7 @@ namespace PrimerParcialLabo_Intento2
             }
             else
             {
-                // TODO: Firebase connection
+                nuevaLista = await FirebaseHandler.ImportarPersonajes(usuario);
             }
             ((frmMainMenu)this.Owner).personajes = nuevaLista;
             ((frmMainMenu)this.Owner).actualizarLista();
