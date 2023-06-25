@@ -26,5 +26,11 @@ namespace PrimerParcialLabo_Intento2
             string retorno = JsonConvert.SerializeObject(personaje);
             return retorno;
         }
+
+        internal static Configuration DeserealizarConfiguracion(string json)
+        {
+            return JsonConvert.DeserializeObject<Configuration>(json);
+        }
+
     }
 }

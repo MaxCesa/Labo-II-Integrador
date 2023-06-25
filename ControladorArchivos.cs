@@ -17,6 +17,7 @@ namespace PrimerParcialLabo_Intento2
     {
         private static readonly string _defaultAdressPersonaje = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+ "\\personajes.json";
         private static readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+        private static readonly string _configAddress = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\configEmporio.json";
         
         public static void Guardar(List<Personaje> personajes)
         {
@@ -31,9 +32,14 @@ namespace PrimerParcialLabo_Intento2
                 serializer.Serialize(jsonWriter, personajes);
             }
         }
-        public static bool ExisteArchivo()
+        public static bool ExisteArchivoPersonajes()
         {
             return File.Exists(_defaultAdressPersonaje);
+        }
+
+        public static bool ExisteArchivo(string address)
+        {
+            return File.Exists(address);
         }
         public static List<Personaje> LeerArchivoPersonajes()
         {
@@ -71,6 +77,18 @@ namespace PrimerParcialLabo_Intento2
             hoja.GetFieldByName("CharacterName").Value = personaje.nombre;
             hoja.GetFieldByName("ClassLevel").Value = personaje.clase.ToString();
             hoja.GetFieldByName("Race").Value = personaje.raza.ToString();
+        }
+
+        internal static Configuration LoadConfig()
+        {
+            Configuration config = new Configuration();
+            if (ExisteArchivo(_configAddress))
+            {
+                using StreamReader reader = new(_configAddress);
+                var json = reader.ReadToEnd();
+                config = Serializador.DeserealizarConfiguracion(json);
+            }
+            return config;
         }
     }
 }

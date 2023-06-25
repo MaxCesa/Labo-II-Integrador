@@ -41,7 +41,7 @@ namespace PrimerParcialLabo_Intento2
             this.usuario = usuario;
             this.usuarios = usuarios;
             this.lblUsuario.Text += usuario.username;
-            if (ControladorArchivos.ExisteArchivo())
+            if (ControladorArchivos.ExisteArchivoPersonajes())
             {
                 personajes = ControladorArchivos.LeerArchivoPersonajes();
                 actualizarLista();
