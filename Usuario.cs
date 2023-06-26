@@ -8,12 +8,14 @@ namespace PrimerParcialLabo_Intento2
 {
     public abstract class Usuario
     {
+        public int id {  get; set; }
         public string username { get; set; }
         public string contraseña { get; set; }
         public string tipo { get; set; }
         public Usuario() { }
-        public Usuario(string usuario, string contraseña)
+        public Usuario(int id, string usuario, string contraseña)
         {
+            this.id = id;
             this.username = usuario;
             this.contraseña = contraseña;
         }
@@ -43,14 +45,14 @@ namespace PrimerParcialLabo_Intento2
 
     public class Jugador : Usuario
     {
-        public Jugador(string usuario, string contraseña) : base(usuario, contraseña)
+        public Jugador(int id, string usuario, string contraseña) : base(id, usuario, contraseña)
         {
             this.tipo = "Jugador";
         }
     }
     public class SuperAdmin : Usuario
     {
-        public SuperAdmin(string usuario, string contraseña) : base(usuario, contraseña)
+        public SuperAdmin(int id, string usuario, string contraseña) : base(id,usuario, contraseña)
         {
             this.tipo = "SuperAdmin";
         }

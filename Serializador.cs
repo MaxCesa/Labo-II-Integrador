@@ -32,5 +32,6 @@ namespace PrimerParcialLabo_Intento2
             return JsonConvert.DeserializeObject<Configuration>(json);
         }
 
+
     }
 }

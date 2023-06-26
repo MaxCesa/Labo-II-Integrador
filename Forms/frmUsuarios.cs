@@ -15,6 +15,7 @@ namespace PrimerParcialLabo_Intento2
         public Usuario usuarioActual;
         public List<Usuario> usuarios;
         public frmMainMenu.actualizarUsuarios guardarYSalir;
+        int usuariosCreados = 0;
         public frmUsuarios()
         {
             InitializeComponent();
@@ -70,13 +71,15 @@ namespace PrimerParcialLabo_Intento2
             if (txtUsername.Text.Length > 0 && txtContraseña.Text.Length > 0)
             {
                 Usuario nuevoUsuario = null;
+                int newId = ((frmMainMenu)this.Parent.Parent).config.maxIdUser;
+
                 switch (cboTipo.Text)
                 {
                     case "Jugador":
-                        nuevoUsuario = new Jugador(txtUsername.Text, txtContraseña.Text);
+                        nuevoUsuario = new Jugador(newId, txtUsername.Text, txtContraseña.Text);
                         break;
                     case "SuperAdmin":
-                        nuevoUsuario = new SuperAdmin(txtUsername.Text, txtContraseña.Text);
+                        nuevoUsuario = new SuperAdmin(newId, txtUsername.Text, txtContraseña.Text);
                         break;
                 }
                 if (nuevoUsuario != null)
@@ -84,6 +87,7 @@ namespace PrimerParcialLabo_Intento2
                     if (!((List<Usuario>)this.usuarios).Exists(e => e.username == nuevoUsuario.username))
                     {
                         ((List<Usuario>)this.usuarios).Add(nuevoUsuario);
+                        usuariosCreados++;
                     }
                     else
                     {
@@ -120,6 +124,11 @@ namespace PrimerParcialLabo_Intento2
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardarYSalir(this.usuarios);
+            if (usuariosCreados > 0)
+            {
+                ((frmMainMenu)this.Parent.Parent).config.maxIdUser += usuariosCreados;
+            }
+            this.Close();
         }
     }
 }

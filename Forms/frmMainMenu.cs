@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimerParcialLabo_Intento2.DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace PrimerParcialLabo_Intento2
         public List<Usuario> usuarios;
         public delegate void actualizarUsuarios(List<Usuario> usuarios);
         public delegate void addPersonaje(Personaje personaje);
-
+        public Configuration config;
 
         public bool sqlActive = false;
 
@@ -36,10 +37,11 @@ namespace PrimerParcialLabo_Intento2
             InitializeComponent();
         }
 
-        public frmMainMenu(List<Usuario> usuarios, Usuario usuario) : this()
+        public frmMainMenu(List<Usuario> usuarios, Usuario usuario, Configuration config) : this()
         {
             this.usuario = usuario;
             this.usuarios = usuarios;
+            this.config = config;
             this.lblUsuario.Text += usuario.username;
             if (ControladorArchivos.ExisteArchivoPersonajes())
             {
@@ -139,10 +141,19 @@ namespace PrimerParcialLabo_Intento2
         private void actualizarUsuariosFn(List<Usuario> usuarios)
         {
             this.usuarios = usuarios;
+            if (config.Sql)
+            {
+                SQLHandler.SetUsuarios(usuarios);
+            }
+            else
+            {
+                FirebaseHandler.SetUsuarios(usuarios);
+            }
         }
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            ControladorArchivos.SaveConfig(config);
             Application.Exit();
         }
     }

@@ -57,7 +57,7 @@ namespace PrimerParcialLabo_Intento2.DB
             return retorno;
         }
 
-        async public static Task ExportarUsuarios(List<Usuario> usuarios)
+        async public static void SetUsuarios(List<Usuario> usuarios)
         {
             System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\Downloads\\tp-integrador-prog2-firebase-adminsdk-yicqq-68208ce954.json");
             FirestoreDb db = FirestoreDb.Create(projectId);
@@ -65,7 +65,7 @@ namespace PrimerParcialLabo_Intento2.DB
             
             foreach (Usuario usuario in usuarios)
             {
-                var docRef = db.Collection("personajes").Document(usuario.ToString());
+                var docRef = db.Collection("usuarios").Document(usuario.id.ToString());
                 var usuarioJson = new UsuarioFirestore(usuario);
                 await docRef.SetAsync(usuarioJson);
             }
@@ -84,18 +84,20 @@ namespace PrimerParcialLabo_Intento2.DB
                 string usernameAux;
                 string contraseñaAux;
                 string tipoAux;
+                int idAux;
                 foreach (DocumentSnapshot personajeFirestore in querySnapshot.Documents)
                 {
                     personajeFirestore.TryGetValue<string>("tipo", out tipoAux);
                     personajeFirestore.TryGetValue("username", out usernameAux);
                     personajeFirestore.TryGetValue("contraseña", out contraseñaAux);
+                    int.TryParse(personajeFirestore.Id, out idAux);
                     switch (tipoAux)
                     {
                         case "SuperAdmin":
-                            retorno.Add(new SuperAdmin(usernameAux, contraseñaAux));
+                            retorno.Add(new SuperAdmin(idAux, usernameAux, contraseñaAux));
                             break;
                         case "Jugador":
-                            retorno.Add(new Jugador(usernameAux, contraseñaAux));
+                            retorno.Add(new Jugador(idAux, usernameAux, contraseñaAux)); ;
                             break;
                         default: throw new Exception("Error de tipo de Usuario en DB");
                     }
@@ -139,6 +141,8 @@ namespace PrimerParcialLabo_Intento2.DB
     [FirestoreData]
     class UsuarioFirestore
     {
+        [FirestoreProperty]
+        int id { set; get; }
         [FirestoreProperty]
         string username { set; get; }
         [FirestoreProperty]

@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace PrimerParcialLabo_Intento2
 {
-    internal class Configuration
+    public class Configuration
     {
         public Theme Theme { get; set; }
         public bool Sql { get; set; }
+        public int maxIdUser { set; get; }
 
-        public Configuration(Theme theme, bool sql)
+        public Configuration(Theme theme, bool sql, int maxId)
         {
             this.Theme = theme;
             this.Sql = sql;
+            this.maxIdUser = maxId;
         }
         
         public Configuration()
         {
             this.Theme = new Theme();
-            this.Sql = false;
+            this.Sql = true;
+            this.maxIdUser = 4;
         }
     }
 
-    internal class Theme
+    public class Theme
     {
         public Color MainColor { get; set; }
         public Color SecondaryColor { get; set; }

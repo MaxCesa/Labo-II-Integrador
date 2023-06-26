@@ -119,11 +119,11 @@ namespace PrimerParcialLabo_Intento2.DB
                 {
                     if(reader.GetString(1) == "SuperAdmin")
                     {
-                        usuarios.Add(new SuperAdmin(reader.GetString(2), reader.GetString(3)));
+                        usuarios.Add(new SuperAdmin(reader.GetInt32(0), reader.GetString(2), reader.GetString(3)));
                     }
                     else
                     {
-                        usuarios.Add(new Jugador(reader.GetString(2), reader.GetString(3)));
+                        usuarios.Add(new Jugador(reader.GetInt32(0), reader.GetString(2), reader.GetString(3)));
                     }
                 }
             }
@@ -133,6 +133,51 @@ namespace PrimerParcialLabo_Intento2.DB
             }
             finally { connection.Close(); }
             return usuarios;
+        }
+
+        public static void SetUsuarios(List<Usuario> usuarios)
+        {
+            MySqlConnection connection;
+            MySqlCommand command;
+
+
+            connection = new MySqlConnection("server= localhost; port= 3306; database= emporiodepersonajes; uid= root;");
+
+            command = new MySqlCommand();
+            command.CommandType = CommandType.Text;
+            command.Connection = connection;
+            var state = connection.State;
+            try
+            {
+                connection.Open();
+                command.CommandText = "INSERT INTO usuarios (id, tipo, username, contraseña) VALUES (@id, @tipo, @username, @contraseña) " +
+                    "ON DUPLICATE KEY UPDATE tipo = @tipo, username = @username, contraseña = @contraseña";
+                foreach (Usuario usuario in usuarios)
+                {
+
+                    command.Parameters.Clear();
+                    command.Parameters.AddWithValue("id", usuario.id);
+                    command.Parameters.AddWithValue("@tipo", usuario.tipo);
+                    command.Parameters.AddWithValue("@username", usuario.username);
+                    command.Parameters.AddWithValue("@contraseña", usuario.contraseña);
+                    command.ExecuteNonQuery();
+                }
+                command.Parameters.Clear();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                throw new Exception("Error de conexión a la base de datos");
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+
+            }
+            return;
         }
     }
 }

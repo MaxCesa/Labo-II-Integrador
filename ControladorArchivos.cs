@@ -90,5 +90,19 @@ namespace PrimerParcialLabo_Intento2
             }
             return config;
         }
+
+        internal static void SaveConfig(Configuration config)
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Formatting = Formatting.Indented;
+            serializer.ObjectCreationHandling = ObjectCreationHandling.Auto;
+            serializer.TypeNameHandling = TypeNameHandling.All;
+
+            using (StreamWriter sWriter = new StreamWriter(_configAddress))
+            using (JsonWriter jsonWriter = new JsonTextWriter(sWriter))
+            {
+                serializer.Serialize(jsonWriter, config);
+            }
+        }
     }
 }

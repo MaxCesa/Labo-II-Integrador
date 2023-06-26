@@ -37,7 +37,7 @@ namespace PrimerParcialLabo_Intento2
             {
                 if (usuario.validacion(txt_Usuario.Text, txt_Contraseña.Text))
                 {
-                    frmMainMenu menu = new frmMainMenu(usuarios, usuario);
+                    frmMainMenu menu = new frmMainMenu(usuarios, usuario, config);
                     menu.Show();
                     this.Hide();
 

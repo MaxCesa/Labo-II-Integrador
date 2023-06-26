@@ -12,5 +12,10 @@ namespace PrimerParcialLabo_Intento2.Interfaces
         {
             throw new NotImplementedException();
         }
+
+        public static void SetUsuarios(List<Usuario> usuarios)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
