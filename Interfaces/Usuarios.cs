@@ -8,12 +8,12 @@ namespace PrimerParcialLabo_Intento2.Interfaces
 {
     internal interface IUsuarios
     {
-        public static Task<List<Usuario>> GetUsuarios()
+        public static Task<ListaUsuarios> GetUsuarios()
         {
             throw new NotImplementedException();
         }
 
-        public static void SetUsuarios(List<Usuario> usuarios)
+        public static void SetUsuarios(ListaUsuarios usuarios)
         {
             throw new NotImplementedException();
         }

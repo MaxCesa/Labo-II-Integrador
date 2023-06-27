@@ -19,18 +19,9 @@ namespace PrimerParcialLabo_Intento2
         private static readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
         private static readonly string _configAddress = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\configEmporio.json";
         
-        public static void Guardar(List<Personaje> personajes)
+        public static void Guardar(ListaPersonajes personajes)
         {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Formatting = Formatting.Indented;
-            serializer.ObjectCreationHandling = ObjectCreationHandling.Auto;
-            serializer.TypeNameHandling = TypeNameHandling.All;
-
-            using (StreamWriter sWriter = new StreamWriter(_defaultAdressPersonaje))
-            using (JsonWriter jsonWriter = new JsonTextWriter(sWriter))
-            {
-                serializer.Serialize(jsonWriter, personajes);
-            }
+            File.WriteAllText(_defaultAdressPersonaje, personajes.SerializarJson());
         }
         public static bool ExisteArchivoPersonajes()
         {
@@ -41,24 +32,24 @@ namespace PrimerParcialLabo_Intento2
         {
             return File.Exists(address);
         }
-        public static List<Personaje> LeerArchivoPersonajes()
+        public static ListaPersonajes LeerArchivoPersonajes()
         {
-            List<Personaje> retorno = new List<Personaje>();
+            ListaPersonajes retorno = new ListaPersonajes();
 
             using StreamReader reader = new(_defaultAdressPersonaje);
             var json = reader.ReadToEnd();
-            retorno = JsonConvert.DeserializeObject<List<Personaje>>(json);
+            retorno = JsonConvert.DeserializeObject<ListaPersonajes>(json);
 
             return retorno;
         }
 
-        public static List<Personaje> LeerArchivoPersonajes(Usuario usuario)
+        public static ListaPersonajes LeerArchivoPersonajes(Usuario usuario)
         {
-            List<Personaje> retorno = new List<Personaje>();
+            ListaPersonajes retorno = new ListaPersonajes();
 
             using StreamReader reader = new(_defaultAdressPersonaje);
             var json = reader.ReadToEnd();
-            retorno = JsonConvert.DeserializeObject<List<Personaje>>(json);
+            retorno = JsonConvert.DeserializeObject<ListaPersonajes>(json);
             retorno = Usuario.FiltrarPersonajesPorUsuario(retorno, usuario);
 
             return retorno;
@@ -86,23 +77,14 @@ namespace PrimerParcialLabo_Intento2
             {
                 using StreamReader reader = new(_configAddress);
                 var json = reader.ReadToEnd();
-                config = Serializador.DeserealizarConfiguracion(json);
+                config = Configuration.DeserializarJson<Configuration>(json);
             }
             return config;
         }
 
         internal static void SaveConfig(Configuration config)
         {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.Formatting = Formatting.Indented;
-            serializer.ObjectCreationHandling = ObjectCreationHandling.Auto;
-            serializer.TypeNameHandling = TypeNameHandling.All;
-
-            using (StreamWriter sWriter = new StreamWriter(_configAddress))
-            using (JsonWriter jsonWriter = new JsonTextWriter(sWriter))
-            {
-                serializer.Serialize(jsonWriter, config);
-            }
+            File.WriteAllText(_configAddress, config.SerializarJson());
         }
     }
 }

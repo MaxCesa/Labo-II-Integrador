@@ -15,7 +15,7 @@ namespace PrimerParcialLabo_Intento2
 {
     public partial class frmExportar : Form
     {
-        List<Personaje> personajeList;
+        ListaPersonajes personajeList;
         Personaje personaje;
         Usuario usuario;
         public frmExportar()
@@ -23,13 +23,13 @@ namespace PrimerParcialLabo_Intento2
             InitializeComponent();
         }
 
-        public frmExportar(List<Personaje> personajeList, Personaje personajeSeleccionado) : this()
+        public frmExportar(ListaPersonajes personajeList, Personaje personajeSeleccionado) : this()
         {
             this.personajeList = personajeList;
             this.personaje = personajeSeleccionado;
         }
 
-        public frmExportar(List<Personaje> personajeList, Personaje personajeSeleccionado, Usuario usuario) : this(personajeList, personajeSeleccionado)
+        public frmExportar(ListaPersonajes personajeList, Personaje personajeSeleccionado, Usuario usuario) : this(personajeList, personajeSeleccionado)
         {
             this.usuario = usuario;
         }
@@ -48,7 +48,7 @@ namespace PrimerParcialLabo_Intento2
 
         private async void btnImportar_Click(object sender, EventArgs e)
         {
-            List<Personaje> nuevaLista = new List<Personaje>();
+            ListaPersonajes nuevaLista = new ListaPersonajes();
             if (((frmMainMenu)this.Owner).sqlActive == true)
             {
                 nuevaLista = SQLHandler.importarPersonajes(usuario);

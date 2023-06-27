@@ -450,3 +450,4 @@ D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\System.Linq.Async.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmAdmin.resources
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.Forms.frmDiceBox.resources

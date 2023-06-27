@@ -9,12 +9,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnD;
+using PrimerParcialLabo_Intento2.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
     public partial class frmJugar : Form
     {
         Personaje personajeActual;
+        public delegate void Callback(string s, int i);
+        public event Callback diceFinished;
+
         public frmJugar()
         {
             InitializeComponent();
@@ -25,21 +29,23 @@ namespace PrimerParcialLabo_Intento2
             personajeActual = personaje;
             this.cboAtributos.DataSource = Atributos.atributos;
             this.cboHabilidades.DataSource = Habilidad.habilidades;
+            this.diceFinished += MostrarResultados;
         }
 
         private void btnTiradaAtributos_Click(object sender, EventArgs e)
         {
-            string resultado = tirarAtributo(personajeActual);
-            rtbConsola.AppendText(resultado);
+            tirarAtributo(personajeActual);
         }
 
-        private string tirarAtributo(Personaje personaje)
+        private void tirarAtributo(Personaje personaje)
         {
             Dado dado = new(1, 20);
             string atributo = this.cboAtributos.Text;
             int resultado = 0;
             resultado = dado.tirar() + personaje.modificadorDeAtributo(atributo);
-            return ("Roll de " + atributo + ": " + resultado.ToString() + "\n");
+
+            Thread diceThread = new Thread(() => this.ShowDice(resultado, atributo));
+            diceThread.Start();
         }
 
         private void frmJugar_Load(object sender, EventArgs e)
@@ -49,10 +55,10 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnTiradaHabilidades_Click(object sender, EventArgs e)
         {
-            rtbConsola.AppendText(tirarHabilidad(personajeActual));
+            tirarHabilidad(personajeActual);
         }
 
-        private string tirarHabilidad(Personaje personaje)
+        private void tirarHabilidad(Personaje personaje)
         {
             Dado dado = new(1, 20);
             int resultado = 0;
@@ -62,7 +68,32 @@ namespace PrimerParcialLabo_Intento2
             {
                 resultado += personaje.bonusProeficiencia();
             }
-            return ("Roll de " + habilidad + ": " + resultado.ToString() + "\n"); ;
+
+            Thread diceThread = new Thread(() => this.ShowDice(resultado, habilidad));
+            diceThread.Start();
+
+
+            //return ("Roll de " + habilidad + ": " + resultado.ToString() + "\n"); ;
+        }
+
+        private void ShowDice(int resultado, string habilidad)
+        {
+            Form diceBox = new frmDiceBox((int)resultado);
+            diceBox.ShowDialog();
+            this.diceFinished.Invoke(habilidad, resultado);
+        }
+
+        private void MostrarResultados(string s, int i)
+        {
+            if (this.InvokeRequired)
+            {
+                Callback callback = new Callback(MostrarResultados);
+                this.Invoke(callback, s, i);
+            }
+            else
+            {
+                rtbConsola.AppendText("Roll de " + (string)s + ": " + i.ToString() + "\n");
+            }
         }
     }
 }

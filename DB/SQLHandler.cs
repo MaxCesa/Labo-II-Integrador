@@ -13,7 +13,7 @@ namespace PrimerParcialLabo_Intento2.DB
     internal class SQLHandler : IUsuarios
     {
 
-        public static void exportarPersonajes(List<Personaje> personajes)
+        public static void exportarPersonajes(ListaPersonajes personajes)
         {
             MySqlConnection connection;
             MySqlCommand command;
@@ -34,7 +34,7 @@ namespace PrimerParcialLabo_Intento2.DB
                 {
                     command.Parameters.Clear();
                     command.Parameters.AddWithValue("@Dueño", personaje.dueño.ToString());
-                    command.Parameters.AddWithValue("@personaje", Serializador.serializarPersonaje(personaje));
+                    command.Parameters.AddWithValue("@personaje", personaje.SerializarJson());
                     command.ExecuteNonQuery();
                 }
                 command.Parameters.Clear();
@@ -54,9 +54,9 @@ namespace PrimerParcialLabo_Intento2.DB
             }
         }
 
-        public static List<Personaje> importarPersonajes(Usuario usuario)
+        public static ListaPersonajes importarPersonajes(Usuario usuario)
         {
-            List<Personaje> import = new List<Personaje>();
+            ListaPersonajes import = new ListaPersonajes();
             MySqlConnection connection;
             MySqlCommand command;
             MySqlDataReader reader;
@@ -76,7 +76,7 @@ namespace PrimerParcialLabo_Intento2.DB
                 while (reader.Read())
                 {
                     var personajeJson = reader.GetString(2);
-                    Personaje personaje = Serializador.deserealizarPersonaje(personajeJson);
+                    Personaje personaje = Deserializador.deserealizarPersonaje(personajeJson);
                     import.Add(personaje);
                 }
             }
@@ -95,10 +95,10 @@ namespace PrimerParcialLabo_Intento2.DB
             return import;
         }
 
-        public static async Task<List<Usuario>> GetUsuarios()
+        public static async Task<ListaUsuarios> GetUsuarios()
         {
-            List<Usuario> usuarios = new List<Usuario>();
-            List<Personaje> import = new List<Personaje>();
+            ListaUsuarios usuarios = new ListaUsuarios();
+            ListaPersonajes import = new ListaPersonajes();
             MySqlConnection connection;
             MySqlCommand command;
             MySqlDataReader reader;
@@ -135,7 +135,7 @@ namespace PrimerParcialLabo_Intento2.DB
             return usuarios;
         }
 
-        public static void SetUsuarios(List<Usuario> usuarios)
+        public static void SetUsuarios(ListaUsuarios usuarios)
         {
             MySqlConnection connection;
             MySqlCommand command;

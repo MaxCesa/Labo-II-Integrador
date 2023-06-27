@@ -15,29 +15,25 @@ namespace PrimerParcialLabo_Intento2
     public partial class frmMainMenu : Form
     {
         public Usuario usuario;
-        public List<Personaje> personajes = new List<Personaje>();
+        public ListaPersonajes personajes = new ListaPersonajes();
         Personaje personajeSeleccionado;
         private frmAdmin childForm;
-        public List<Usuario> usuarios;
-        public delegate void actualizarDeAdmin(List<Usuario> usuarios, Configuration config);
-        public delegate void addPersonaje(Personaje personaje);
+        public ListaUsuarios usuarios;
         public Configuration config;
 
         public bool sqlActive = false;
 
-        public void conseguirUsuarios(List<Usuario> usuarios)
+        public void conseguirUsuarios(ListaUsuarios usuarios)
         {
             this.usuarios = usuarios;
         }
-
-        //lista de campañas de pruba
 
         private frmMainMenu()
         {
             InitializeComponent();
         }
 
-        public frmMainMenu(List<Usuario> usuarios, Usuario usuario, Configuration config) : this()
+        public frmMainMenu(ListaUsuarios usuarios, Usuario usuario, Configuration config) : this()
         {
             this.usuario = usuario;
             this.usuarios = usuarios;
@@ -139,7 +135,7 @@ namespace PrimerParcialLabo_Intento2
 
         }
 
-        private void actualizarMenuFn(List<Usuario> usuarios, Configuration c)
+        private void actualizarMenuFn(ListaUsuarios usuarios, Configuration c)
         {
             this.usuarios = usuarios;
             this.config = c;

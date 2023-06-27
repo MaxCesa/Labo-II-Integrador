@@ -24,9 +24,9 @@ namespace PrimerParcialLabo_Intento2
             return (usuario == this.username && contraseña == this.contraseña);
         }
 
-        public static List<Personaje> FiltrarPersonajesPorUsuario(List<Personaje> lista, Usuario usuario)
+        public static ListaPersonajes FiltrarPersonajesPorUsuario(ListaPersonajes lista, Usuario usuario)
         {
-            List<Personaje> retorno = new List<Personaje>();
+            ListaPersonajes retorno = new ListaPersonajes();
             foreach(Personaje personaje in lista)
             {
                 if (personaje.esDueño(usuario))

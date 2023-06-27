@@ -25,16 +25,16 @@ namespace PrimerParcialLabo_Intento2.DB
             return rta;
         }
 
-        async public static void ExportarPersonajes(List<Personaje> personajeList)
+        async public static void ExportarPersonajes(ListaPersonajes personajeList)
         {
             foreach(Personaje personaje in personajeList)
             {
                 await AgregarPersonaje(personaje);
             }
         }
-        async public static Task<List<Personaje>> ImportarPersonajes(Usuario dueño)
+        async public static Task<ListaPersonajes> ImportarPersonajes(Usuario dueño)
         {
-            List<Personaje> retorno = new List<Personaje>();
+            ListaPersonajes retorno = new ListaPersonajes();
             try
             {
                 System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\Downloads\\tp-integrador-prog2-firebase-adminsdk-yicqq-68208ce954.json");
@@ -46,7 +46,7 @@ namespace PrimerParcialLabo_Intento2.DB
                 foreach (DocumentSnapshot personajeFirestore in querySnapshot.Documents)
                 {
                     personajeFirestore.TryGetValue<string>("personaje", out valor);
-                    retorno.Add(Serializador.deserealizarPersonaje(valor));
+                    retorno.Add(Deserializador.deserealizarPersonaje(valor));
                 }
             }
             catch (Exception)
@@ -57,7 +57,7 @@ namespace PrimerParcialLabo_Intento2.DB
             return retorno;
         }
 
-        async public static void SetUsuarios(List<Usuario> usuarios)
+        async public static void SetUsuarios(ListaUsuarios usuarios)
         {
             System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\Downloads\\tp-integrador-prog2-firebase-adminsdk-yicqq-68208ce954.json");
             FirestoreDb db = FirestoreDb.Create(projectId);
@@ -71,9 +71,9 @@ namespace PrimerParcialLabo_Intento2.DB
             }
         }
 
-        async public static Task<List<Usuario>> GetUsuarios()
+        async public static Task<ListaUsuarios> GetUsuarios()
         {
-            List<Usuario> retorno = new List<Usuario>();
+            ListaUsuarios retorno = new ListaUsuarios();
             try
             {
                 System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "D:\\Downloads\\tp-integrador-prog2-firebase-adminsdk-yicqq-68208ce954.json");
@@ -125,7 +125,7 @@ namespace PrimerParcialLabo_Intento2.DB
         public string personaje { set; get; }
         public PersonajeFirestore(Personaje personaje)
         {
-            this.personaje = Serializador.serializarPersonaje(personaje);
+            this.personaje = personaje.SerializarJson();
             this.nombre = personaje.nombre;
             this.dueño = personaje.dueño;
         }

@@ -6,7 +6,7 @@ namespace PrimerParcialLabo_Intento2
     {
         Dictionary<string, int> atributos;
         public Personaje personaje;
-        public frmMainMenu.addPersonaje pasarPersonaje;
+        public addPersonaje pasarPersonaje;
         public frmCrearPersonaje()
         {
             InitializeComponent();

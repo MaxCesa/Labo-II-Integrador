@@ -1,13 +1,14 @@
+using IronPdf.Logging;
 using PrimerParcialLabo_Intento2.DB;
 
 namespace PrimerParcialLabo_Intento2
 {
     public partial class frmLogIn : Form
     {
-        public List<Usuario> usuarios = new List<Usuario>()
+        public ListaUsuarios usuarios = new ListaUsuarios()
         //{
-        //    new SuperAdmin("Max","123"),
-        //    new Jugador("test", "test")
+        //    new SuperAdmin(1,"Max","123"),
+        //    new Jugador(2,"test", "test")
         //};
         ;
         Configuration config = new Configuration();

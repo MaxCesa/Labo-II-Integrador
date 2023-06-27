@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using DnD;
+using Newtonsoft.Json;
+using PrimerParcialLabo_Intento2.Interfaces;
 
 namespace PrimerParcialLabo_Intento2;
 
-public class Personaje
+public class Personaje : ISerializador
 {
     public string nombre { set; get; }
     public string clase { set; get; } = string.Empty;
@@ -115,5 +117,10 @@ public class Personaje
     public bool esDueño(Usuario usuarioAValidar)
     {
         return (usuarioAValidar == null);
+    }
+
+    public string SerializarJson()
+    {
+        return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
 }

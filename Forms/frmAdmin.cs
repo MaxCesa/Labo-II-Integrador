@@ -15,8 +15,8 @@ namespace PrimerParcialLabo_Intento2
     public partial class frmAdmin : Form
     {
         public Usuario usuarioActual;
-        public List<Usuario> usuarios;
-        public frmMainMenu.actualizarDeAdmin guardarYSalir;
+        public ListaUsuarios usuarios;
+        public actualizarDeAdmin guardarYSalir;
         int usuariosCreados = 0;
         Configuration config;
         public frmAdmin()
@@ -24,12 +24,12 @@ namespace PrimerParcialLabo_Intento2
             InitializeComponent();
         }
 
-        public void conseguirUsuarios(List<Usuario> usuarios)
+        public void conseguirUsuarios(ListaUsuarios usuarios)
         {
             this.usuarios = usuarios;
         }
 
-        public frmAdmin(Usuario usuarioActual, List<Usuario> usuarios, Configuration config)
+        public frmAdmin(Usuario usuarioActual, ListaUsuarios usuarios, Configuration config)
         {
             InitializeComponent();
             this.usuarios = usuarios;
@@ -91,9 +91,9 @@ namespace PrimerParcialLabo_Intento2
                 }
                 if (nuevoUsuario != null)
                 {
-                    if (!((List<Usuario>)this.usuarios).Exists(e => e.username == nuevoUsuario.username))
+                    if (!((ListaUsuarios)this.usuarios).Exists(e => e.username == nuevoUsuario.username))
                     {
-                        ((List<Usuario>)this.usuarios).Add(nuevoUsuario);
+                        ((ListaUsuarios)this.usuarios).Add(nuevoUsuario);
                         usuariosCreados++;
                     }
                     else
@@ -112,7 +112,7 @@ namespace PrimerParcialLabo_Intento2
             {
                 if (lstUsuarios.SelectedItems[0].SubItems[1].Text != usuarioActual.username)
                 {
-                    if (!((List<Usuario>)this.usuarios).Exists(e => e.username == txtUsername.Text))
+                    if (!((ListaUsuarios)this.usuarios).Exists(e => e.username == txtUsername.Text))
                     {
                         lstUsuarios.SelectedItems[0].SubItems[0].Text = cboTipo.Text;
                         lstUsuarios.SelectedItems[0].SubItems[1].Text = txtUsername.Text;
