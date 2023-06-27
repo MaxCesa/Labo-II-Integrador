@@ -11,7 +11,11 @@ namespace PrimerParcialLabo_Intento2
         public Theme Theme { get; set; }
         public bool Sql { get; set; }
         public int maxIdUser { set; get; }
+        public bool ordenAlfabeticoPersonajes { set; get; }
 
+        public delegate int OrdenarPersonajes(Personaje x, Personaje y);
+
+        public OrdenarPersonajes ordenarPersonajes { set; get; }
         public Configuration(Theme theme, bool sql, int maxId)
         {
             this.Theme = theme;
@@ -24,6 +28,8 @@ namespace PrimerParcialLabo_Intento2
             this.Theme = new Theme();
             this.Sql = true;
             this.maxIdUser = 4;
+            this.ordenAlfabeticoPersonajes = true;
+            this.ordenarPersonajes = ((x, y) => string.Compare(x.nombre, y.nombre));
         }
     }
 

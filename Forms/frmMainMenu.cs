@@ -17,9 +17,9 @@ namespace PrimerParcialLabo_Intento2
         public Usuario usuario;
         public List<Personaje> personajes = new List<Personaje>();
         Personaje personajeSeleccionado;
-        private frmUsuarios childForm;
+        private frmAdmin childForm;
         public List<Usuario> usuarios;
-        public delegate void actualizarUsuarios(List<Usuario> usuarios);
+        public delegate void actualizarDeAdmin(List<Usuario> usuarios, Configuration config);
         public delegate void addPersonaje(Personaje personaje);
         public Configuration config;
 
@@ -75,6 +75,7 @@ namespace PrimerParcialLabo_Intento2
         public void actualizarLista()
         {
             this.lstPersonajes.Items.Clear();
+            personajes.Sort(config.ordenarPersonajes.Invoke);
             foreach (Personaje elem in personajes)
             {
                 lstPersonajes.Items.Add(elem);
@@ -131,17 +132,18 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            childForm = (frmUsuarios)abrirSubForm(new frmUsuarios(usuario, usuarios));
-            childForm.guardarYSalir = new actualizarUsuarios(this.actualizarUsuariosFn);
+            childForm = (frmAdmin)abrirSubForm(new frmAdmin(usuario, usuarios, config));
+            childForm.guardarYSalir = new actualizarDeAdmin(this.actualizarMenuFn);
             childForm.Show();
 
 
         }
 
-        private void actualizarUsuariosFn(List<Usuario> usuarios)
+        private void actualizarMenuFn(List<Usuario> usuarios, Configuration c)
         {
             this.usuarios = usuarios;
-            if (config.Sql)
+            this.config = c;
+            if (c.Sql)
             {
                 SQLHandler.SetUsuarios(usuarios);
             }
@@ -149,6 +151,7 @@ namespace PrimerParcialLabo_Intento2
             {
                 FirebaseHandler.SetUsuarios(usuarios);
             }
+            actualizarLista();
         }
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)

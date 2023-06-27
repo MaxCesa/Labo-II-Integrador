@@ -200,7 +200,6 @@ D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo-Intento2.csproj.CopyComplete
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmInformacion.resources
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmNuevoItem.resources
-D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmUsuarios.resources
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
@@ -450,3 +449,4 @@ D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\bin\Debug\net6.0-windows\System.Linq.Async.dll
+D:\Users\maxic\Documents\Programacion 2\PrimerParcialLabo-Intento2\obj\Debug\net6.0-windows\PrimerParcialLabo_Intento2.frmAdmin.resources
