@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace PrimerParcialLabo_Intento2
 {
@@ -14,6 +15,15 @@ namespace PrimerParcialLabo_Intento2
         public string SerializarJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+        public string SerializarXml()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(ListaPersonajes));
+            StringWriter sw = new StringWriter();
+            serializer.Serialize(sw, this);
+
+            return sw.ToString();
         }
     }
 
@@ -35,6 +45,15 @@ namespace PrimerParcialLabo_Intento2
             {
                 throw new Exception("Json Nulo");
             }
+        }
+
+        public string SerializarXml()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(ListaUsuarios));
+            StringWriter sw = new StringWriter();
+            serializer.Serialize(sw, this);
+
+            return sw.ToString();
         }
     }
 }

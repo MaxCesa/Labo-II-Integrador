@@ -4,8 +4,11 @@ using PrimerParcialLabo_Intento2.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace PrimerParcialLabo_Intento2
 {
@@ -23,7 +26,7 @@ namespace PrimerParcialLabo_Intento2
             this.Sql = sql;
             this.maxIdUser = maxId;
         }
-        
+
         public Configuration()
         {
             this.Theme = new Theme();
@@ -35,7 +38,7 @@ namespace PrimerParcialLabo_Intento2
 
         public string SerializarJson()
         {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
+            return JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
         }
 
         public static Configuration DeserializarJson<Configuration>(string json)
@@ -48,9 +51,18 @@ namespace PrimerParcialLabo_Intento2
             catch (Exception ex)
             {
                 throw Logger.LogAndThrow(ex);
-                
+
             }
             return default(Configuration);
+        }
+
+        public string SerializarXml()
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Configuration));
+            StringWriter sw = new StringWriter();
+            serializer.Serialize(sw, this);
+
+            return sw.ToString();
         }
     }
 

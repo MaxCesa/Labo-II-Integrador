@@ -76,7 +76,7 @@ namespace PrimerParcialLabo_Intento2.DB
                 while (reader.Read())
                 {
                     var personajeJson = reader.GetString(2);
-                    Personaje personaje = Deserializador.deserealizarPersonaje(personajeJson);
+                    Personaje personaje = Personaje.DeserializarJson<Personaje>(personajeJson);
                     import.Add(personaje);
                 }
             }

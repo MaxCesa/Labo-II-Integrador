@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnD;
+using PrimerParcialLabo_Intento2.Interfaces;
 using PrimerParcialLabo_Intento2.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmJugar : Form
+    public partial class frmJugar : Form, ITema
     {
         Personaje personajeActual;
         public delegate void Callback(string s, int i);
@@ -24,12 +25,21 @@ namespace PrimerParcialLabo_Intento2
             InitializeComponent();
         }
 
-        public frmJugar(Personaje personaje) : this()
+        public frmJugar(Personaje personaje, Configuration config) : this()
         {
             personajeActual = personaje;
             this.cboAtributos.DataSource = Atributos.atributos;
             this.cboHabilidades.DataSource = Habilidad.habilidades;
             this.diceFinished += MostrarResultados;
+            AplicarTema(config.Theme);
+        }
+
+        public void AplicarTema(Theme theme)
+        {
+            this.BackColor = theme.MainColor;
+            cboAtributos.BackColor = theme.TerciaryColor;
+            cboHabilidades.BackColor = theme.TerciaryColor;
+            rtbConsola.BackColor = theme.SecondaryColor;
         }
 
         private void btnTiradaAtributos_Click(object sender, EventArgs e)

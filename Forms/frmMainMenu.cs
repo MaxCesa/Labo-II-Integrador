@@ -1,4 +1,5 @@
 ﻿using PrimerParcialLabo_Intento2.DB;
+using PrimerParcialLabo_Intento2.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmMainMenu : Form
+    public partial class frmMainMenu : Form, ITema
     {
         public Usuario usuario;
         public ListaPersonajes personajes = new ListaPersonajes();
@@ -45,18 +46,17 @@ namespace PrimerParcialLabo_Intento2
                 actualizarLista();
             }
 
-
-
             if (usuario is SuperAdmin)
             {
                 btnUsuarios.Visible = true;
                 btnUsuarios.Enabled = true;
             }
+            AplicarTema(config.Theme);
         }
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            frmCrearPersonaje form = (frmCrearPersonaje)abrirSubForm(new frmCrearPersonaje());
+            frmCrearPersonaje form = (frmCrearPersonaje)abrirSubForm(new frmCrearPersonaje(config));
             form.pasarPersonaje = new addPersonaje(this.addPersonajeFn);
             form.Show();
 
@@ -94,13 +94,13 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnJugar_Click(object sender, EventArgs e)
         {
-            Form frm = abrirSubForm(new frmJugar(personajeSeleccionado));
+            Form frm = abrirSubForm(new frmJugar(personajeSeleccionado, config));
             frm.Show();
         }
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            frmExportar form = new frmExportar(personajes, personajeSeleccionado, usuario);
+            frmExportar form = new frmExportar(personajes, personajeSeleccionado, usuario, config);
             form.Owner = this;
             form.ShowDialog();
         }
@@ -121,7 +121,7 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnInformacion_Click(object sender, EventArgs e)
         {
-            Form frm = abrirSubForm(new frmInformacion(personajeSeleccionado));
+            Form frm = abrirSubForm(new frmInformacion(personajeSeleccionado, config));
 
             frm.Show();
         }
@@ -148,12 +148,20 @@ namespace PrimerParcialLabo_Intento2
                 FirebaseHandler.SetUsuarios(usuarios);
             }
             actualizarLista();
+            AplicarTema(c.Theme);
         }
 
         private void frmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             ControladorArchivos.SaveConfig(config);
             Application.Exit();
+        }
+
+        public void AplicarTema(Theme theme)
+        {
+            this.panelContenedor.BackColor = theme.MainColor;
+            this.panelMenu.BackColor = theme.SecondaryColor;
+            this.lstPersonajes.BackColor = theme.MainColor;
         }
     }
 }

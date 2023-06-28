@@ -48,7 +48,12 @@
             rdoOrdenPorNivel = new RadioButton();
             lblOrdenamientoPersonajes = new Label();
             panel1 = new Panel();
+            lblTemas = new Label();
+            panel2 = new Panel();
+            rdoForja = new RadioButton();
+            rdoPergamino = new RadioButton();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // lblUsuarios
@@ -62,7 +67,7 @@
             // 
             // lstUsuarios
             // 
-            lstUsuarios.BackColor = Color.Tan;
+            lstUsuarios.BackColor = Color.Silver;
             lstUsuarios.Columns.AddRange(new ColumnHeader[] { Tipos, Usuarios, Contraseñas });
             lstUsuarios.FullRowSelect = true;
             lstUsuarios.HeaderStyle = ColumnHeaderStyle.Nonclickable;
@@ -197,7 +202,6 @@
             rdoOrdenAlfabetico.Name = "rdoOrdenAlfabetico";
             rdoOrdenAlfabetico.Size = new Size(142, 24);
             rdoOrdenAlfabetico.TabIndex = 14;
-            rdoOrdenAlfabetico.TabStop = true;
             rdoOrdenAlfabetico.Text = "Orden alfabetico";
             rdoOrdenAlfabetico.UseVisualStyleBackColor = true;
             rdoOrdenAlfabetico.CheckedChanged += rdoOrdenAlfabetico_CheckedChanged;
@@ -209,7 +213,6 @@
             rdoOrdenPorNivel.Name = "rdoOrdenPorNivel";
             rdoOrdenPorNivel.Size = new Size(133, 24);
             rdoOrdenPorNivel.TabIndex = 15;
-            rdoOrdenPorNivel.TabStop = true;
             rdoOrdenPorNivel.Text = "Orden por nivel";
             rdoOrdenPorNivel.UseVisualStyleBackColor = true;
             rdoOrdenPorNivel.CheckedChanged += rdoOrdenPorNivel_CheckedChanged;
@@ -232,13 +235,55 @@
             panel1.Size = new Size(306, 38);
             panel1.TabIndex = 17;
             // 
+            // lblTemas
+            // 
+            lblTemas.AutoSize = true;
+            lblTemas.Location = new Point(34, 473);
+            lblTemas.Name = "lblTemas";
+            lblTemas.Size = new Size(54, 20);
+            lblTemas.TabIndex = 18;
+            lblTemas.Text = "Temas:";
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(rdoForja);
+            panel2.Controls.Add(rdoPergamino);
+            panel2.Location = new Point(31, 496);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(450, 48);
+            panel2.TabIndex = 19;
+            // 
+            // rdoForja
+            // 
+            rdoForja.AutoSize = true;
+            rdoForja.Location = new Point(151, 3);
+            rdoForja.Name = "rdoForja";
+            rdoForja.Size = new Size(63, 24);
+            rdoForja.TabIndex = 1;
+            rdoForja.Text = "Forja";
+            rdoForja.UseVisualStyleBackColor = true;
+            rdoForja.CheckedChanged += rdoForja_CheckedChanged;
+            // 
+            // rdoPergamino
+            // 
+            rdoPergamino.AutoSize = true;
+            rdoPergamino.Location = new Point(3, 3);
+            rdoPergamino.Name = "rdoPergamino";
+            rdoPergamino.Size = new Size(101, 24);
+            rdoPergamino.TabIndex = 0;
+            rdoPergamino.Text = "Pergamino";
+            rdoPergamino.UseVisualStyleBackColor = true;
+            rdoPergamino.CheckedChanged += rdoPergamino_CheckedChanged;
+            // 
             // frmAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = Color.BlanchedAlmond;
+            BackColor = Color.Gray;
             ClientSize = new Size(919, 395);
+            Controls.Add(panel2);
+            Controls.Add(lblTemas);
             Controls.Add(panel1);
             Controls.Add(lblOrdenamientoPersonajes);
             Controls.Add(label3);
@@ -260,6 +305,8 @@
             Load += frmUsuarios_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -286,5 +333,9 @@
         private RadioButton rdoOrdenPorNivel;
         private Label lblOrdenamientoPersonajes;
         private Panel panel1;
+        private Label lblTemas;
+        private Panel panel2;
+        private RadioButton rdoPergamino;
+        private RadioButton rdoForja;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrimerParcialLabo_Intento2.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmComboEleccion : Form
+    public partial class frmComboEleccion : Form, ITema
     {
         public string eleccion;
         public frmComboEleccion()
@@ -18,10 +19,17 @@ namespace PrimerParcialLabo_Intento2
             InitializeComponent();
         }
 
+        public void AplicarTema(Theme theme)
+        {
+            this.BackColor = theme.MainColor;
+            cboOpciones.BackColor = theme.SecondaryColor;
+        }
+
         public frmComboEleccion(List<string> listEleccion, string descripcion) : this()
         {
             this.cboOpciones.DataSource = listEleccion;
             this.lblDescripcion.Text = descripcion;
+            AplicarTema(((frmCrearPersonaje)Parent).config.Theme);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)

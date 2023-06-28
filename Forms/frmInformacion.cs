@@ -10,24 +10,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnD;
 using Exepciones;
+using PrimerParcialLabo_Intento2.Interfaces;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmInformacion : Form
+    public partial class frmInformacion : Form, ITema
     {
         Personaje personaje;
+        Configuration config;
         public frmInformacion()
         {
             InitializeComponent();
         }
 
-        public frmInformacion(Personaje personajeSeleccionado) : this()
+        public frmInformacion(Personaje personajeSeleccionado, Configuration config) : this()
         {
             this.personaje = personajeSeleccionado;
             cargarDatosPrincipales();
             cargarAtributos();
             cargarHabilidades();
+            this.config = config;
+            AplicarTema(config.Theme);
 
+        }
+
+        public void AplicarTema(Theme theme)
+        {
+            this.BackColor = theme.MainColor;
+            lstEquipo.BackColor = theme.SecondaryColor;
         }
 
         private void cargarDatosPrincipales()

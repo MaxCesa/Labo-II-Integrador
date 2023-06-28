@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
+using System.Xml.Serialization;
 using DnD;
+using IronSoftware;
 using Newtonsoft.Json;
 using PrimerParcialLabo_Intento2.Interfaces;
 
@@ -122,5 +124,29 @@ public class Personaje : ISerializador
     public string SerializarJson()
     {
         return JsonConvert.SerializeObject(this, Formatting.Indented);
+    }
+
+    public static Personaje DeserializarJson<Personaje>(string json)
+    {
+
+        try
+        {
+            return JsonConvert.DeserializeObject<Personaje>(json);
+        }
+        catch (Exception ex)
+        {
+            throw Logger.LogAndThrow(ex);
+
+        }
+        return default(Personaje);
+    }
+
+    public string SerializarXml()
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(Personaje));
+        StringWriter sw = new StringWriter();
+        serializer.Serialize(sw, this);
+
+        return sw.ToString();
     }
 }

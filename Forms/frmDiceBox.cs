@@ -21,7 +21,7 @@ namespace PrimerParcialLabo_Intento2.Forms
             InitializeComponent();
             this.resultado = resultado;
             this.rnd = new Random();
-
+            
         }
 
         private void RollDice(int resultado)

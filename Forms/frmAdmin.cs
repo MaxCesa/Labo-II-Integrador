@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmAdmin : Form
+    public partial class frmAdmin : Form, ITema
     {
         public Usuario usuarioActual;
         public ListaUsuarios usuarios;
@@ -35,7 +35,13 @@ namespace PrimerParcialLabo_Intento2
             this.usuarios = usuarios;
             this.usuarioActual = usuarioActual;
             this.config = config;
+            AplicarTema(config.Theme);
+        }
 
+        public void AplicarTema(Theme theme)
+        {
+            this.BackColor = theme.MainColor;
+            lstUsuarios.BackColor = theme.SecondaryColor;
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -151,6 +157,18 @@ namespace PrimerParcialLabo_Intento2
         private void rdoOrdenPorNivel_CheckedChanged(object sender, EventArgs e)
         {
             this.config.ordenarPersonajes = (x, y) => y.nivel.CompareTo(x.nivel);
+        }
+
+        private void rdoForja_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.Theme = new Theme(Color.Gray, Color.Silver, Color.DarkGray);
+            AplicarTema(config.Theme);
+        }
+
+        private void rdoPergamino_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.Theme = new Theme();
+            AplicarTema(config.Theme);
         }
     }
 }

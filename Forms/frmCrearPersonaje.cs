@@ -1,17 +1,33 @@
 using DnD;
+using PrimerParcialLabo_Intento2.Interfaces;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmCrearPersonaje : Form
+    public partial class frmCrearPersonaje : Form, ITema
     {
         Dictionary<string, int> atributos;
         public Personaje personaje;
         public addPersonaje pasarPersonaje;
+        public Configuration config;
         public frmCrearPersonaje()
         {
             InitializeComponent();
             this.cboRazas.DataSource = Enum.GetValues(typeof(Razas));
             this.cboClases.DataSource = Enum.GetValues(typeof(Clases));
+        }
+
+        public frmCrearPersonaje(Configuration config): this()
+        {
+            this.config = config;
+            AplicarTema(config.Theme);
+        }
+        public void AplicarTema(Theme tema)
+        {
+            this.BackColor = tema.MainColor;
+            txtNombre.BackColor = tema.TerciaryColor;
+            cboClases.BackColor = tema.TerciaryColor;
+            cboRazas.BackColor = tema.TerciaryColor;
+            numNivel.BackColor = tema.TerciaryColor;
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)

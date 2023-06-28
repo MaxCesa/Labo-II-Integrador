@@ -10,10 +10,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PrimerParcialLabo_Intento2.DB;
+using PrimerParcialLabo_Intento2.Interfaces;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmExportar : Form
+    public partial class frmExportar : Form, ITema
     {
         ListaPersonajes personajeList;
         Personaje personaje;
@@ -21,17 +22,23 @@ namespace PrimerParcialLabo_Intento2
         public frmExportar()
         {
             InitializeComponent();
+           ;
         }
 
+        public void AplicarTema(Theme theme)
+        {
+            this.BackColor = theme.MainColor;
+        }
         public frmExportar(ListaPersonajes personajeList, Personaje personajeSeleccionado) : this()
         {
             this.personajeList = personajeList;
             this.personaje = personajeSeleccionado;
         }
 
-        public frmExportar(ListaPersonajes personajeList, Personaje personajeSeleccionado, Usuario usuario) : this(personajeList, personajeSeleccionado)
+        public frmExportar(ListaPersonajes personajeList, Personaje personajeSeleccionado, Usuario usuario, Configuration config) : this(personajeList, personajeSeleccionado)
         {
             this.usuario = usuario;
+            AplicarTema(config.Theme);
         }
 
         private void button1_Click(object sender, EventArgs e)

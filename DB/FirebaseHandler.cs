@@ -46,7 +46,7 @@ namespace PrimerParcialLabo_Intento2.DB
                 foreach (DocumentSnapshot personajeFirestore in querySnapshot.Documents)
                 {
                     personajeFirestore.TryGetValue<string>("personaje", out valor);
-                    retorno.Add(Deserializador.deserealizarPersonaje(valor));
+                    retorno.Add(Personaje.DeserializarJson<Personaje>(valor));
                 }
             }
             catch (Exception)
