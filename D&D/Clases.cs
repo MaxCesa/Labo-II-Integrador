@@ -49,6 +49,12 @@ namespace DnD
             }
             return retorno;
         }
+
+        public static void aumentarHP(Personaje personaje)
+        {
+            personaje.hitPointsMaximos += (personaje.dadoHP.tirar(personaje.atributos["Constitucion"]));
+            personaje.dadoHP.cantidad++;
+        }
     }
 
     public class Barbaro : Clase
@@ -69,6 +75,7 @@ namespace DnD
                         break;
                     case 1:
                         personaje.dadoHP = new Dado(1, 12);
+                        personaje.hitPointsMaximos = 12 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armadura mediana");
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Escudos");
@@ -90,6 +97,7 @@ namespace DnD
                         
                         break;
                     case 2:
+                        aumentarHP(personaje);
                         personaje.caracteristicas.Add("Ataque Imprudente");
                         personaje.caracteristicas.Add("Sentido de peligro");
                         break;
@@ -120,13 +128,16 @@ namespace DnD
                             personaje.caracteristicas.Add("Buscador espiritual");
                             personaje.caracteristicas.Add("Espiritu del Totem");
                         }
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.caracteristicas.Add("Ataque extra");
                         personaje.caracteristicas.Add("Movimiento rapido");
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         if (personaje.caracteristicas.Contains("Camino del Berserker"))
@@ -137,15 +148,19 @@ namespace DnD
                         {
                             personaje.caracteristicas.Add("Aspecto de la bestia");
                         }
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         personaje.caracteristicas.Add("Instinto salvaje");
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 9:
                         personaje.caracteristicas.Add("Critico brutal");
+                        aumentarHP(personaje);
                         break;
                     case 10:
                         if (personaje.caracteristicas.Contains("Camino del Berserker"))
@@ -156,14 +171,18 @@ namespace DnD
                         {
                             personaje.caracteristicas.Add("Caminante espiritual");
                         }
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         personaje.caracteristicas.Add("Furia implacable");
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
+                        aumentarHP(personaje);
                         break;
                     case 14:
                         if (personaje.caracteristicas.Contains("Camino del Berserker"))
@@ -174,23 +193,30 @@ namespace DnD
                         {
                             personaje.caracteristicas.Add("Subtonía Totémica");
                         }
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         personaje.caracteristicas.Add("Furia persistente");
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
+                        aumentarHP(personaje);
                         break;
                     case 18:
                         personaje.caracteristicas.Add("Fuerza indómita");
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         personaje.caracteristicas.Add("Campeon primario");
+                        aumentarHP(personaje);
                         break;
                 }
             }
@@ -211,6 +237,8 @@ namespace DnD
                     case 0:
                         break;
                     case 1:
+                        personaje.dadoHP = new Dado(1, 8);
+                        personaje.hitPointsMaximos = 8 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Armas simples");
                         personaje.proeficiencias.Add("Ballesta de mano");
@@ -235,6 +263,7 @@ namespace DnD
                         break;
                     case 2:
                         personaje.caracteristicas.Add("Polivalente");
+                        aumentarHP(personaje);
                         personaje.caracteristicas.Add("Cancion de descanso");
                         personaje.spellSlots[1] = 3;
                         break;
@@ -273,14 +302,17 @@ namespace DnD
                         personaje.caracteristicas.Add("Experto");
                         personaje.spellSlots[1] = 4;
                         personaje.spellSlots.Add(2, 2);
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[2] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.caracteristicas.Add("Fuente de inspiracion");
                         personaje.spellSlots.Add(3, 2);
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         personaje.caracteristicas.Add("Contraoda");
@@ -293,29 +325,37 @@ namespace DnD
                             personaje.caracteristicas.Add("Ataque adicional");
                         }
                         personaje.spellSlots[3] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         personaje.spellSlots.Add(4, 1);
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[4] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 9:
                         personaje.spellSlots.Add(5, 1);
+                        aumentarHP(personaje);
                         break;
                     case 10:
                         personaje.caracteristicas.Add("Secretos magicos");
                         personaje.spellSlots[5] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         personaje.spellSlots.Add(6, 1);
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
                         personaje.spellSlots.Add(7, 1);
+                        aumentarHP(personaje);
                         break;
                     case 14:
                         if (personaje.caracteristicas.Contains("Colegio del Conocimiento"))
@@ -326,25 +366,32 @@ namespace DnD
                         {
                             personaje.caracteristicas.Add("Magia de batalla");
                         }
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         personaje.spellSlots.Add(8, 1);
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
                         personaje.spellSlots.Add(9, 1);
+                        aumentarHP(personaje);
                         break;
                     case 18:
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[6] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         personaje.caracteristicas.Add("Inspiracion superior");
                         personaje.spellSlots[7] = 2;
+                        aumentarHP(personaje);
                         break;
                 }
             }
@@ -369,6 +416,7 @@ namespace DnD
                         break;
                     case 1:
                         personaje.dadoHP = new Dado(1, 8);
+                        personaje.hitPointsMaximos = 8 + personaje.atributos["Constitucion"];
                         personaje.clase = "Clerigo";
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Armadura mediana");
@@ -429,65 +477,83 @@ namespace DnD
 
                         }
                         personaje.spellSlots[1] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 3:
                         personaje.spellSlots[1] = 4;
                         personaje.spellSlots.Add(2, 2);
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[2] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 5:
-
                         personaje.spellSlots.Add(3, 2);
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         personaje.spellSlots[3] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         personaje.spellSlots.Add(4, 1);
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[4] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 9:
                         personaje.spellSlots.Add(5, 1);
+                        aumentarHP(personaje);
                         break;
                     case 10:
                         personaje.caracteristicas.Add("Intervencion divina");
                         personaje.spellSlots[5] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         personaje.spellSlots.Add(6, 1);
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
                         personaje.spellSlots.Add(7, 1);
+                        aumentarHP(personaje);
                         break;
                     case 14:
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         personaje.spellSlots.Add(8, 1);
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
                         personaje.spellSlots.Add(9, 1);
+                        aumentarHP(personaje);
                         break;
                     case 18:
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[6] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         personaje.caracteristicas.Add("Intervencion divina mejorada");
                         personaje.spellSlots[7] = 2;
+                        aumentarHP(personaje);
                         break;
                 }
             }
@@ -514,6 +580,8 @@ namespace DnD
                         break;
                     case 1:
                         personaje.clase = "Druida";
+                        personaje.dadoHP = new Dado(1, 8);
+                        personaje.hitPointsMaximos = 8 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Armadura mediana");
                         personaje.proeficiencias.Add("Escudos");
@@ -558,6 +626,7 @@ namespace DnD
 
                         }
                         personaje.spellSlots[1] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 3:
                         if(Clase.GetEspecializacion(personaje, especializacionesPosibles) == "Circulo de la tierra")
@@ -566,13 +635,16 @@ namespace DnD
                         }
                         personaje.spellSlots[1] = 4;
                         personaje.spellSlots.Add(2, 2);
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[2] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.spellSlots.Add(3, 2);
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -586,16 +658,20 @@ namespace DnD
                                 break;
                         }
                         personaje.spellSlots[3] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         personaje.spellSlots.Add(4, 1);
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[4] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 9:
                         personaje.spellSlots.Add(5, 1);
+                        aumentarHP(personaje);
                         break;
                     case 10:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -610,15 +686,19 @@ namespace DnD
 
                         }
                         personaje.spellSlots[5] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         personaje.spellSlots.Add(6, 1);
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
                         personaje.spellSlots.Add(7, 1);
+                        aumentarHP(personaje);
                         break;
                     case 14:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -632,30 +712,36 @@ namespace DnD
                                 break;
 
                         }
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         personaje.spellSlots.Add(8, 1);
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
                         personaje.spellSlots.Add(9, 1);
+                        aumentarHP(personaje);
                         break;
                     case 18:
                         personaje.caracteristicas.Add("Cuerpo eterno");
                         personaje.caracteristicas.Add("Conjuros bestiales");
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         personaje.spellSlots[6] = 2;
                         break;
                     case 20:
                         personaje.caracteristicas.Add("Archidruida");
                         personaje.spellSlots[7] = 2;
+                        aumentarHP(personaje);
                         break;
                 }
-                Console.WriteLine("I = " + i.ToString());
             }
             personaje.nivel += cantidadNiveles;
         }
@@ -700,6 +786,8 @@ namespace DnD
                         break;
                     case 1:
                         personaje.clase = "Guerrero";
+                        personaje.dadoHP = new Dado(1, 10);
+                        personaje.hitPointsMaximos = 10 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Armadura mediana");
                         personaje.proeficiencias.Add("Armadura pesada");
@@ -717,10 +805,12 @@ namespace DnD
                         }
                         Guerrero.estiloDeCombate(personaje);
                         personaje.caracteristicas.Add("Nuevas energias");
+                        aumentarHP(personaje);
                         break;
                     case 2:
                         Clase.SetEspecializacion(personaje, especializacionesPosibles);
                         personaje.caracteristicas.Add("Oleada de accion");
+                        aumentarHP(personaje);
                         break;
                     case 3:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -738,6 +828,7 @@ namespace DnD
                                 personaje.caracteristicas.Add("Estudiante de guerra");
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
@@ -745,12 +836,15 @@ namespace DnD
                         {
                             personaje.spellSlots[1] = 3;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.caracteristicas.Add("Ataque extra");
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -767,12 +861,15 @@ namespace DnD
                                 personaje.caracteristicas.Add("Conoce a tu enemigo");
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 9:
                         personaje.caracteristicas.Add("Indomable");
+                        aumentarHP(personaje);
                         break;
                     case 10:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -788,20 +885,25 @@ namespace DnD
                                 personaje.caracteristicas.Add("Superioridad en combate mejorada");
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 11:
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
                         if(Clase.GetEspecializacion(personaje, especializacionesPosibles) == "Caballero arcano")
                         {
                             personaje.spellSlots.Add(3, 2);
                         }
+                        aumentarHP(personaje);
                         break;
                     case 14:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -816,6 +918,7 @@ namespace DnD
                                 personaje.caracteristicas.Add("Implacable");
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
@@ -823,8 +926,10 @@ namespace DnD
                         {
                             personaje.spellSlots[3] = 3;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 17:
+                        aumentarHP(personaje);
                         break;
                     case 18:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -839,6 +944,7 @@ namespace DnD
                                 //Cambio de dado de superioridad
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
@@ -846,9 +952,11 @@ namespace DnD
                         {
                             personaje.spellSlots.Add(4, 1);
                         }
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         //Mejora de ataque extra
+                        aumentarHP(personaje);
                         break;
                 }
             }
@@ -874,6 +982,8 @@ namespace DnD
                         break;
                     case 1:
                         personaje.clase = "Monje";
+                        personaje.dadoHP = new Dado(1, 8);
+                        personaje.hitPointsMaximos = 8 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armas simples");
                         personaje.proeficiencias.Add("Espada corta");
 
@@ -887,11 +997,12 @@ namespace DnD
                         }
                         personaje.caracteristicas.Add("Defensa sin armadura");
                         personaje.caracteristicas.Add("Artes marciales");
-
+                        aumentarHP(personaje);
                         break;
                     case 2:
                         personaje.caracteristicas.Add("Ki");
                         personaje.caracteristicas.Add("Movimiento sin armadura");
+                        aumentarHP(personaje);
                         break;
                     case 3:
                         Clase.SetEspecializacion(personaje, especializacionesPosibles);
@@ -908,15 +1019,17 @@ namespace DnD
                                 break;
                         }
                         personaje.caracteristicas.Add("Desviar proyectiles");
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.caracteristicas.Add("Caida lenta");
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.caracteristicas.Add("Ataque extra");
                         personaje.caracteristicas.Add("Golpe aturdidor");
-
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         personaje.caracteristicas.Add("Golpes potenciados con ki");
@@ -931,18 +1044,23 @@ namespace DnD
                             case "Camino de los cuatro elementos":
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         personaje.caracteristicas.Add("Evasion");
                         personaje.caracteristicas.Add("Quietud de la menta");
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 9:
+                        aumentarHP(personaje);
                         break;
                     case 10:
                         personaje.caracteristicas.Add("Pureza del cuerpo");
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -956,23 +1074,28 @@ namespace DnD
                             case "Camino de los cuatro elementos":
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
-                        
                         personaje.caracteristicas.Add("Lengua del sol y la luna");
+                        aumentarHP(personaje);
                         break;
                     case 14:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.caracteristicas.Add("Alma diamantina");
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         personaje.caracteristicas.Add("Cuerpo imperecedero");
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -986,16 +1109,19 @@ namespace DnD
                             case "Camino de los cuatro elementos":
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                     case 18:
                         personaje.caracteristicas.Add("Cuerpo vacio");
-
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         personaje.caracteristicas.Add("Perfeccion de uno mismo");
+                        aumentarHP(personaje);
                         break;
                 }
             }
@@ -1041,6 +1167,8 @@ namespace DnD
                         break;
                     case 1:
                         personaje.clase = "Paladin";
+                        personaje.dadoHP = new Dado(1, 10);
+                        personaje.hitPointsMaximos = 10 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Armadura mediana");
                         personaje.proeficiencias.Add("Armadura pesada");
@@ -1058,13 +1186,14 @@ namespace DnD
                         }
                         personaje.caracteristicas.Add("Imposicion de manos");
                         personaje.caracteristicas.Add("Sentido divino");
-
+                        aumentarHP(personaje);
                         break;
                     case 2:
                         Paladin.estiloDeCombate(personaje);
                         personaje.caracteristicas.Add("Lanzamiento de hechizos");
                         personaje.caracteristicas.Add("Castigo divino");
                         personaje.spellSlots.Add(1, 2);
+                        aumentarHP(personaje);
                         break;
                     case 3:
                         Clase.SetEspecializacion(personaje, especializacionesPosibles);
@@ -1082,18 +1211,21 @@ namespace DnD
                         }
                         personaje.caracteristicas.Add("Salud divina");
                         personaje.spellSlots[1] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.caracteristicas.Add("Ataque extra");
                         personaje.spellSlots.Add(2, 2);
                         personaje.spellSlots[1] = 4;
-                        
+                        aumentarHP(personaje);
                         break;
                     case 6:
                         personaje.caracteristicas.Add("Aura de proteccion");
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -1109,30 +1241,36 @@ namespace DnD
                                 break;
                         }
                         personaje.spellSlots[2] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 9:
-                        
+                        aumentarHP(personaje);
                         personaje.spellSlots.Add(3, 2);
                         break;
                     case 10:
                         personaje.caracteristicas.Add("Aura de coraje");
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         personaje.caracteristicas.Add("Castigo divino mejorado");
                         personaje.spellSlots[3] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
-                        
+                        aumentarHP(personaje);
                         personaje.spellSlots.Add(4, 1);
                         break;
                     case 14:
                         personaje.caracteristicas.Add("Toque de purificacion");
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -1148,20 +1286,24 @@ namespace DnD
                                 break;
                         }
                         personaje.spellSlots[4] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
-                        
+                        aumentarHP(personaje);
                         personaje.spellSlots.Add(5, 1);
                         break;
                     case 18:
                         //mejora de auras
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[5] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -1176,6 +1318,7 @@ namespace DnD
                                 personaje.caracteristicas.Add("Angel vengador");
                                 break;
                         }
+                        aumentarHP(personaje);
                         break;
                 }
             }
@@ -1221,6 +1364,8 @@ namespace DnD
                         break;
                     case 1:
                         personaje.clase = "Explorador";
+                        personaje.dadoHP = new Dado(1, 10);
+                        personaje.hitPointsMaximos = 10 + personaje.atributos["Constitucion"];
                         personaje.proeficiencias.Add("Armadura ligera");
                         personaje.proeficiencias.Add("Armadura mediana");
                         personaje.proeficiencias.Add("Escudos");
@@ -1241,6 +1386,7 @@ namespace DnD
                         Explorador.estiloDeCombate(personaje);
                         personaje.caracteristicas.Add("Lanzamiento de hechizos");
                         personaje.spellSlots.Add(1, 2);
+                        aumentarHP(personaje);
                         break;
                     case 3:
                         Clase.SetEspecializacion(personaje, especializacionesPosibles);
@@ -1255,17 +1401,20 @@ namespace DnD
                         }
                         personaje.caracteristicas.Add("Conciencia primitiva");
                         personaje.spellSlots[1] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 4:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 5:
                         personaje.caracteristicas.Add("Ataque extra");
                         personaje.spellSlots.Add(2, 2);
                         personaje.spellSlots[1] = 4;
-                        
+                        aumentarHP(personaje);
                         break;
                     case 6:
+                        aumentarHP(personaje);
                         break;
                     case 7:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -1278,17 +1427,20 @@ namespace DnD
                                 break;
                         }
                         personaje.spellSlots[2] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 8:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.caracteristicas.Add("Zancada forestal");
+                        aumentarHP(personaje);
                         break;
                     case 9:
-                        
+                        aumentarHP(personaje);
                         personaje.spellSlots.Add(3, 2);
                         break;
                     case 10:
                         personaje.caracteristicas.Add("Ocultarse a plena vista");
+                        aumentarHP(personaje);
                         break;
                     case 11:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -1301,16 +1453,19 @@ namespace DnD
                                 break;
                         }
                         personaje.spellSlots[3] = 3;
+                        aumentarHP(personaje);
                         break;
                     case 12:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 13:
-                        
+                        aumentarHP(personaje);
                         personaje.spellSlots.Add(4, 1);
                         break;
                     case 14:
                         personaje.caracteristicas.Add("Esfumarse");
+                        aumentarHP(personaje);
                         break;
                     case 15:
                         switch (Clase.GetEspecializacion(personaje, especializacionesPosibles))
@@ -1323,23 +1478,28 @@ namespace DnD
                                 break;
                         }
                         personaje.spellSlots[4] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 16:
                         Atributos.abilityScoreImprovement(personaje);
+                        aumentarHP(personaje);
                         break;
                     case 17:
-                        
+                        aumentarHP(personaje);
                         personaje.spellSlots.Add(5, 1);
                         break;
                     case 18:
                         personaje.caracteristicas.Add("Sentidos salvajes");
+                        aumentarHP(personaje);
                         break;
                     case 19:
                         Atributos.abilityScoreImprovement(personaje);
                         personaje.spellSlots[5] = 2;
+                        aumentarHP(personaje);
                         break;
                     case 20:
                         personaje.caracteristicas.Add("Asesino de enemigos");
+                        aumentarHP(personaje);
                         break;
                 }
             }

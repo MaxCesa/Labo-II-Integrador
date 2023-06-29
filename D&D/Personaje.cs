@@ -49,7 +49,7 @@ public class Personaje : ISerializador
 
     public override string ToString()
     {
-        return this.nombre + " : " + this.clase + " " + this.nivel.ToString();
+        return this.nombre + " - " + this.clase + " " + this.nivel.ToString();
     }
     public int bonusProeficiencia()
     {
