@@ -12,6 +12,7 @@ using IronPdf.Forms;
 using Newtonsoft.Json;
 using System.Reflection.PortableExecutable;
 using DnD;
+using PrimerParcialLabo_Intento2.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
@@ -21,7 +22,7 @@ namespace PrimerParcialLabo_Intento2
         private static readonly string _projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
         private static readonly string _configAddress = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\configEmporio.json";
         private static readonly string _desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
+        public static event ExportacionPDFEventHandler ExportacionCompletada;
 
         public static void Guardar(ListaPersonajes personajes)
         {
@@ -58,7 +59,7 @@ namespace PrimerParcialLabo_Intento2
 
             return retorno;
         }
-        public static void ExportarAPDF(Personaje personaje)
+        public static void ExportarAPDF(Personaje personaje, frmLoading loadingForm)
         {
             PdfDocument documento = PdfDocument.FromFile(_projectDirectory + "\\hoja-rellenable.pdf");
             var form = documento.Form;
@@ -72,6 +73,7 @@ namespace PrimerParcialLabo_Intento2
             rellenarDatosVitales(ref form, personaje);
             rellenarSavingThrows(ref form, personaje);
             documento.SaveAs(_desktop + "\\" + personaje.ToString() + ".pdf");
+            ExportacionCompletada?.Invoke(null, EventArgs.Empty);
         }
 
         private static void rellenarSavingThrows(ref PdfForm form, Personaje personaje)
@@ -86,7 +88,7 @@ namespace PrimerParcialLabo_Intento2
             form.GetFieldByName("ST Strength").Value = personaje.savingThrows.Contains("Fuerza") ? (personaje.modificadorDeAtributo("Fuerza") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Fuerza").ToString();
             form.GetFieldByName("ST Dexterity").Value = personaje.savingThrows.Contains("Destreza") ? (personaje.modificadorDeAtributo("Destreza") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Destreza").ToString();
             form.GetFieldByName("ST Constitution").Value = personaje.savingThrows.Contains("Constitucion") ? (personaje.modificadorDeAtributo("Constitucion") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Constitucion").ToString();
-            form.GetFieldByName("ST Inteligence").Value = personaje.savingThrows.Contains("Inteligencia") ? (personaje.modificadorDeAtributo("Inteligencia") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Inteligencia").ToString();
+            form.GetFieldByName("ST Intelligence").Value = personaje.savingThrows.Contains("Inteligencia") ? (personaje.modificadorDeAtributo("Inteligencia") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Inteligencia").ToString();
             form.GetFieldByName("ST Wisdom").Value = personaje.savingThrows.Contains("Sabiduria") ? (personaje.modificadorDeAtributo("Sabiduria") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Sabiduria").ToString();
             form.GetFieldByName("ST Charisma").Value = personaje.savingThrows.Contains("Carisma") ? (personaje.modificadorDeAtributo("Carisma") + personaje.bonusProeficiencia()).ToString() : personaje.modificadorDeAtributo("Carisma").ToString();
         }

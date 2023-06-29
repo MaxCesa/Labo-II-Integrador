@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PrimerParcialLabo_Intento2.DB;
+using PrimerParcialLabo_Intento2.Forms;
 using PrimerParcialLabo_Intento2.Interfaces;
 
 namespace PrimerParcialLabo_Intento2
@@ -19,6 +20,7 @@ namespace PrimerParcialLabo_Intento2
         ListaPersonajes personajeList;
         Personaje personaje;
         Usuario usuario;
+        frmLoading loading;
         public frmExportar()
         {
             InitializeComponent();
@@ -50,8 +52,35 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            ControladorArchivos.ExportarAPDF(personaje);
+            Thread threadAnimacion = new Thread(() =>  showLoading());
+            threadAnimacion.Start();
+            ControladorArchivos.ExportacionCompletada += ExportacionCompletada;
+            Thread threadExportacion = new Thread(() => ControladorArchivos.ExportarAPDF(personaje, this.loading));
+            threadExportacion.Start();
         }
+
+        private void ExportacionCompletada(object sender, EventArgs e)
+        {
+            //ESTA PORONGA NO ESTA CORRIENDO, NO SE CIERRA LA NUEVA FORM
+            this.loading.ExportacionCompletada += (sender, args) =>
+            {
+                this.loading.Invoke(new Action(() =>
+                {
+                    this.loading.Close();
+                    this.loading.Dispose();
+                    this.loading = null;
+                }));
+            };
+        }
+
+
+        private void showLoading()
+        {
+            this.loading = new Forms.frmLoading();
+            loading.ShowDialog();
+        }
+
+
 
         private async void btnImportar_Click(object sender, EventArgs e)
         {
@@ -67,6 +96,7 @@ namespace PrimerParcialLabo_Intento2
             ((frmMainMenu)this.Owner).personajes = nuevaLista;
             ((frmMainMenu)this.Owner).actualizarLista();
         }
+
 
         private void btmExportarDB_Click(object sender, EventArgs e)
         {

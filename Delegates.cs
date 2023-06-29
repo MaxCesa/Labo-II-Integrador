@@ -9,4 +9,5 @@ namespace PrimerParcialLabo_Intento2
     public delegate int OrdenarPersonajes(Personaje x, Personaje y);
     public delegate void actualizarDeAdmin(ListaUsuarios usuarios, Configuration config);
     public delegate void addPersonaje(Personaje personaje);
+    public delegate void ExportacionPDFEventHandler(object sender, EventArgs e);
 }

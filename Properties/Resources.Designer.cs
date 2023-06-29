@@ -63,6 +63,16 @@ namespace PrimerParcialLabo_Intento2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _34338d26023e5515f6cc8969aa027bca_w200 {
+            get {
+                object obj = ResourceManager.GetObject("34338d26023e5515f6cc8969aa027bca_w200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DnD_Symbol {
             get {
                 object obj = ResourceManager.GetObject("DnD-Symbol", resourceCulture);

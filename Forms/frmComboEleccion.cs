@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PrimerParcialLabo_Intento2
 {
-    public partial class frmComboEleccion : Form, ITema
+    public partial class frmComboEleccion : Form
     {
         public string eleccion;
         public frmComboEleccion()
@@ -29,7 +29,6 @@ namespace PrimerParcialLabo_Intento2
         {
             this.cboOpciones.DataSource = listEleccion;
             this.lblDescripcion.Text = descripcion;
-            AplicarTema(((frmCrearPersonaje)Parent).config.Theme);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
