@@ -7,7 +7,7 @@ using PrimerParcialLabo_Intento2;
 
 namespace DnD
 {
-    internal class Atributos
+    public class Atributos
     {
         public static List<string> atributos = new List<string>()
         {
