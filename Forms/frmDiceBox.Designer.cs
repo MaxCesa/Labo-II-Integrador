@@ -34,6 +34,7 @@
             // 
             // lblDiceScore
             // 
+            lblDiceScore.BackColor = Color.White;
             lblDiceScore.Location = new Point(0, 0);
             lblDiceScore.Name = "lblDiceScore";
             lblDiceScore.Size = new Size(114, 31);
@@ -41,20 +42,23 @@
             // 
             // lblDiceBox
             // 
+            lblDiceBox.Anchor = AnchorStyles.None;
             lblDiceBox.AutoSize = true;
-            lblDiceBox.Font = new Font("Segoe Script", 70F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDiceBox.Location = new Point(78, 137);
+            lblDiceBox.BackColor = Color.White;
+            lblDiceBox.Font = new Font("Segoe Script", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDiceBox.Location = new Point(138, 160);
             lblDiceBox.Name = "lblDiceBox";
-            lblDiceBox.Size = new Size(317, 185);
+            lblDiceBox.Size = new Size(85, 64);
             lblDiceBox.TabIndex = 1;
-            lblDiceBox.Text = "Test";
+            lblDiceBox.Text = "20";
             lblDiceBox.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmDiceBox
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(439, 481);
+            BackgroundImage = Properties.Resources._360_F_339998612_a98KKuXzPSHde5rvpAjd4NkpbWpBNGRn;
+            ClientSize = new Size(360, 360);
             Controls.Add(lblDiceBox);
             Controls.Add(lblDiceScore);
             FormBorderStyle = FormBorderStyle.None;

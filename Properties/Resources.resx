@@ -118,8 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flecha izquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\flecha izquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DnD-Symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DnD-Symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wooden-floor-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wooden-floor-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="34338d26023e5515f6cc8969aa027bca_w200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\files\34338d26023e5515f6cc8969aa027bca_w200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngegg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,19 +139,16 @@
   <data name="pngegg (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wooden-floor-background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wooden-floor-background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wooden-floor-background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wooden-floor-background2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="flecha izquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flecha izquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pngegg (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DnD-Symbol" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DnD-Symbol.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wooden-floor-background2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wooden-floor-background2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="34338d26023e5515f6cc8969aa027bca_w200" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\files\34338d26023e5515f6cc8969aa027bca_w200.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="360_F_339998612_a98KKuXzPSHde5rvpAjd4NkpbWpBNGRn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\360_F_339998612_a98KKuXzPSHde5rvpAjd4NkpbWpBNGRn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

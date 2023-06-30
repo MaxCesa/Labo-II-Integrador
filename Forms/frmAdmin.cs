@@ -188,6 +188,7 @@ namespace PrimerParcialLabo_Intento2
                 if (lstUsuarios.SelectedItems[0].SubItems[1].Text != usuarioActual.username)
                 {
                     this.usuarios.RemoveAll(user => user.username == txtUsername.Text);
+                    cargarLista();
                 }
             }
         }
