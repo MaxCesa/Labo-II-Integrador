@@ -61,16 +61,14 @@ namespace PrimerParcialLabo_Intento2
 
         private void ExportacionCompletada(object sender, EventArgs e)
         {
-            //ESTA PORONGA NO ESTA CORRIENDO, NO SE CIERRA LA NUEVA FORM
-            this.loading.ExportacionCompletada += (sender, args) =>
-            {
+
                 this.loading.Invoke(new Action(() =>
                 {
                     this.loading.Close();
                     this.loading.Dispose();
                     this.loading = null;
                 }));
-            };
+
         }
 
 
