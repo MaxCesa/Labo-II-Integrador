@@ -30,7 +30,6 @@
         {
             btnGuardar = new Button();
             btnExportar = new Button();
-            btnImportar = new Button();
             btmExportarDB = new Button();
             SuspendLayout();
             // 
@@ -54,19 +53,9 @@
             btnExportar.UseVisualStyleBackColor = true;
             btnExportar.Click += btnExportar_Click;
             // 
-            // btnImportar
-            // 
-            btnImportar.Location = new Point(38, 179);
-            btnImportar.Name = "btnImportar";
-            btnImportar.Size = new Size(174, 54);
-            btnImportar.TabIndex = 2;
-            btnImportar.Text = "Importar personajes desde base de datos";
-            btnImportar.UseVisualStyleBackColor = true;
-            btnImportar.Click += btnImportar_Click;
-            // 
             // btmExportarDB
             // 
-            btmExportarDB.Location = new Point(38, 251);
+            btmExportarDB.Location = new Point(38, 179);
             btmExportarDB.Name = "btmExportarDB";
             btmExportarDB.Size = new Size(174, 55);
             btmExportarDB.TabIndex = 3;
@@ -79,9 +68,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
-            ClientSize = new Size(248, 441);
+            ClientSize = new Size(248, 264);
             Controls.Add(btmExportarDB);
-            Controls.Add(btnImportar);
             Controls.Add(btnExportar);
             Controls.Add(btnGuardar);
             Name = "frmExportar";
@@ -93,7 +81,6 @@
 
         private Button btnGuardar;
         private Button btnExportar;
-        private Button btnImportar;
         private Button btmExportarDB;
     }
 }

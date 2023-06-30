@@ -137,10 +137,11 @@
             lblNaturaleza = new Label();
             lblReligion = new Label();
             btnAñadirItem = new Button();
-            btnExaminarItem = new Button();
             btnTirarItem = new Button();
             Logo = new PictureBox();
             toolTip1 = new ToolTip(components);
+            btnCargar = new Button();
+            btnGuardar = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -1575,25 +1576,11 @@
             btnAñadirItem.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAñadirItem.Location = new Point(699, 624);
             btnAñadirItem.Name = "btnAñadirItem";
-            btnAñadirItem.Size = new Size(121, 54);
+            btnAñadirItem.Size = new Size(91, 54);
             btnAñadirItem.TabIndex = 5;
             btnAñadirItem.Text = "Añadir";
             btnAñadirItem.UseVisualStyleBackColor = true;
             btnAñadirItem.Click += btnAñadirItem_Click;
-            // 
-            // btnExaminarItem
-            // 
-            btnExaminarItem.BackgroundImage = Properties.Resources.pngegg;
-            btnExaminarItem.BackgroundImageLayout = ImageLayout.Stretch;
-            btnExaminarItem.FlatAppearance.BorderSize = 0;
-            btnExaminarItem.FlatStyle = FlatStyle.Flat;
-            btnExaminarItem.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnExaminarItem.Location = new Point(826, 624);
-            btnExaminarItem.Name = "btnExaminarItem";
-            btnExaminarItem.Size = new Size(129, 54);
-            btnExaminarItem.TabIndex = 6;
-            btnExaminarItem.Text = "WIP";
-            btnExaminarItem.UseVisualStyleBackColor = true;
             // 
             // btnTirarItem
             // 
@@ -1602,9 +1589,9 @@
             btnTirarItem.FlatAppearance.BorderSize = 0;
             btnTirarItem.FlatStyle = FlatStyle.Flat;
             btnTirarItem.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTirarItem.Location = new Point(961, 625);
+            btnTirarItem.Location = new Point(796, 624);
             btnTirarItem.Name = "btnTirarItem";
-            btnTirarItem.Size = new Size(100, 54);
+            btnTirarItem.Size = new Size(81, 54);
             btnTirarItem.TabIndex = 7;
             btnTirarItem.Text = "Tirar";
             btnTirarItem.UseVisualStyleBackColor = true;
@@ -1621,15 +1608,46 @@
             Logo.TabIndex = 8;
             Logo.TabStop = false;
             // 
+            // btnCargar
+            // 
+            btnCargar.BackgroundImage = Properties.Resources.pngegg;
+            btnCargar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCargar.FlatAppearance.BorderSize = 0;
+            btnCargar.FlatStyle = FlatStyle.Flat;
+            btnCargar.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCargar.Location = new Point(883, 624);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(83, 54);
+            btnCargar.TabIndex = 9;
+            btnCargar.Text = "Cargar";
+            btnCargar.UseVisualStyleBackColor = true;
+            btnCargar.Click += btnCargar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackgroundImage = Properties.Resources.pngegg;
+            btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnGuardar.Location = new Point(973, 626);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(88, 54);
+            btnGuardar.TabIndex = 10;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
             // frmInformacion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(1084, 708);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnCargar);
             Controls.Add(Logo);
             Controls.Add(btnTirarItem);
-            Controls.Add(btnExaminarItem);
             Controls.Add(btnAñadirItem);
             Controls.Add(tableLayoutPanel4);
             Controls.Add(lstEquipo);
@@ -1751,7 +1769,6 @@
         private Label lblAcrobaciasMod;
         private Label lblAtletismoMod;
         private Button btnAñadirItem;
-        private Button btnExaminarItem;
         private Button btnTirarItem;
         private PictureBox Logo;
         private Label lblAtributo;
@@ -1764,5 +1781,7 @@
         private Label lblModificador;
         private Label lblProeficiencia;
         private ToolTip toolTip1;
+        private Button btnCargar;
+        private Button btnGuardar;
     }
 }

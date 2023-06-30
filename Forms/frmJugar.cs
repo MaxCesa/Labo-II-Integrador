@@ -105,5 +105,37 @@ namespace PrimerParcialLabo_Intento2
                 rtbConsola.AppendText("Roll de " + (string)s + ": " + i.ToString() + "\n");
             }
         }
+
+        private void btnSubirDeNivel_Click(object sender, EventArgs e)
+        {
+            switch (personajeActual.clase)
+            {
+                case "Barbaro":
+                    Barbaro.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Bardo":
+                    Bardo.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Clerigo":
+                    Clerigo.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Druida":
+                    Druida.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Guerrero":
+                    Guerrero.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Explorador":
+                    Explorador.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Paladin":
+                    Paladin.subirDeNivel(personajeActual, 1);
+                    break;
+                case "Monje":
+                    Monje.subirDeNivel(personajeActual, 1);
+                    break;
+
+            }
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using PrimerParcialLabo_Intento2.DB;
+﻿using IronPdf.Logging;
+using IronSoftware;
+using PrimerParcialLabo_Intento2.DB;
 using PrimerParcialLabo_Intento2.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,8 +23,6 @@ namespace PrimerParcialLabo_Intento2
         private frmAdmin childForm;
         public ListaUsuarios usuarios;
         public Configuration config;
-
-        public bool sqlActive = false;
 
         public void conseguirUsuarios(ListaUsuarios usuarios)
         {
@@ -163,5 +163,21 @@ namespace PrimerParcialLabo_Intento2
             this.panelMenu.BackColor = theme.SecondaryColor;
             this.lstPersonajes.BackColor = theme.MainColor;
         }
+
+        private async void btnImportar_Click(object sender, EventArgs e)
+        {
+            ListaPersonajes nuevaLista = new ListaPersonajes();
+            if (config.Sql)
+            {
+                nuevaLista = SQLHandler.importarPersonajes(usuario);
+            }
+            else
+            {
+                nuevaLista = await FirebaseHandler.ImportarPersonajes(usuario);
+            }
+            this.personajes = nuevaLista;
+            this.actualizarLista();
+        }
+
     }
 }

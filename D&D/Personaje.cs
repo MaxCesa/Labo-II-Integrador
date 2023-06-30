@@ -141,12 +141,6 @@ public class Personaje : ISerializador
         return default(Personaje);
     }
 
-    public string SerializarXml()
-    {
-        XmlSerializer serializer = new XmlSerializer(typeof(Personaje));
-        StringWriter sw = new StringWriter();
-        serializer.Serialize(sw, this);
 
-        return sw.ToString();
-    }
+
 }

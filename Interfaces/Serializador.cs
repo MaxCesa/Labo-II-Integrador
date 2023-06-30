@@ -14,7 +14,10 @@ namespace PrimerParcialLabo_Intento2.Interfaces
         {
             throw new NotImplementedException();
         }
-        public string SerializarXml();
+        public string SerializarXml()
+        {
+            throw new NotImplementedException();
+        }
 
         public static T DeserializarXml<T>(string xml)
         {

@@ -33,14 +33,11 @@
             btnTiradaAtributos = new Button();
             cboHabilidades = new ComboBox();
             btnTiradaHabilidades = new Button();
-            cboAtaques = new ComboBox();
-            btnCheckHit = new Button();
-            btnDaño = new Button();
             rtbConsola = new RichTextBox();
             lblAtributos = new Label();
             lblHabilidades = new Label();
-            lblAtaques = new Label();
             toolTip1 = new ToolTip(components);
+            btnSubirDeNivel = new Button();
             SuspendLayout();
             // 
             // cboAtributos
@@ -97,47 +94,6 @@
             btnTiradaHabilidades.UseVisualStyleBackColor = true;
             btnTiradaHabilidades.Click += btnTiradaHabilidades_Click;
             // 
-            // cboAtaques
-            // 
-            cboAtaques.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            cboAtaques.FormattingEnabled = true;
-            cboAtaques.Location = new Point(68, 248);
-            cboAtaques.Margin = new Padding(4, 3, 4, 3);
-            cboAtaques.Name = "cboAtaques";
-            cboAtaques.Size = new Size(188, 31);
-            cboAtaques.TabIndex = 4;
-            // 
-            // btnCheckHit
-            // 
-            btnCheckHit.BackgroundImage = Properties.Resources.pngegg;
-            btnCheckHit.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCheckHit.FlatAppearance.BorderSize = 0;
-            btnCheckHit.FlatStyle = FlatStyle.Flat;
-            btnCheckHit.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCheckHit.Location = new Point(305, 248);
-            btnCheckHit.Margin = new Padding(4, 3, 4, 3);
-            btnCheckHit.Name = "btnCheckHit";
-            btnCheckHit.Size = new Size(95, 33);
-            btnCheckHit.TabIndex = 5;
-            btnCheckHit.Text = "Check";
-            toolTip1.SetToolTip(btnCheckHit, "Checkeo de golpe (Ver si el ataque conecta):\r\n1d20 + atributo del arma");
-            btnCheckHit.UseVisualStyleBackColor = true;
-            // 
-            // btnDaño
-            // 
-            btnDaño.BackgroundImage = Properties.Resources.pngegg;
-            btnDaño.BackgroundImageLayout = ImageLayout.Stretch;
-            btnDaño.FlatAppearance.BorderSize = 0;
-            btnDaño.FlatStyle = FlatStyle.Flat;
-            btnDaño.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnDaño.Location = new Point(305, 302);
-            btnDaño.Margin = new Padding(4, 3, 4, 3);
-            btnDaño.Name = "btnDaño";
-            btnDaño.Size = new Size(95, 33);
-            btnDaño.TabIndex = 6;
-            btnDaño.Text = "Daño";
-            btnDaño.UseVisualStyleBackColor = true;
-            // 
             // rtbConsola
             // 
             rtbConsola.BackColor = Color.BurlyWood;
@@ -171,16 +127,21 @@
             lblHabilidades.TabIndex = 9;
             lblHabilidades.Text = "Habilidades";
             // 
-            // lblAtaques
+            // btnSubirDeNivel
             // 
-            lblAtaques.AutoSize = true;
-            lblAtaques.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblAtaques.Location = new Point(68, 222);
-            lblAtaques.Margin = new Padding(4, 0, 4, 0);
-            lblAtaques.Name = "lblAtaques";
-            lblAtaques.Size = new Size(75, 23);
-            lblAtaques.TabIndex = 10;
-            lblAtaques.Text = "Ataques";
+            btnSubirDeNivel.BackgroundImage = Properties.Resources.pngegg;
+            btnSubirDeNivel.BackgroundImageLayout = ImageLayout.Stretch;
+            btnSubirDeNivel.FlatAppearance.BorderSize = 0;
+            btnSubirDeNivel.FlatStyle = FlatStyle.Flat;
+            btnSubirDeNivel.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSubirDeNivel.Location = new Point(68, 439);
+            btnSubirDeNivel.Margin = new Padding(4, 3, 4, 3);
+            btnSubirDeNivel.Name = "btnSubirDeNivel";
+            btnSubirDeNivel.Size = new Size(168, 38);
+            btnSubirDeNivel.TabIndex = 10;
+            btnSubirDeNivel.Text = "Subir de nivel";
+            btnSubirDeNivel.UseVisualStyleBackColor = true;
+            btnSubirDeNivel.Click += btnSubirDeNivel_Click;
             // 
             // frmJugar
             // 
@@ -188,13 +149,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BlanchedAlmond;
             ClientSize = new Size(1000, 518);
-            Controls.Add(lblAtaques);
+            Controls.Add(btnSubirDeNivel);
             Controls.Add(lblHabilidades);
             Controls.Add(lblAtributos);
             Controls.Add(rtbConsola);
-            Controls.Add(btnDaño);
-            Controls.Add(btnCheckHit);
-            Controls.Add(cboAtaques);
             Controls.Add(btnTiradaHabilidades);
             Controls.Add(cboHabilidades);
             Controls.Add(btnTiradaAtributos);
@@ -215,13 +173,10 @@
         private Button btnTiradaAtributos;
         private ComboBox cboHabilidades;
         private Button btnTiradaHabilidades;
-        private ComboBox cboAtaques;
-        private Button btnCheckHit;
-        private Button btnDaño;
         private RichTextBox rtbConsola;
         private Label lblAtributos;
         private Label lblHabilidades;
-        private Label lblAtaques;
         private ToolTip toolTip1;
+        private Button btnSubirDeNivel;
     }
 }

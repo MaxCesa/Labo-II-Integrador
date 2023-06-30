@@ -219,5 +219,6 @@ namespace PrimerParcialLabo_Intento2
         {
             File.WriteAllText(_configAddress, config.SerializarJson());
         }
+
     }
 }

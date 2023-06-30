@@ -24,7 +24,7 @@ namespace PrimerParcialLabo_Intento2
         public frmExportar()
         {
             InitializeComponent();
-           ;
+            ;
         }
 
         public void AplicarTema(Theme theme)
@@ -52,7 +52,7 @@ namespace PrimerParcialLabo_Intento2
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            Thread threadAnimacion = new Thread(() =>  showLoading());
+            Thread threadAnimacion = new Thread(() => showLoading());
             threadAnimacion.Start();
             ControladorArchivos.ExportacionCompletada += ExportacionCompletada;
             Thread threadExportacion = new Thread(() => ControladorArchivos.ExportarAPDF(personaje, this.loading));
@@ -62,12 +62,12 @@ namespace PrimerParcialLabo_Intento2
         private void ExportacionCompletada(object sender, EventArgs e)
         {
 
-                this.loading.Invoke(new Action(() =>
-                {
-                    this.loading.Close();
-                    this.loading.Dispose();
-                    this.loading = null;
-                }));
+            this.loading.Invoke(new Action(() =>
+            {
+                this.loading.Close();
+                this.loading.Dispose();
+                this.loading = null;
+            }));
 
         }
 
@@ -80,25 +80,11 @@ namespace PrimerParcialLabo_Intento2
 
 
 
-        private async void btnImportar_Click(object sender, EventArgs e)
-        {
-            ListaPersonajes nuevaLista = new ListaPersonajes();
-            if (((frmMainMenu)this.Owner).sqlActive == true)
-            {
-                nuevaLista = SQLHandler.importarPersonajes(usuario);
-            }
-            else
-            {
-                nuevaLista = await FirebaseHandler.ImportarPersonajes(usuario);
-            }
-            ((frmMainMenu)this.Owner).personajes = nuevaLista;
-            ((frmMainMenu)this.Owner).actualizarLista();
-        }
 
 
         private void btmExportarDB_Click(object sender, EventArgs e)
         {
-            if (((frmMainMenu)this.Owner).sqlActive == true)
+            if (((frmMainMenu)this.Owner).config.Sql)
             {
                 SQLHandler.exportarPersonajes(personajeList);
             }
@@ -107,5 +93,6 @@ namespace PrimerParcialLabo_Intento2
                 FirebaseHandler.ExportarPersonajes(personajeList);
             }
         }
+
     }
 }

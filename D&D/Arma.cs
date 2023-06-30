@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DnD
 {
-    internal class Arma : Item
+    [XmlInclude(typeof(Arma))]
+    public class Arma : Item
     {
         public Dado dadoDaño;
         public enum tipoDeDaño
@@ -34,6 +36,13 @@ namespace DnD
         {
             dadoDaño = dado;
             tipoDeDaño damageType = (tipoDeDaño)numeroDeTipo;
+            propiedades = new List<string>();
+        }
+
+        public Arma(): base()
+        {
+            dadoDaño = new Dado(1,4);
+            tipoDeDaño damageType = tipoDeDaño.Cortante;
             propiedades = new List<string>();
         }
 

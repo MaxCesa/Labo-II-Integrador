@@ -41,6 +41,7 @@
             lstPersonajes = new ListBox();
             lblPersonajeSeleccionado = new Label();
             panelMenu = new Panel();
+            btnImportarDB = new Button();
             panelContenedor = new Panel();
             toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)campañaBindingSource).BeginInit();
@@ -105,6 +106,7 @@
             btnExportar.BackColor = Color.Transparent;
             btnExportar.BackgroundImage = Properties.Resources.pngegg;
             btnExportar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnExportar.Enabled = false;
             btnExportar.FlatAppearance.BorderSize = 0;
             btnExportar.FlatStyle = FlatStyle.Flat;
             btnExportar.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -126,7 +128,7 @@
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnUsuarios.Location = new Point(6, 512);
+            btnUsuarios.Location = new Point(3, 652);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(175, 42);
             btnUsuarios.TabIndex = 5;
@@ -139,7 +141,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsuario.Location = new Point(12, 489);
+            lblUsuario.Location = new Point(6, 626);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(82, 23);
             lblUsuario.TabIndex = 6;
@@ -148,7 +150,7 @@
             // btnSeleccionarPersonaje
             // 
             btnSeleccionarPersonaje.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSeleccionarPersonaje.Location = new Point(12, 411);
+            btnSeleccionarPersonaje.Location = new Point(12, 466);
             btnSeleccionarPersonaje.Name = "btnSeleccionarPersonaje";
             btnSeleccionarPersonaje.Size = new Size(110, 29);
             btnSeleccionarPersonaje.TabIndex = 10;
@@ -159,12 +161,12 @@
             // lstPersonajes
             // 
             lstPersonajes.BackColor = Color.PapayaWhip;
-            lstPersonajes.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lstPersonajes.Font = new Font("Segoe Script", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             lstPersonajes.FormattingEnabled = true;
-            lstPersonajes.ItemHeight = 23;
+            lstPersonajes.ItemHeight = 20;
             lstPersonajes.Location = new Point(12, 240);
             lstPersonajes.Name = "lstPersonajes";
-            lstPersonajes.Size = new Size(158, 165);
+            lstPersonajes.Size = new Size(158, 204);
             lstPersonajes.TabIndex = 11;
             // 
             // lblPersonajeSeleccionado
@@ -178,6 +180,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.NavajoWhite;
+            panelMenu.Controls.Add(btnImportarDB);
             panelMenu.Controls.Add(lblUsuario);
             panelMenu.Controls.Add(btnCrear);
             panelMenu.Controls.Add(btnSeleccionarPersonaje);
@@ -191,6 +194,22 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(184, 706);
             panelMenu.TabIndex = 14;
+            // 
+            // btnImportarDB
+            // 
+            btnImportarDB.BackColor = Color.Transparent;
+            btnImportarDB.BackgroundImage = Properties.Resources.pngegg;
+            btnImportarDB.BackgroundImageLayout = ImageLayout.Stretch;
+            btnImportarDB.FlatAppearance.BorderSize = 0;
+            btnImportarDB.FlatStyle = FlatStyle.Flat;
+            btnImportarDB.Font = new Font("Segoe Script", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnImportarDB.Location = new Point(6, 519);
+            btnImportarDB.Name = "btnImportarDB";
+            btnImportarDB.Size = new Size(175, 46);
+            btnImportarDB.TabIndex = 12;
+            btnImportarDB.Text = "Importar DB";
+            btnImportarDB.UseVisualStyleBackColor = false;
+            btnImportarDB.Click += btnImportar_Click;
             // 
             // panelContenedor
             // 
@@ -235,5 +254,6 @@
         private Panel panelMenu;
         private Panel panelContenedor;
         private ToolTip toolTip1;
+        private Button btnImportarDB;
     }
 }

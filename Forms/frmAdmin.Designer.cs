@@ -52,8 +52,13 @@
             panel2 = new Panel();
             rdoForja = new RadioButton();
             rdoPergamino = new RadioButton();
+            lblBaseDeDatos = new Label();
+            panel3 = new Panel();
+            rdoFirestore = new RadioButton();
+            rdoSQL = new RadioButton();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // lblUsuarios
@@ -150,7 +155,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(645, 574);
+            btnGuardar.Location = new Point(645, 657);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(119, 29);
             btnGuardar.TabIndex = 8;
@@ -160,7 +165,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(770, 574);
+            btnSalir.Location = new Point(770, 657);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(94, 29);
             btnSalir.TabIndex = 9;
@@ -275,13 +280,57 @@
             rdoPergamino.UseVisualStyleBackColor = true;
             rdoPergamino.CheckedChanged += rdoPergamino_CheckedChanged;
             // 
+            // lblBaseDeDatos
+            // 
+            lblBaseDeDatos.AutoSize = true;
+            lblBaseDeDatos.Location = new Point(34, 556);
+            lblBaseDeDatos.Name = "lblBaseDeDatos";
+            lblBaseDeDatos.Size = new Size(50, 20);
+            lblBaseDeDatos.TabIndex = 20;
+            lblBaseDeDatos.Text = "label4";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(rdoFirestore);
+            panel3.Controls.Add(rdoSQL);
+            panel3.Location = new Point(31, 579);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(450, 40);
+            panel3.TabIndex = 21;
+            // 
+            // rdoFirestore
+            // 
+            rdoFirestore.AutoSize = true;
+            rdoFirestore.Location = new Point(151, 3);
+            rdoFirestore.Name = "rdoFirestore";
+            rdoFirestore.Size = new Size(87, 24);
+            rdoFirestore.TabIndex = 1;
+            rdoFirestore.TabStop = true;
+            rdoFirestore.Text = "Firestore";
+            rdoFirestore.UseVisualStyleBackColor = true;
+            rdoFirestore.CheckedChanged += rdoFirestore_CheckedChanged;
+            // 
+            // rdoSQL
+            // 
+            rdoSQL.AutoSize = true;
+            rdoSQL.Location = new Point(3, 3);
+            rdoSQL.Name = "rdoSQL";
+            rdoSQL.Size = new Size(76, 24);
+            rdoSQL.TabIndex = 0;
+            rdoSQL.TabStop = true;
+            rdoSQL.Text = "MySQL";
+            rdoSQL.UseVisualStyleBackColor = true;
+            rdoSQL.CheckedChanged += rdoSQL_CheckedChanged;
+            // 
             // frmAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.Gray;
-            ClientSize = new Size(919, 395);
+            ClientSize = new Size(919, 698);
+            Controls.Add(panel3);
+            Controls.Add(lblBaseDeDatos);
             Controls.Add(panel2);
             Controls.Add(lblTemas);
             Controls.Add(panel1);
@@ -307,6 +356,8 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -337,5 +388,9 @@
         private Panel panel2;
         private RadioButton rdoPergamino;
         private RadioButton rdoForja;
+        private Label lblBaseDeDatos;
+        private Panel panel3;
+        private RadioButton rdoFirestore;
+        private RadioButton rdoSQL;
     }
 }

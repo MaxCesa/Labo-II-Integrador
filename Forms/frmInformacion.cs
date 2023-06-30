@@ -8,12 +8,17 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 using DnD;
 using Exepciones;
+using IronSoftware;
 using PrimerParcialLabo_Intento2.Interfaces;
 
 namespace PrimerParcialLabo_Intento2
 {
+    [XmlInclude(typeof(Arma))]
+    [XmlInclude(typeof(Armadura))]
     public partial class frmInformacion : Form, ITema
     {
         Personaje personaje;
@@ -114,7 +119,7 @@ namespace PrimerParcialLabo_Intento2
         {
             try
             {
-                if(lstEquipo.SelectedIndices.Count > 0)
+                if (lstEquipo.SelectedIndices.Count > 0)
                 {
                     int posicionItemABorrar = lstEquipo.SelectedIndices[0];
                     personaje.equipamiento.RemoveAt(posicionItemABorrar);
@@ -126,10 +131,45 @@ namespace PrimerParcialLabo_Intento2
                     throw new ItemNoSeleccionadoExeption();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                throw Logger.LogAndThrow(ex);
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            List<Item> list = personaje.equipamiento;
+            Type[] itemTypes = new Type[] { typeof(Arma), typeof(Armadura) };
+            XmlSerializer xs = new XmlSerializer(typeof(List<Item>), itemTypes);
+            using (StreamWriter streamWriter = System.IO.File.CreateText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//Equipo de " + personaje.ToString() +".xml"))
+            {
+                xs.Serialize(streamWriter, list);
+            };
+        }
+
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+
+            using(OpenFileDialog dialog = new OpenFileDialog() )
+            {
+                if(dialog.ShowDialog() == DialogResult.OK)
+                {
+                    string path = dialog.FileName;
+                    Type[] itemTypes = new Type[] { typeof(Arma), typeof(Armadura) };
+                    XmlSerializer deserializer = new XmlSerializer(typeof(List<Item>), itemTypes);
+    
+
+                    var fileReader = new StreamReader(path, true);  // true means to detect the BOM.
+                    var reader = XmlReader.Create(fileReader);
+
+                    try { personaje.equipamiento = (List<Item>)deserializer.Deserialize(reader); }
+                    catch (Exception ex) { throw Logger.LogAndThrow(ex); }
+                    recargarTabla();
+                }
 
             }
+
         }
     }
 }

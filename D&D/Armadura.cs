@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DnD
 {
-    internal class Armadura : Item
+    [XmlInclude(typeof(Armadura))]
+    public class Armadura : Item
     {
+
         public int ArmorClass {get; set;}
         public enum TipoArmadura
         {
@@ -23,6 +26,12 @@ namespace DnD
         {
             ArmorClass = armorClass;
             this.tipoArmadura = (TipoArmadura)tipo;
+        }
+
+        public Armadura(): base()
+        {
+            ArmorClass = 0;
+            this.tipoArmadura = TipoArmadura.Ligera;
         }
     }
 }

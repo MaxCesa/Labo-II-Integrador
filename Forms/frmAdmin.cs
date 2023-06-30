@@ -170,5 +170,15 @@ namespace PrimerParcialLabo_Intento2
             this.config.Theme = new Theme();
             AplicarTema(config.Theme);
         }
+
+        private void rdoSQL_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.Sql = true;
+        }
+
+        private void rdoFirestore_CheckedChanged(object sender, EventArgs e)
+        {
+            this.config.Sql = false;
+        }
     }
 }
