@@ -180,5 +180,16 @@ namespace PrimerParcialLabo_Intento2
         {
             this.config.Sql = false;
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Length > 0 && txtContraseña.Text.Length > 0)
+            {
+                if (lstUsuarios.SelectedItems[0].SubItems[1].Text != usuarioActual.username)
+                {
+                    this.usuarios.RemoveAll(user => user.username == txtUsername.Text);
+                }
+            }
+        }
     }
 }
